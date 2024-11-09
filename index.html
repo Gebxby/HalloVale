@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">	
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hallo Valeria</title>
+	<link rel="stylesheet" href="static/css/styles4.css">
+	<script src="static/js/srcipts.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url('static/image/background.jpg'); background-size: cover; background-position: center;">
+
+	<!-- Loading screen -->
+	<div id="loading-screen">
+		<svg class="loader" viewBox="0 0 100 100">
+			<!-- "V" Letter -->
+			<path class="letter" d="M 10,10 L 50,90 L 90,10" />
+			<!-- "G" Letter -->
+			<path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
+		</svg>
+	</div>
+
+	<!-- Main content -->
+	<div style="display: none;" id="main-content" >
+		<!-- navbar -->
+		<div id="navbar">
+			<nav class="slideInY">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="flex items-center justify-between h-16">
+						<!-- Logo and Site Title -->
+						<div class="flex items-center">
+							<h1 class="text-2xl font-bold text-center text-white">
+								<a href="aboutThisWeb.html" class="text-2xl font-bold text-center text-white">Hallo Valeria</a>
+							</h1>
+						</div>
+	
+						<!-- Desktop Menu -->
+						<div class="hidden md:flex items-center space-x-4">
+							<a href="gallery.html" class="text-white px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300">Gallery</a>
+							<a href="aboutThisWeb.html" class="text-white px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300">About</a>
+						</div>
+	
+						<!-- Mobile Menu Button -->
+						<div class="md:hidden flex items-center">
+							<button class="mobile-menu-button">
+								<svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+									<path d="M4 6h16M4 12h16M4 18h16"></path>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+	
+				<!-- Mobile Menu (hidden by default) -->
+				<div class="mobile-menu hidden md:hidden text-white text-center">
+					<a href="gallery.html" class="block px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300">Gallery</a>
+					<a href="aboutThisWeb.html" class="text-white px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300">About</a>
+				</div>
+			</nav>
+		</div>
+
+		<script>
+			const btn = document.querySelector('.mobile-menu-button');
+			const menu = document.querySelector('.mobile-menu');
+	
+			// Event listener for mobile menu button
+			btn.addEventListener('click', () => {
+				menu.classList.toggle('hidden');
+			});
+
+			// Hide loading screen and show main content once page is fully loaded
+			
+		</script>
+
+		<!-- Content -->
+		<div class="grid flex justify-center items-center h-screen slideInY">
+			<section class="contents">
+				<div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
+					<div class="praf">
+						<p id="content">klik tombol dibawah untuk membaca pesan 💕</p>
+						<audio id="audio-player" src="static/music/Die With A Smiile.mp3" type="audio/mp3" class="mt-4" autoplay></audio>
+
+					</div>
+					<!-- Tombol di tengah bawah dari container -->
+					<button type="button" onclick='document.getElementById("content").innerHTML=showMessage(123);' 
+						class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 bg-[url('static/image/button-image.png')] bg-cover">
+					</button>
+				</div>
+				
+			</section>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hallo Valeria</title>
+	<link rel="stylesheet" href="static/css/styles4.css">
+	<script src="static/js/srcipts.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body style="background-color: rgb(255, 255, 255);">
+
+	<div id="loading-screen">
+		<svg class="loader" viewBox="0 0 100 100">
+			<!-- "V" Letter -->
+			<path class="letter" d="M 10,10 L 50,90 L 90,10" />
+			<!-- "G" Letter -->
+			<path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
+		</svg>
+	</div>
+
+	<div class="bg-gradient-to-l from-indigo-500 to-pink-400">
+		<div >
+			<nav class="slideInY ">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="flex items-center justify-between h-16">
+						<!-- Logo and Site Title -->
+						<div class="flex items-center">
+							<h1 class="text-2xl font-bold text-center text-white">
+								<a href="aboutThisWeb.html" class="text-2xl font-bold text-center text-white">Gallery</a>
+							</h1>
+						</div>
+	
+						<!-- Desktop Menu -->
+						<div class="hidden md:flex items-center space-x-4">
+							<a href="index.html" class="text-white px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300">home</a>
+		
+						</div>
+	
+						<!-- Mobile Menu Button -->
+						<div class="md:hidden flex items-center">
+							<button class="mobile-menu-button">
+								<svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+									<path d="M4 6h16M4 12h16M4 18h16"></path>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+	
+				<!-- Mobile Menu (hidden by default) -->
+				<div class="mobile-menu hidden md:hidden text-white text-center">
+					<a href="index.html" class="block px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300">Home</a>
+				</div>
+			</nav>
+		</div>
+	
+		<script>
+			const btn = document.querySelector('.mobile-menu-button');
+			const menu = document.querySelector('.mobile-menu');
+	
+			// Event listener for mobile menu button
+			btn.addEventListener('click', () => {
+				menu.classList.toggle('hidden');
+			});
+	
+			// Hide loading screen and show main content once page is fully loaded
+			
+		</script>
+	
+	
+		<div class="image-container p-4">
+			<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-center items-center">
+				<!-- Setiap gambar akan menempati satu kolom dari grid yang adaptif -->
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/4.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/5.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/6.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/7.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/8.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/9.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/10.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/11.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/12.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/13.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/14.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/15.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/16.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/17.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/18.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/19.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/20.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/21.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/22.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/23.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/24.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/25.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/26.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/27.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/28.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/29.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/30.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/31.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/32.png" alt="png">
+				<img id="photo" class="photo w-full h-auto object-cover rounded-lg" src="static/image/33.png" alt="png">
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

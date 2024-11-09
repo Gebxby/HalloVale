@@ -1,0 +1,253 @@
+/* html, body {
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+} */
+
+* {
+    margin: 0; /* Mengatur semua elemen agar tidak memiliki margin default */
+    padding: 0; /* Mengatur semua elemen agar tidak memiliki padding default */
+    box-sizing: border-box; /* Menggunakan box-sizing untuk menghindari masalah dengan padding dan width */
+}
+
+body{
+    /* background-image: linear-gradient(#ff97d7,#7f59ff);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: #1c1a1b;
+   
+}
+
+nav{
+    background-color: #fe4baa57;
+    border: solid;
+    border-color: white;
+ 
+    border-radius: 100px;
+    margin: auto;
+    padding: 10px 20px;
+    max-width: 1000px;   
+}
+
+a{
+    
+    font-family: cursive;
+}
+
+#content {
+    color: white;
+    font-family: cursive;
+
+}
+#content:hover{
+    color: white;
+    background-color: #ff58bfce;
+    border-radius: 10px;
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    
+}
+#content1{
+    color: white;
+    font-family: semibold;
+}
+#content1:hover{
+    
+    background-color: #0000006c;
+    border-radius: 10px;
+    box-shadow: #04010b;
+}
+
+#photo:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+
+.paraf p:hover{
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+}
+
+.conteiner {
+    width: 400px;
+    height: 400px;
+    background-color: #ffe4e4;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+
+@keyframes slideInYNav{
+    0%{
+        opacity: 0%;
+        transform: translateY(-100);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(100);
+    }
+
+}
+.slideInY{
+    animation:slideInYNav 1.5s ease-out forwards;
+}
+
+/* Loading screen styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(21, 21, 21);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9000;
+}
+
+/* Spinner animation */
+/* SVG loader animation */
+.loader {
+    width: 120px;
+    height: 120px;
+}
+
+/* Fill animation */
+.letter {
+    stroke: #e91e63;
+    stroke-width: 6;
+    fill: none;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: fillAnimation 3s ease-in-out infinite;
+}
+
+@keyframes fillAnimation {
+    0% {
+        stroke-dashoffset: 300;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: -300;
+    }
+}
+
+
+
+/* animasi untuk abt this we */
+
+@keyframes slideInX {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Mulai dari bawah */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(10); /* Berakhir di posisi semula */
+    }
+}
+
+/* Menyertakan animasi ke dalam Tailwind */
+.animate-slideInX {
+    animation: slideInX 1.5s ease-out forwards;
+}
+
+
+
+
+
+
+/* Fade-out animation */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Apply the fade-out animation */
+.fade-out {
+    animation: fadeOut 1s forwards; /* 1-second fade-out */
+}
+
+/* Ensure the fade-out affects both the navbar and the content */
+#main-content.fade-out{
+    animation: fadeOut 1s forwards;
+}
+
+/* @keyframes popup {
+    0% {
+        transform: scale(0); 
+    }
+    100% {
+        transform: scale(2);
+    }
+}
+
+.animate-popup {
+    animation: popup 1.5s ease-in-out forwards;
+} */
+
+
+
+/* @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} */
+
+/* @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 18px; 
+    }
+
+    p {
+        font-size: 12px; 
+    }
+
+    .content-image {
+        max-width: 100%; 
+    }
+} */
+/* 
+.photo:hover {
+    transform: scale(1.05);
+    transition-duration: 0.5s; */
+    /* Stop scroll animation on hover */
+/* } */
+
+/* .photo {
+    animation: photoScroll 20s;
+}
+
+@keyframes photoScroll {
+    0% {
+        transform: translateX(5000%);
+    }
+    100% {
+        transform: translateX(-5000%);
+    }
+} */
+
+
