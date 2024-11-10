@@ -28,12 +28,12 @@ nav{
 
 a{
     
-    font-family: Apple Chancery, cursive;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 }
 
 #content {
     color: white;
-    font-family: Apple Chancery, cursive;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 
 }
 #content:hover{
@@ -61,7 +61,7 @@ a{
 }
 
 .desc{
-    font-family: Apple Chancery, cursive;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 }
 
 .paraf p:hover{
