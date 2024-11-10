@@ -11,9 +11,6 @@
 }
 
 body{
-    /* background-image: linear-gradient(#ff97d7,#7f59ff);
-    background-repeat: no-repeat;
-    background-size: cover; */
     background-color: #1c1a1b;
    
 }
@@ -63,6 +60,9 @@ a{
     transition-duration: 0.5s;
 }
 
+.desc{
+    font-family: cursive;
+}
 
 .paraf p:hover{
     transform: scale(1.02);
@@ -191,63 +191,3 @@ a{
 #main-content.fade-out{
     animation: fadeOut 1s forwards;
 }
-
-/* @keyframes popup {
-    0% {
-        transform: scale(0); 
-    }
-    100% {
-        transform: scale(2);
-    }
-}
-
-.animate-popup {
-    animation: popup 1.5s ease-in-out forwards;
-} */
-
-
-
-/* @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-} */
-
-/* @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    h1 {
-        font-size: 18px; 
-    }
-
-    p {
-        font-size: 12px; 
-    }
-
-    .content-image {
-        max-width: 100%; 
-    }
-} */
-/* 
-.photo:hover {
-    transform: scale(1.05);
-    transition-duration: 0.5s; */
-    /* Stop scroll animation on hover */
-/* } */
-
-/* .photo {
-    animation: photoScroll 20s;
-}
-
-@keyframes photoScroll {
-    0% {
-        transform: translateX(5000%);
-    }
-    100% {
-        transform: translateX(-5000%);
-    }
-} */
-
-
