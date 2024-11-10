@@ -26,16 +26,16 @@ nav{
     max-width: 1000px;   
 }
 
-a{
+nav a{
     
-    font-family: Snell Roundhand, cursive;
+    font-family: Trebuchet MS, sans-serif;
     font-style:normal;
 
 }
 
 #content {
     color: white;
-    font-family: Palatino, URW Palladio L, serif;
+    font-family: Georgia, serif;
 
 }
 #content:hover{
@@ -63,7 +63,7 @@ a{
 }
 
 .desc{
-    font-family: Palatino, URW Palladio L, serif;
+    font-family: Georgia, serif;
 }
 
 .paraf p:hover{
