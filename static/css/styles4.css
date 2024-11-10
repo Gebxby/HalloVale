@@ -28,12 +28,12 @@ nav{
 
 a{
     
-    font-family: cursive;
+    font-family: Apple Chancery, cursive;
 }
 
 #content {
     color: white;
-    font-family: cursive;
+    font-family: Apple Chancery, cursive;
 
 }
 #content:hover{
@@ -61,7 +61,7 @@ a{
 }
 
 .desc{
-    font-family: cursive;
+    font-family: Apple Chancery, cursive;
 }
 
 .paraf p:hover{
