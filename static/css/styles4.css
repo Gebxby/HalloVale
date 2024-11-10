@@ -28,12 +28,12 @@ nav{
 
 a{
     
-    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-family: Snell Roundhand, cursive;
 }
 
 #content {
     color: white;
-    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-family: Snell Roundhand, cursive;
 
 }
 #content:hover{
@@ -61,7 +61,7 @@ a{
 }
 
 .desc{
-    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-family: Snell Roundhand, cursive;
 }
 
 .paraf p:hover{
