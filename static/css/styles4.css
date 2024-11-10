@@ -29,11 +29,13 @@ nav{
 a{
     
     font-family: Snell Roundhand, cursive;
+    font-style:normal;
+
 }
 
 #content {
     color: white;
-    font-family: Snell Roundhand, cursive;
+    font-family: Palatino, URW Palladio L, serif;
 
 }
 #content:hover{
@@ -61,7 +63,7 @@ a{
 }
 
 .desc{
-    font-family: Snell Roundhand, cursive;
+    font-family: Palatino, URW Palladio L, serif;
 }
 
 .paraf p:hover{
