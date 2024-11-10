@@ -8,7 +8,6 @@
 
 let currentMessageIndex = 0;
 audioHasPlay = false
-haspPlayesAudio = false
 
 function showMessage(seconds) {
     const pesan = [
@@ -70,7 +69,9 @@ function showMessage(seconds) {
     
    
 
-    // Get the message to show based on the current index
+    // Get the message to show based on the current index\
+    hasPlayesAudio = false
+
     let messageToShow = pesan[currentMessageIndex];
     document.getElementById("content").innerHTML = messageToShow;
 	const audioPlayer = document.getElementById("audio-player");
@@ -84,7 +85,7 @@ function showMessage(seconds) {
 		audioPlayer.pause();
 		audioPlayer.currentTime = 0
         audioHasPlay = false
-        haspPlayesAudio = false
+        hasPlayesAudio = false
 	}
 
     // Increment the index for the next message, looping back to 0 if at the end
@@ -100,7 +101,7 @@ window.addEventListener('load', () => {
 	setTimeout(() => {
 		document.getElementById('loading-screen').style.display = 'none';
 		
-        haspPlayesAudio = false
+        hasPlayesAudio = false
 		
 	}, 2500); // 5000 milliseconds = 5 seconds
 	document.getElementById('main-content').style.display = 'block';
