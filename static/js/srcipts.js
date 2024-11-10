@@ -8,6 +8,8 @@
 
 let currentMessageIndex = 0;
 audioHasPlay = false
+hasPlayesAudio = false
+
 
 function showMessage(seconds) {
     const pesan = [
