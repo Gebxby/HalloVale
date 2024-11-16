@@ -52,7 +52,7 @@ function showMessage(seconds) {
         menggantikannya. aku kedepannya akan terus menerus memberikan yang terbaik dalam hal apapun, termasuk mencintai dan menyayangimu seperti yang Tuhan lalukan pada umat manusia.\
         karna sesungguhnya, aku akan menjadikan Yakub sebagai teladan dalam mengejar dan mempertahankan cintanya pada Rachel selama 14 tahun.",
 
-        "<a href='https://docs.google.com/document/d/1oMF_7TqhrtLEpJriRXQktK157d1QRiBoJHDVusO_96c/edit?tab=t.0'>this is poem for you abbe (click me!)<a>",
+        "<a href='https://docs.google.com/document/d/1oMF_7TqhrtLEpJriRXQktK157d1QRiBoJHDVusO_96c/edit?tab=t.0'>this is poem for you babe (click me!)<a>",
 
         "siap siap buat something sayaangg!",
 
