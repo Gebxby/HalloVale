@@ -33,6 +33,7 @@ nav a{
 
 }
 
+
 #content {
     color: white;
     font-family: Georgia, serif;
@@ -62,6 +63,17 @@ nav a{
     transition-duration: 0.5s;
 }
 
+#verif_link{
+    background-color: #fe4baa57;
+    border: solid;
+    border-color: white;
+ 
+    border-radius: 100px;
+    margin: auto;
+    padding: 10px 20px;
+    max-width: 1000px;  
+}
+
 .desc{
     font-family: Georgia, serif;
 }
@@ -88,6 +100,23 @@ nav a{
     border-radius: 10px;
     flex: 1;
 }
+
+.verification-box{
+    display: grid;
+    columns: 10px;
+    gap: 50px;
+    background-color: #808080;
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    padding:20px;
+    width: 100%;
+    text-align: center;
+    max-width: 400px;
+    box-shadow:0 15px 15px #00000080;
+
+}
+
 
 
 @keyframes slideInYNav{
@@ -167,9 +196,6 @@ nav a{
 .animate-slideInX {
     animation: slideInX 1.5s ease-out forwards;
 }
-
-
-
 
 
 

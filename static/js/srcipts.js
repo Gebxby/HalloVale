@@ -23,18 +23,18 @@ function showMessage(seconds) {
 
         "pertama-tama mari anggungkan dulu Tuhan atas semuanya ini, atas semua yang telah terjadi;\
         Cinta tuh kayak datang tiba tiba dalam hidupku, dan tak pernah sedikitpun terlintas di kepalaku,\
-        kalau Tuhan mempertemukan aku dengan seseorang gadis baik hati,dan sangat manis bagaikan gulali,\
-        dan berhasil menembus hatiku. Tuhan telah menunjukan secara nyata padaku, arti sesungguhnya hatiku\
-        bernari-nari saat melihatmu dan menunjukan padaku kasih yang nyata melalui kamu.",
+        kalau Tuhan mempertemukan aku dengan seseorang gadis baik hati, penuh pengertian, tulus dan tentunya yang berhasil nembus hati aku.\
+        Tuhan telah menunjukan secara nyata padaku, arti sesungguhnya hati\
+        bernari-nari melihat kekasih, apalagi orangnya itu kamu. aku juga sadar kalau Tuhan menunjukan padaku kasih yang nyata melalui kamu.",
 
         "siapa sangka, Tuhan mengirimkan seorang <a href='https://id.wikipedia.org/wiki/Afrodit'> Aphrodite(kamu bisa klik)<a> kepadaku,\
-        dan semua itu seakan masih terasa berlebihan di mataku. cantikmu itu tak wajar karna setiap harinya cantikmu selalu akan bisa buat aku terperanga dan tak dapat melepaskan pandanganku darimu;\
-        bahkan parasmu itu dapat menyaingi indahnya lautan, gunung-gunung, lembah-lembah bahkan awan-awan di langit sekalipun.\
-        rambut hitammu yang terurai panjang ke bawah, membuatmu terang bersinar bagaikan bintang bintang di langit malam.\
-        kadang kala sifatmu yang menggemaskan itu, memabuatku sakit perut karena harus tertawa. gelagakmu yang serinng mendatangkan\
-        senyum pada pipiku juga menjadi hal yang indah  buatku.",
+        dan semua itu seakan masih terasa berlebihan di mataku. cantikmu itu tak wajar karna setiap harinya cantikmu akan selalu bisa buat aku terperanga dan tak dapat melepaskan pandanganku darimu;\
+        bahkan bulan saja tidak bisa buat aku terperanga meski hanya sesaat.\
+        parasmu itu spesial buat aku, exclusive hanya untuk aku, karna tanpa benda benda yang kamu lekat/pakai di wajah pun, kamu tetap bisa menandingi alam semesta ini.\
+        kamu selalu berhasil buat aku ketawa, kamu juga ngajarin aku banyak hal tentang dunia baru, ngajarin aku cara mencintai diri sendiri, dan terutama jadiin aku orang yang suka memuji Tuhan begitu melihat kamu.\
+        ",
 
-        "cantikku, kita telah berlayar melewati banyak hal. banyak hal di lautan lepas ini yang sudah kita lepas dan ambil. banyak hal yang kita\
+        "Mi Amor, kita telah berlayar melewati banyak hal. banyak hal di lautan lepas ini yang sudah kita lepas dan ambil. banyak hal yang kita\
         syukuri, yang kita sesali, dan yang kita Amini. 3 bulan ini terasa begitu singkat ketika kita sudah berada di penghujung tahun, padahal\
         3 bulan itu bukan waktu yang sebentar bagi kita berdua untuk menerima, memaafkan dan melepaskan apa yang baik dan buruk, apa yang nyaman dan tidak\
         bagi diri kita masing masing.",
@@ -46,7 +46,9 @@ function showMessage(seconds) {
 
         "melalui message box ini juga, aku mau tegasin lagi ke kamu, rasaku padamu tidak akan pernah berubah. selama nafasku masih berdesah, dan jantungku masih berdetak,\
         kamu akan selalu menjadi satu satunya cinta pertama dan terakhirku yang akan hidup bersamaku sampai matahari tak lagi bersinar bagi kita berdua,\
-        sampai perahu ini lapuk dan tenggelam, dan sampai kita tak dapat melihat lagi dunia fana ini. aku percaya kita kan selamanya bersama dalam taman firdaus.",
+        sampai perahu ini lapuk dan tenggelam, dan sampai kita tak dapat melihat lagi dunia fana ini; melalui ini aku juga tegasin kalau kamu selalu cukup buat aku.\
+        kedepannya akan ada banyak hal yang akan kita lalui sayang. tentunya aku mau kita kerjasama dalam hal apapun saat menghadapinya.\
+        kedapannya juga kita akan membangun cinta yang lebih lagi, apapun kondisinya kita harus tetap lindungin bareng bareng, bahkan jika roboh, kita bangun ulang kembali sama sama.",
 
         "sekali lagi, thanks to all you did to me. hidupku jadi penuh akan warna baru, yaitu the color of you. dan warnamu itu unik, hanya satu hingga tak ada yang dapat\
         menggantikannya. aku kedepannya akan terus menerus memberikan yang terbaik dalam hal apapun, termasuk mencintai dan menyayangimu seperti yang Tuhan lalukan pada umat manusia.\
@@ -108,3 +110,7 @@ window.addEventListener('load', () => {
 	}, 2500); // 5000 milliseconds = 5 seconds
 	document.getElementById('main-content').style.display = 'block';
 });
+
+
+
+    
