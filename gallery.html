@@ -7,11 +7,10 @@
 	<link rel="stylesheet" href="static/css/styles4.css">
 	<script src="static/js/srcipts.js"></script>
 	<script src="https://cdn.tailwindcss.com"></script>
-
-
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-200">
 
+	
 	<div id="loading-screen">
 		<svg class="loader" viewBox="0 0 100 100">
 			<!-- "V" Letter -->
@@ -20,7 +19,6 @@
 			<path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
 		</svg>
 	</div>
-
 	<div >
 		<div >
 			<nav class="slideInY ">
@@ -29,16 +27,16 @@
 						<!-- Logo and Site Title -->
 						<div class="flex items-center">
 							<h1 class="text-2xl font-bold text-center text-white">
-								<a href="gallery.html" class="text-2xl font-bold text-center text-white">Gallery</a>
+								<a class='text-2xl font-bold text-center text-white' href='gallery.html'>Gallery</a>
 							</h1>
 						</div>
-	
+
 						<!-- Desktop Menu -->
 						<div class="hidden md:flex items-center space-x-4">
-							<a href="index.html" class="hover:text-sky-300"><img src="static/image/home-button.jpg" alt="Home" class="w-7 h-7 mx-auto"></a>
-							<a href="aboutThisWeb.html" class="text-white px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300">About</a>
+							<a class='hover:text-sky-300' href='index.html'><img src="static/image/home-button.jpg" alt="Home" class="w-7 h-7 mx-auto"></a>
+							<a class='text-white px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300' href='aboutThisWeb.html'>About</a>
 						</div>
-	
+
 						<!-- Mobile Menu Button -->
 						<div class="md:hidden flex items-center">
 							<button class="mobile-menu-button">
@@ -49,557 +47,203 @@
 						</div>
 					</div>
 				</div>
-	
+
 				<!-- Mobile Menu (hidden by default) -->
 				<div class="mobile-menu hidden md:hidden text-white  text-start">
-					<a href="index.html" class="block px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300">Home</a>
+					<a class='block px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300' href='/'>Home</a>
 				</div>
 			</nav>
 		</div>
-	
+
 		<script>
 			const btn = document.querySelector('.mobile-menu-button');
 			const menu = document.querySelector('.mobile-menu');
-	
+
 			// Event listener for mobile menu button
 			btn.addEventListener('click', () => {
 				menu.classList.toggle('hidden');
 			});
-	
+
 			// Hide loading screen and show main content once page is fully loaded
 			
 		</script>
-	
-	
 		<div class="image-container p-4">
-			<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-center items-center">
-				<!-- Setiap gambar akan menempati satu kolom dari grid yang adaptif -->
-
-
-				<!-- foto lendscape -->
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/1.jpg">
-					  <img src="static/image/1.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">Kamu cantik bangeet</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/2.jpg">
-					  <img src="static/image/2.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">rambutmu buat aku jatuh cinta</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/3.jpg">
-					  <img src="static/image/3.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">ga ekspek kamu secantik ini</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/4.jpg">
-					  <img src="static/image/4.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">salah satu foto favoritku</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/5.jpg">
-					  <img src="static/image/5.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">aura nya kuat bangeet T__T</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/8.jpg">
-					  <img src="static/image/8.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">sedih, katanya ini lagi kangen</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/9.jpg">
-					  <img src="static/image/9.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">manisssnyoooo</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/10.jpg">
-					  <img src="static/image/10.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">ini senyum kalau udah kenyang</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/18.jpg">
-					  <img src="static/image/18.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">bisa gaah, jangan kecantikan T__T</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/19.jpg">
-					  <img src="static/image/19.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">matamu ituloohh buat meleleh</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/20.jpg">
-					  <img src="static/image/20.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">mam ayam waktu ultahnya kamuu</div>
-				</div>
-
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/33.jpg">
-					  <img src="static/image/33.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">foto bucin di asrama sebelum di tegur T__T</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/36.jpg">
-					  <img src="static/image/36.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">jumper bareng kamu yang manis</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/37.jpg">
-					  <img src="static/image/37.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">dump photo</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/38.jpg">
-					  <img src="static/image/38.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">dump photo</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/39.jpg">
-					  <img src="static/image/39.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">gilaaa pacar kamu ini gantenggg</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/40.jpg">
-					  <img src="static/image/40.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">baru pulang jumper udah gini ajee</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/41.jpg">
-					  <img src="static/image/41.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">tatapan maut yang manis HAHAHA</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/42.jpg">
-					  <img src="static/image/42.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">maniss amaayyy</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/43.jpg">
-					  <img src="static/image/43.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">INI APALAGIIII T__T</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/45.jpg">
-					  <img src="static/image/45.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">mata pandaa</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/47.jpg">
-					  <img src="static/image/47.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">photobooth pertama kitee niihh</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/48.jpg">
-					  <img src="static/image/48.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">kamunyaa lucuu amaay</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/49.jpg">
-					  <img src="static/image/49.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">gaya orang kerenn</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/50.jpg">
-					  <img src="static/image/50.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">gaya bapak bapak</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/51.jpg">
-					  <img src="static/image/51.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">GEMESIIINN BANGEETT T_T</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/53.jpg">
-					  <img src="static/image/53.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">bibirnya merahh mengiklat,cocok buat yang manis manis kayak kamu</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/55.jpg">
-					  <img src="static/image/55.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">meski rambutnya kayak tante tante madura, tapi kamu tetap cantikk</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/56.jpg">
-					  <img src="static/image/56.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">lucunyoooo ya Tuhannn</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/57.jpg">
-					  <img src="static/image/57.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">gaya template bangeet nieehh...lucuunya</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/58.jpg">
-					  <img src="static/image/58.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">Kamu cantik bangeet</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/59.jpg">
-					  <img src="static/image/59.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">bisa ga sihh kurnagin kadar gula sayang?</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/70.jpg">
-					  <img src="static/image/70.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">Photobooth kedua kita nieehh</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/71.jpg">
-					  <img src="static/image/71.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">HAHAHA gaya bapak bapak udah jadi kewajiban</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/72.jpg">
-					  <img src="static/image/72.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">sebenarnya aku coba nyari senyum yang okee T__T</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/73.jpg">
-					  <img src="static/image/73.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">buseengg gaya template</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/74.jpg">
-					  <img src="static/image/74.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">SUMPAAHHH MANISSS BANGETT KAMUU >///< </div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/75.jpg">
-					  <img src="static/image/75.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">ciuman balasan 😋</div>
-				</div>
-
-
-
-
-
-
-
-
-
-				<!-- foto potrait pendek -->
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/6.jpg">
-					  <img src="static/image/6.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">gelang pertama kitaaa</div>
-				</div>
-
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/12.jpg">
-					  <img src="static/image/12.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">aku masih ingat betapa sukanya aku sama rambut hitam kamu ini</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/13.jpg">
-					  <img src="static/image/13.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">Kamu dengan rambut hitam itu, udah terang kayak bintang</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/14.jpg">
-					  <img src="static/image/14.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">bahkan hanya dengan tersenyum, kamu bisa kalahin indahnya samudra</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/15.jpg">
-					  <img src="static/image/15.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">saat tak senyum pun, masih bisa ngalahin indahnya cakrawala</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/26.jpg">
-					  <img src="static/image/26.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">ini glowing kayak telor rebut hehehe</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/28.jpg">
-					  <img src="static/image/28.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">foto sama kating semester 14 nieeehh</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/29.jpg">
-					  <img src="static/image/29.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">tadi foto sama kating sem 14, sekarang foto sama maba 2030</div>
-
-				</div><div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/34.jpg">
-					  <img src="static/image/34.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">dump photo yang aku suka</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/35.jpg">
-					  <img src="static/image/35.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">gaya ayam kepenyet</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/60.jpg">
-					  <img src="static/image/60.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">bulet buleett</div>
-				</div>
-				
-				
-				
-				
-				
-
-
-
-
-
-
-				<!-- potrait panjang -->
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/7.jpg">
-					  <img src="static/image/7.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">minum ultra pink karna namanya ping ping</div>
-				</div>
-				
-				
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/11.jpg">
-					  <img src="static/image/11.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">pap muka setengah</div>
-				</div>
-				
-				
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/16.jpg">
-					  <img src="static/image/16.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">ketika tertangkap kamera, sedang marah/ngambek di bikun AHHAHA</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/17.jpg">
-					  <img src="static/image/17.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">lihat foto ini berasa di mangsa tante tante</div>
-				</div>
-				
-				
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/21.jpg">
-					  <img src="static/image/21.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">ngambil ktm tapi kamunya kecewa karna ga sesuai, padahal cantik kok kamunyaa</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/22.jpg">
-					  <img src="static/image/22.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">ini sihh lagi kangen berat sampe rela pap sarangheo</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/27.jpg">
-					  <img src="static/image/27.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">muka kamu waktu kangen berat, untung aku ga jadiin stiker 😭</div>
-				</div>
-				
-				
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/30.jpg">
-					  <img src="static/image/30.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">foto di tempat nongkrong baru kita, dalas(setelah dimarahi di asrama)</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/31.jpg">
-					  <img src="static/image/31.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">sebelum ken marahi di asrama</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/32.jpg">
-					  <img src="static/image/32.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">aduuuhhh cantikkk bangeettt </div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/44.jpg">
-					  <img src="static/image/44.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">GUK GUK GUUUKKK</div>
-				</div>
-				
-				
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/46.jpg">
-					  <img src="static/image/46.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">guk guuuk guguk guuguguguk</div>
-				</div>
-				
-				
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/52.jpg">
-					  <img src="static/image/52.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">bahkan kamu saat natural pun, masih keliatan cantik banget dimataku sayanggg</div>
-				</div>
-				
-				
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/54.jpg">
-					  <img src="static/image/54.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">ini kayaknya lagi bete trus pap ke aku yah AHHAHA</div>
-				</div>
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/61.jpg">
-					  <img src="static/image/61.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">your beauty is more than enough</div>
-				</div>
-				
-				
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/63.jpg">
-					  <img src="static/image/63.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">pap yang aku ributin beberapa kali karna ga dikirim kirim, padahal akuu pengen liat nona manis ku iniii</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/64.jpg">
-					  <img src="static/image/64.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">tetap cantiiikkk walau keliatan terpaksa waktu pap</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/65.jpg">
-					  <img src="static/image/65.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">foto gadis cantik dengan daster barunya diaa</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/66.jpg">
-					  <img src="static/image/66.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">GEMESIIINNN BANGEETT</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/67.jpg">
-					  <img src="static/image/67.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">pengen skelai skeali kamu ke kampus pake ginian HAHAHA</div>
-				</div>
-				
-				<div id="photo" class="photo w-full h-auto object-cover bg-white rounded-lg">
-					<a target="_blank" href="static/image/68.jpg">
-					  <img src="static/image/68.jpg" alt="Vale's pict" width="600" height="400">
-					</a>
-					<div class="desc">"El amor no se mira con los ojos, sino con el alma." (Cinta tidak dilihat dengan mata, tapi dengan jiwa.)</div>
-				</div>
-				
-				
-				
-				
-				
-				
+			<div id="photo-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-center items-center ">
+				<!-- Foto-foto akan dimasukkan secara dinamis oleh JavaScript -->
+			</div>
+			<div class="overlay" id="${photo.id}">
+				<a href="#" class="close-btn text-white  mx-auto" >close</a>
+				<img class="img" >
 			</div>
 		</div>
 	</div>
+
+	<script>
+		function clickImg() {
+			const photos = [
+
+		// foto lendscape
+			{ url: "static/image/1.jpg", desc: "", id:"gambar 1"},
+			{ url: "static/image/2.jpg", desc: "", id:"gambar 2" },
+			{ url: "static/image/3.jpg", desc: "", id:"gambar 3" },
+			{ url: "static/image/4.jpg", desc: "", id:"gambar 4" },
+			{ url: "static/image/5.jpg", desc: "", id:"gambar 5" },
+			{ url: "static/image/8.jpg", desc: "", id:"gambar 8" },
+			{ url: "static/image/9.jpg", desc: "", id:"gambar 9" },
+			{ url: "static/image/10.jpg", desc: "", id:"gambar 10" },
+			{ url: "static/image/19.jpg", desc: "", id:"gambar 19" },
+			{ url: "static/image/42.jpg", desc: "", id:"gambar 42" },
+			{ url: "static/image/45.jpg", desc: "", id:"gambar 45" },
+			
+			{ url: "static/image/53.jpg", desc: "", id:"gambar 53" },
+			{ url: "static/image/55.jpg", desc: "", id:"gambar 55" },
+			{ url: "static/image/56.jpg", desc: "", id:"gambar 56" },
+			{ url: "static/image/57.jpg", desc: "", id:"gambar 57" },
+			{ url: "static/image/58.jpg", desc: "", id:"gambar 58" },
+
+			{ url: "static/image/18.jpg", desc: "", id:"gambar 18" },
+			{ url: "static/image/20.jpg", desc: "", id:"gambar 20" },
+			{ url: "static/image/33.jpg", desc: "", id:"gambar 33" },
+			{ url: "static/image/36.jpg", desc: "", id:"gambar 36" },
+			{ url: "static/image/37.jpg", desc: "", id:"gambar 37" },
+			{ url: "static/image/38.jpg", desc: "", id:"gambar 38" },
+			{ url: "static/image/39.jpg", desc: "", id:"gambar 39" },
+			{ url: "static/image/40.jpg", desc: "", id:"gambar 40" },
+			{ url: "static/image/41.jpg", desc: "", id:"gambar 41" },
+			{ url: "static/image/43.jpg", desc: "", id:"gambar 43" },
+			
+			{ url: "static/image/51.jpg", desc: "", id:"gambar 52" },
+			{ url: "static/image/47.jpg", desc: "", id:"gambar 47" },
+			{ url: "static/image/48.jpg", desc: "", id:"gambar 48" },
+			{ url: "static/image/49.jpg", desc: "", id:"gambar 49" },
+			{ url: "static/image/50.jpg", desc: "", id:"gambar 50" },
+			
+			{ url: "static/image/59.jpg", desc: "", id:"gambar 59" },
+			{ url: "static/image/70.jpg", desc: "", id:"gambar 70" },
+			{ url: "static/image/71.jpg", desc: "", id:"gambar 71" },
+			{ url: "static/image/72.jpg", desc: "", id:"gambar 72" },
+			{ url: "static/image/73.jpg", desc: "", id:"gambar 73" },
+			{ url: "static/image/74.jpg", desc: "", id:"gambar 74" },
+			{ url: "static/image/75.jpg", desc: "", id:"gambar 75" },
+			{ url: "static/image/79.jpg", desc: "", id:"gambar 79" },
+			{ url: "static/image/82.jpg", desc: "", id:"gambar 82" },
+			{ url: "static/image/94.jpg", desc: "", id:"gambar 95" },
+			{ url: "static/image/PIXECT1.jpg", desc: "", id:"gambar PIXECT1"},
+			{ url: "static/image/PIXECT2.jpg", desc: "", id:"gambar PIXECT2"},
+			{ url: "static/image/PIXECT3.jpg", desc: "", id:"gambar PIXECT3"},
+			{ url: "static/image/PIXECT4.jpg", desc: "", id:"gambar PIXECT4"},
+			{ url: "static/image/webcam1.jpg", desc: "", id:"gambar webcam1"},
+			{ url: "static/image/webcam2.jpg", desc: "", id:"gambar webcam2"},
+			{ url: "static/image/webcam3.jpg", desc: "", id:"gambar webcam3"},
+			{ url: "static/image/webcam4.jpg", desc: "", id:"gambar webcam4"},
+			{ url: "static/image/webcam5.jpg", desc: "", id:"gambar webcam5"},
+			{ url: "static/image/webcam6.jpg", desc: "", id:"gambar webcam6"},
+			{ url: "static/image/webcam7.jpg", desc: "", id:"gambar webcam7"},
+			{ url: "static/image/webcam8.jpg", desc: "", id:"gambar webcam8"},
+			{ url: "static/image/webcam9.jpg", desc: "", id:"gambar webcam9"},
+			{ url: "static/image/webcam10.jpg", desc: "", id:"gambar webcam10"},
+			{ url: "static/image/webcam11.jpg", desc: "", id:"gambar webcam11"},
+			{ url: "static/image/webcam12.jpg", desc: "", id:"gambar webcam12"},
+			
+		
+			// foto pendek
+			{ url: "static/image/87.jpg", desc: "", id:"gambar 87"},
+			{ url: "static/image/95.jpg", desc: "", id:"gambar 95"},
+			{ url: "static/image/6.jpg", desc: "", id:"gambar 6"},
+			{ url: "static/image/29.jpg", desc: "", id:"gambar 29"},
+			{ url: "static/image/34.jpg", desc: "", id:"gambar 34"},
+			{ url: "static/image/35.jpg", desc: "", id:"gambar 35"},
+			{ url: "static/image/60.jpg", desc: "", id:"gambar 60"},
+			{ url: "static/image/12.jpg", desc: "", id:"gambar 12"},
+			{ url: "static/image/13.jpg", desc: "", id:"gambar 13"},
+			{ url: "static/image/76.jpg", desc: "", id:"gambar 76"},
+			{ url: "static/image/77.jpg", desc: "", id:"gambar 77"},
+			{ url: "static/image/89.jpg", desc: "", id:"gambar 89"},
+			{ url: "static/image/80.jpg", desc: "", id:"gambar 80"},
+			
+		// foto potrait
+			
+			{ url: "static/image/78.jpg", desc: "", id:"gambar 78"},
+			{ url: "static/image/81.jpg", desc: "", id:"gambar 81"},
+			{ url: "static/image/83.jpg", desc: "", id:"gambar 83"},
+			{ url: "static/image/84.jpg", desc: "", id:"gambar 84"},
+			{ url: "static/image/85.jpg", desc: "", id:"gambar 85"},
+			{ url: "static/image/86.jpg", desc: "", id:"gambar 86"},
+			{ url: "static/image/88.jpg", desc: "", id:"gambar 88"},
+			{ url: "static/image/90.jpg", desc: "", id:"gambar 90"},
+			{ url: "static/image/91.jpg", desc: "", id:"gambar 91"},
+			{ url: "static/image/92.jpg", desc: "", id:"gambar 92"},
+			{ url: "static/image/93.jpg", desc: "", id:"gambar 93"},
+			{ url: "static/image/7.jpg", desc: "", id:"gambar 7"},
+			{ url: "static/image/11.jpg", desc: "", id:"gambar 11"},
+			{ url: "static/image/16.jpg", desc: "", id:"gambar 16"},
+			{ url: "static/image/17.jpg", desc: "", id:"gambar 17"},
+			{ url: "static/image/21.jpg", desc: "", id:"gambar 21"},
+			{ url: "static/image/22.jpg", desc: "", id:"gambar 22"},
+			{ url: "static/image/27.jpg", desc: "", id:"gambar 27"},
+			{ url: "static/image/30.jpg", desc: "", id:"gambar 30"},
+			{ url: "static/image/31.jpg", desc: "", id:"gambar 31"},
+			{ url: "static/image/32.jpg", desc: "", id:"gambar 32"},
+			{ url: "static/image/44.jpg", desc: "", id:"gambar 44"},
+			{ url: "static/image/46.jpg", desc: "", id:"gambar 46"},
+			{ url: "static/image/52.jpg", desc: "", id:"gambar 52"},
+			{ url: "static/image/54.jpg", desc: "", id:"gambar 54"},
+			{ url: "static/image/61.jpg", desc: "", id:"gambar 61"},
+			{ url: "static/image/63.jpg", desc: "", id:"gambar 63"},
+			{ url: "static/image/64.jpg", desc: "", id:"gambar 64"},
+			{ url: "static/image/65.jpg", desc: "", id:"gambar 65"},
+			{ url: "static/image/66.jpg", desc: "", id:"gambar 66"},
+			{ url: "static/image/67.jpg", desc: "", id:"gambar 67"},
+			{ url: "static/image/68.jpg", desc: "", id:"gambar 68"}
+        ];
+
+    // Referensi ke elemen grid
+    const photoGrid = document.getElementById("photo-grid");
+
+    // Referensi ke elemen overlay
+    const overlay = document.querySelector(".overlay");
+    const overlayImg = overlay.querySelector("img");
+
+    // Loop melalui array data gambar
+    photos.forEach(photo => {
+        // Buat elemen div
+        const photoDiv = document.createElement("div");
+        photoDiv.className = "photo w-full h-auto object-cover bg-white rounded-lg";
+
+        // Tambahkan elemen anchor dan img
+        photoDiv.innerHTML = `
+            <img src="${photo.url}" alt="${photo.desc}" 
+                 class="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer">
+            <div class="desc text-center text-gray-700 mt-2">${photo.desc}</div>
+        `;
+
+        // Tambahkan event listener untuk klik gambar
+			photoDiv.querySelector("img").addEventListener("click", () => {
+				overlayImg.src = photo.url; // Set gambar di overlay
+				overlay.classList.remove("hidden"); // Tampilkan overlay
+			});
+
+				// Tambahkan elemen ke grid
+				photoGrid.appendChild(photoDiv);
+			});
+
+    // Event listener untuk menutup overlay
+			
+			overlay.classList.add("hidden"); // Sembunyikan overlay
+
+			document.querySelector(".close-btn").addEventListener("click", () => {
+				overlay.classList.add("hidden"); // Sembunyikan overlay
+			});
+			
+		};
+		clickImg();
+	</script>
 	
+
+<footer class="footer mt-20 py-4 bg-gray-200 text-center text-gray-700">  
+    <!-- <p>"El amor no se mira con los ojos, sino con el alma." (Cinta tidak dilihat dengan mata, tapi dengan jiwa.)</p>   -->
+    <p>"Amor mío, cariño mío, universo mío que Dios ama, me arrastraste hasta lo más profundo de tu alma, hasta que mi corazón sea completamente tuyo. quédate conmigo para siempre mi amor"</p> 
+</footer>  
+
 </body>
 </html>

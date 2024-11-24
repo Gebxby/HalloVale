@@ -70,9 +70,6 @@ function showMessage(seconds) {
     ];
     // for music
 
-    
-   
-
     // Get the message to show based on the current index\
     hasPlayesAudio = false
 
