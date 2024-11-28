@@ -13,7 +13,7 @@ hasPlayesAudio = false
 
 function showMessage(seconds) {
     const pesan = [
-        "Hallo sayangku",
+       "Hallo sayangku",
         
         "gimana kabarnya?? semoga dalam keadaan baik,damai dan sehat walafiat saat membuka ini yahhh...\
         kamu pasti kaget tiba tiba ada ginian yah??\
@@ -28,10 +28,10 @@ function showMessage(seconds) {
         bernari-nari melihat kekasih, apalagi orangnya itu kamu. aku juga sadar kalau Tuhan menunjukan padaku kasih yang nyata melalui kamu.",
 
         "siapa sangka, Tuhan mengirimkan seorang <a href='https://id.wikipedia.org/wiki/Afrodit'> Aphrodite(kamu bisa klik)<a> kepadaku,\
-        dan semua itu seakan masih terasa berlebihan di mataku. cantikmu itu tak wajar karna setiap harinya cantikmu akan selalu bisa buat aku terperanga dan tak dapat melepaskan pandanganku darimu;\
+        dan semua itu seakan masih terasa berlebihan di mataku. cantikmu itu tak wajar karena setiap harinya cantikmu akan selalu bisa buat aku terperanga dan tak dapat melepaskan pandanganku darimu;\
         bahkan bulan saja tidak bisa buat aku terperanga meski hanya sesaat.\
         parasmu itu spesial buat aku, exclusive hanya untuk aku, karna tanpa benda benda yang kamu lekat/pakai di wajah pun, kamu tetap bisa menandingi alam semesta ini.\
-        kamu selalu berhasil buat aku ketawa, kamu juga ngajarin aku banyak hal tentang dunia baru, ngajarin aku cara mencintai diri sendiri, dan terutama jadiin aku orang yang suka memuji Tuhan begitu melihat kamu.\
+        kamu selalu berhasil buat aku ketawa, kamu juga ngajarin aku banyak hal tentang dunia baru, ngajarin aku cara mencintai diri sendiri, dan terutama jadikan aku orang yang suka memuji Tuhan begitu melihat kamu.\
         ",
 
         "Mi Amor, kita telah berlayar melewati banyak hal. banyak hal di lautan lepas ini yang sudah kita lepas dan ambil. banyak hal yang kita\
@@ -48,10 +48,10 @@ function showMessage(seconds) {
         kamu akan selalu menjadi satu satunya cinta pertama dan terakhirku yang akan hidup bersamaku sampai matahari tak lagi bersinar bagi kita berdua,\
         sampai perahu ini lapuk dan tenggelam, dan sampai kita tak dapat melihat lagi dunia fana ini; melalui ini aku juga tegasin kalau kamu selalu cukup buat aku.\
         kedepannya akan ada banyak hal yang akan kita lalui sayang. tentunya aku mau kita kerjasama dalam hal apapun saat menghadapinya.\
-        kedapannya juga kita akan membangun cinta yang lebih lagi, apapun kondisinya kita harus tetap lindungin bareng bareng, bahkan jika roboh, kita bangun ulang kembali sama sama.",
+        kedapannya juga kita akan membangun cinta yang lebih lagi, apapun kondisinya kita harus tetap lindungi bareng bareng, bahkan jika roboh, kita bangun ulang kembali sama sama.",
 
         "sekali lagi, thanks to all you did to me. hidupku jadi penuh akan warna baru, yaitu the color of you. dan warnamu itu unik, hanya satu hingga tak ada yang dapat\
-        menggantikannya. aku kedepannya akan terus menerus memberikan yang terbaik dalam hal apapun, termasuk mencintai dan menyayangimu seperti yang Tuhan lalukan pada umat manusia.\
+        menggantikannya. aku kedepannya akan terus menerus memberikan yang terbaik dalam hal apapun, termasuk mencintai dan menyayangimu seperti yang Tuhan lakukan pada umat manusia.\
         karna sesungguhnya, aku akan menjadikan Yakub sebagai teladan dalam mengejar dan mempertahankan cintanya pada Rachel selama 14 tahun.",
 
         "<a href='https://docs.google.com/document/d/1oMF_7TqhrtLEpJriRXQktK157d1QRiBoJHDVusO_96c/edit?tab=t.0'>this is poem for you babe (click me!)<a>",
@@ -62,9 +62,10 @@ function showMessage(seconds) {
         "2",
         "1",
 
-        "ini adalah pesan terakhir ku untuk mu, mainkan musik untukmu🎶",
+        "ini adalah pesan terakhirku untuk mu, mainkan musik untukmu🎶",
 
         "klik tombol dibawah untuk membaca pesan 💕",
+
 
         
     ];
