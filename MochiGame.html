@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/styles4.css">
+    <script src="static/js/srcipts.js"></script>
     <title>Game Mochi</title>
     <style>
         * {
@@ -173,6 +174,14 @@
     </style>
 </head>
 <body>
+    <div id="loading-screen">
+		<svg class="loader" viewBox="0 0 100 100">
+			<!-- "V" Letter -->
+			<path class="letter" d="M 10,10 L 50,90 L 90,10" />
+			<!-- "G" Letter -->
+			<path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
+		</svg>
+	</div>
     <div class="game-container relative">
         <!-- Score Container -->
         <div class="score-container absolute top-4 left-4 margin-bottom bg-white p-4 rounded-lg shadow-md text-sm">
@@ -194,7 +203,7 @@
     
 
    
-    <audio src="static/music/Naruto - Naruto's Daily Life.mp4" autoplay></audio>
+    <audio src="static/music/Naruto - Naruto's Daily Life.mp4" autoplay  loop></audio>
 
     <script>
         const gameContainer = document.querySelector('.game-container');
