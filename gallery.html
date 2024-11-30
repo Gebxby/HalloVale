@@ -7,6 +7,18 @@
 	<link rel="stylesheet" href="static/css/styles4.css">
 	<script src="static/js/srcipts.js"></script>
 	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+        body {
+            cursor: url('static/image/cursorOrigami32.png'), auto;
+		
+        }
+		a{
+			cursor: url('static/image/hand.png'),pointer;
+		}
+		img .img{
+			cursor: url('static/image/hand.png'),pointer;
+		}
+    </style>
 </head>
 <body class="bg-gray-200">
 
@@ -32,30 +44,31 @@
 						</div>
 
 						<!-- Desktop Menu -->
-						<div class="hidden md:flex items-center space-x-4">
-							<a class='hover:text-sky-300' href='index.html'><img src="static/image/home-button.jpg" alt="Home" class="w-7 h-7 mx-auto"></a>
-							<a class='text-white px-4 py-2 rounded-full hover:bg-pink-400 transition duration-300' href='aboutThisWeb.html'>About</a>
+						<div class="flex items-center space-x-6 display-grid">
+							<a class='hover:scale-110 duration-500 ' href='index.html'><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"></a>
+							<a class='hover:scale-110 duration-500 ' href='aboutThisWeb.html'><img src="static/image/about.png" alt="About" class="w-10 h-10 mx-auto"></a>
+							<a class='hover:scale-110 duration-500 ' href='MochiGame.html'><img src="static/image/game-control.png" alt="Game" class="w-10 h-10 mx-auto"></a>
 						</div>
 
 						<!-- Mobile Menu Button -->
-						<div class="md:hidden flex items-center">
+						<!-- <div class="md:hidden flex items-center">
 							<button class="mobile-menu-button">
 								<svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
 									<path d="M4 6h16M4 12h16M4 18h16"></path>
 								</svg>
 							</button>
-						</div>
+						</div> -->
 					</div>
 				</div>
 
 				<!-- Mobile Menu (hidden by default) -->
-				<div class="mobile-menu hidden md:hidden text-white  text-start">
+				<!-- <div class="mobile-menu hidden md:hidden text-white  text-start">
 					<a class='block px-4 py-2 rounded-xl hover:bg-pink-400 transition duration-300' href='/'>Home</a>
-				</div>
+				</div> -->
 			</nav>
 		</div>
 
-		<script>
+		<!-- <script>
 			const btn = document.querySelector('.mobile-menu-button');
 			const menu = document.querySelector('.mobile-menu');
 
@@ -66,7 +79,7 @@
 
 			// Hide loading screen and show main content once page is fully loaded
 			
-		</script>
+		</script> -->
 		<div class="image-container p-4">
 			<div id="photo-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-center items-center ">
 				<!-- Foto-foto akan dimasukkan secara dinamis oleh JavaScript -->
@@ -74,7 +87,7 @@
 			<div class="overlay" id="${photo.id}">
 				<a href="#" class="close-btn text-white " ><img src="static/image/close-btn.png" alt="Close Button" ></a>
 				
-				<img class="img">
+				<img class="img" style="cursor: url('static/image/hand.png'),pointer;">
 				
 			</div>
 		</div>
@@ -216,7 +229,7 @@
 
         // Tambahkan elemen anchor dan img
         photoDiv.innerHTML = `
-            <img src="${photo.url}" alt="${photo.desc}" 
+            <img src="${photo.url}" alt="${photo.desc}" style="cursor: url('static/image/hand.png'),pointer;" 
                  class="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer">
             <div class="desc text-center text-gray-700 mt-2">${photo.desc}</div>
         `;

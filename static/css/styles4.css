@@ -11,7 +11,9 @@
 }
 
 body{
+    cursor: url('static/image/cursor2.png'),auto;
     background-color: #1c1a1b;
+    
    
 }
 
@@ -72,6 +74,7 @@ nav a{
 
 /* Gaya default untuk overlay */
 .overlay {
+    
     position: fixed;
     top: 0;
     left: 0;
