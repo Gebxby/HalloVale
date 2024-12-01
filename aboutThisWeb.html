@@ -29,11 +29,67 @@
 		</svg>
         
 	</div>
+    
+    <div id="navbar">
+        <nav class="slideInY mt-10">
+            <div class="mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo and Site Title -->
+                    <div class="flex items-center">
+                        <h1 class="text-2xl font-bold text-center text-white">
+                            <a href="secretMsg.html" class="text-2xl font-bold text-center text-white">Hallo Valeria</a>
+                        </h1>
+                    </div>
 
+                    <!-- Desktop Menu -->
+                
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"></a>
+                        <a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"></a>
+                        <a class='hover:scale-150 duration-500 ' href='MochiGame.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"></a>
+                        <a class='hover:scale-150 duration-500 ' href='message_box.html'><img src="static/image/love-letter.png" alt="message" class="w-15 h-10 mx-auto"></a>
+                    </div>
+                
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="mobile-menu-button">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (hidden by default) -->
+            <div class="display:grid-cols-3 mobile-menu hidden md:hidden text-white text-start duration-500">
+                <a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"></a>
+                <a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"></a>
+                <a class='hover:scale-150 duration-500 ' href='MochiGame.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"></a>
+                <a class='hover:scale-150 duration-500 ' href='message_box.html'><img src="static/image/love-letter.png" alt="message" class="w-15 h-10 mx-auto"></a>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        const btn = document.querySelector('.mobile-menu-button');
+        const menu = document.querySelector('.mobile-menu');
+
+        // Event listener for mobile menu button
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Hide loading screen and show main content once page is fully loaded
+        
+    </script>
+
+    <!--  -->
     <!-- main content -->
     <div style="display: none;" id="main-content">
         <div class="grid flex justify-center items-center h-screen">
-            <div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-stone-500 bg-opacity-25 relative">
+            <div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-400 bg-opacity-20 relative">
                 <div class="text-lg font-semibold text-white text-center">
                     <h4>About This Website</h4>
                     <br>
@@ -47,8 +103,7 @@
                         beberapa fitur juga akan di tambahkan kedepannya untuk mendambahkan variasi yang menarik untuk website ini.
                     </p>
                     <br>
-                    <div style="display:grid;">
-                        <a href="index.html" class="hover:text-sky-300"><img src="static/image/home.png" alt="Home" class="w-7 h-7 mx-auto"></a>
+                    
                 </div>
             </div>
         </div>

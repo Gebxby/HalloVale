@@ -12,7 +12,7 @@
 
 body{
     cursor: url('static/image/cursor2.png'),auto;
-    background-color: #1c1a1b;
+    background-color: #e6e6e6;
     
    
 }
@@ -22,10 +22,10 @@ nav{
     border: solid;
     border-color: white;
  
-    border-radius: 100px;
+    border-radius: 25px;
     margin: auto;
     padding: 10px 20px;
-    max-width: 1000px;   
+    max-width: 1500px;   
 }
 
 nav a{
@@ -101,12 +101,34 @@ nav a{
     animation: ZoomAndFade 2s;
 }
 
+#photo-grid{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    
+}
+
+/* .image-container{
+    align-items: center;
+    width: 1000px;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f8f8f8;
+    border: #000000;
+    border: 15px;
+    border-radius: 45px;
+} */
+
 /* Media query untuk layar besar (desktop) */
 @media screen and (min-width: 1024px) {
     .overlay img {
         max-height: 70%; /* Kurangi tinggi maksimum pada layar besar */
         max-width: 70%; /* Kurangi lebar maksimum pada layar besar */
     }
+  
 }
 
 /* Media query untuk layar kecil (414px x 896px) */
@@ -115,6 +137,12 @@ nav a{
         max-height: 100%; /* Penuhi tinggi layar pada perangkat kecil */
         max-width: 100%; /* Penuhi lebar layar pada perangkat kecil */
         padding: 0; /* Hilangkan padding agar gambar penuh */
+    }
+    #photo-grid{
+        margin-top: 100px;
+        margin-bottom: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
@@ -278,4 +306,6 @@ nav a{
 #main-content.fade-out{
     animation: fadeOut 1s forwards;
 }
+
+
 

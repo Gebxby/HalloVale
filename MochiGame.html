@@ -15,7 +15,8 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #8fca95;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi.jpg');
+            background-size: cover;
             cursor: url('static/image/cursorOrigami32.png'), auto;
         }
         a{
@@ -60,7 +61,7 @@
             position: relative;
             width: 100%;
             height: 100vh;
-            background-color: #ffeecc;
+            
             overflow: hidden;
         }
 
@@ -196,10 +197,11 @@
         
     
         <!-- Menu Container -->
-        <div class="menu-container absolute top-4 right-4 bottom-4 flex flex-col items-center gap-3">
+        <div class="menu-container absolute top-4 right-4 bottom-4 flex flex-col items-center gap-3 mr-10">
             <a href="index.html" class='hover:scale-150 duration-500 '><img src="static/image/home.png" alt="Home" class="menu-icon"></a>
-            <a href="gallery.html" class='hover:scale-150 duration-500 '><img src="static/image/photo.png" alt="Gallery" class="menu-icon"></a>
-            <a href="aboutThisWeb.html" class='hover:scale-150 duration-500 '><img src="static/image/about1.png" alt="About" class="menu-icon"></a>
+            <a href="gallery.html" class='hover:scale-150 duration-500 '><img src="static/image/gallery.png" alt="Gallery" class="menu-icon"></a>
+            <a href="message_box.html" class='hover:scale-150 duration-500 '><img src="static/image/love-letter.png" alt="message" class="menu-icon"></a>
+            <a href="aboutThisWeb.html" class='hover:scale-150 duration-500 '><img src="static/image/information.png" alt="About" class="menu-icon"></a>
         </div>
     
         <!-- Player -->
@@ -269,7 +271,7 @@
                     // Check for Ratu Mochi transformation
                     if (mochiS >= 100 && !player.classList.contains('ratu-mochi')) {
                         player.classList.add('ratu-mochi');
-                        document.body.style.backgroundColor = '#ffe4e1'; 
+                        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi2.jpg')"; 
                         alert('Selamat! Kamu telah menjadi Ratu Mochi!');
                         gameContainer.classList.add('ratu-background');
                     }
@@ -317,7 +319,7 @@
 
                         if (cirengS >= 50 && !player.classList.contains('ratu-cireng')) {
                             player.classList.add('ratu-cireng');
-                            document.body.style.backgroundColor = '#ffe4e1'; 
+                            document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi3.jpg')"; 
                             alert('Selamat! Kamu telah menjadi Ratu Cireng!');
                             gameContainer.classList.add('ratu-background');
                     }
