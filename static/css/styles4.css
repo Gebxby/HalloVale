@@ -13,9 +13,11 @@
 body{
     cursor: url('static/image/cursor2.png'),auto;
     background-color: #e6e6e6;
+    transition: background-image 1s ease, background-color 1s ease;
     
    
 }
+
 
 nav{
     background-color: #fe4baa57;

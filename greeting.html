@@ -3,14 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hallo Valeria</title>
+	<title>Hallo Valeria Text</title>
 	<link rel="stylesheet" href="static/css/styles4.css">
 	<script src="static/js/srcipts.js"></script>
+	
 	<script src="https://cdn.tailwindcss.com"></script>
 	<style>
         body {
             cursor: url('static/image/cursorOrigami32.png'), auto;
-		
         }
 
 		a{
@@ -19,9 +19,66 @@
 		button img{
 			cursor: url('static/image/hand.png'),pointer;
 		}
+
+		/* Kelas untuk waktu tertentu */
+		.morning {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/sunrise2.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+		
+		.noon {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/bacakground4.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+		
+		.evening {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/sunset.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+		
+		.night {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/night.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+  
     </style>
 </head>
-<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url('static/image/background4.jpg'); background-size: cover; background-position: center;">
+<body >
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			function ChangeBackground() {
+				const body = document.body;
+				const hour = new Date().getHours();
+				const greetingLink = document.getElementById("greeting");
+
+				body.className = ""; // Reset kelas pada body
+				
+				if (hour >= 6 && hour < 12) {
+					body.classList.add("morning");
+					greetingLink.textContent = "Good Morning Vale";
+				} else if (hour >= 12 && hour < 16) {
+					body.classList.add("noon");
+					greetingLink.textContent = "Good Afternoon Vale";
+				} else if (hour >= 16 && hour < 19) {
+					body.classList.add("evening");
+					greetingLink.textContent = "Good Evening Vale";
+				} else {
+					body.classList.add("night");
+					greetingLink.textContent = "Good Night Vale";
+				}
+			}
+
+			// Panggil fungsi dan set interval
+			ChangeBackground();
+			setInterval(ChangeBackground, 3600000);
+		});
+	</script>
+
+
 
 	<!-- Loading screen -->
 	<div id="loading-screen">
@@ -34,7 +91,7 @@
 	</div>
 
 	<!-- Main content -->
-	<div style="display: none;" id="main-content" >
+	<div id="main-content" >
 		<!-- navbar -->
 		<div id="navbar">
 			<nav class="slideInY mt-10">
@@ -42,8 +99,8 @@
 					<div class="flex items-center justify-between h-16">
 						<!-- Logo and Site Title -->
 						<div class="flex items-center">
-							<h1 class="text-2xl font-bold text-center text-white">
-								<a href="secretMsg.html" class="text-2xl font-bold text-center text-white">Morning Text</a>
+							<h1  class="text-2xl font-bold text-center text-white">
+								<a id="greeting" href="secretMsg.html" class="text-2xl font-bold text-center text-white"></a>
 							</h1>
 						</div>
 	
@@ -103,24 +160,15 @@
 		</script>
 
 		<!-- Content -->
-		<div class="grid flex justify-center items-center h-screen slideInY">
+		<div class="grid flex justify-center items-center h-screen slideInY pt-10 mt-10">
 			<section class="contents">
 				<div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
 					<div class="praf">
-							<img src="static/image/morningImage.jpg" class="h-20 w-30" alt="">
-							<p id="content" >GUTEN MORGEN MI ALMA!!</p>
-							<p id="content" >HAPPY SUNDAY🤍😁</p>
-							<p id="content" >gimana bobonya semalam?? aku senang kalau bobonya nyenyak sayanggg;</p>
-							<p id="content" >awali hari kamu dengan doa yahh sayangg,</p>
-							<p id="content" >ucap syukur ke Tuhan untuk nafas kehidupanmu sayangg... </p>
-							<p id="content" >kalau sayang misa hari ini,</p>
-							<p id="content" >siap siapin diri dengan baik dan tetap fokus untuk memuji Tuhan hari ini sayangg🤍😁💕</p> 
-							
-							<p id="content" >hari ini juga semangat buat tugasnyaa sayangg,</p> 
-							<p id="content" >aku yakin kamu pasti bisa selesaikan,</p>
-							<p id="content" >karna kamu itu keren dan hebat....kalau ada apa apa sayangg,</p>
-							<p id="content" >kabari aku cuz i open for youuu; akan selalu berusaha ast respon untuk kamuu yahh cantik💕💕💕</p>
-							<p id="content" >ILY SIMPLY BECAUSE YOU'RE YOU🤍🤍🤍🤍</p>
+						<img src="https://i.pinimg.com/736x/75/16/17/751617ddff1ac65788b68d680a0312a9.jpg" class="h-40 w-30" alt="">
+						<p id="content">Gute Nacht, meine Liebe🌃🌜🤍</p>
+						<p id="content">Hari ini kamu udah keren sayangg, sebagai pacarku, kamu tetap sayang dan ada di sisiku, sebagai anak Tuhan, kamu memuji Dia hari ini, sebagai mahasiswa kamu udah kerja keras selesaikan tugas sayangg… ketekunan dan kesabarannya kamu dalam megerjakan itu menunjukan seberapa kerennya kamu sayangg😘😘</p>
+						<p id="content">Udah malam, dan saatnya buat bobo sayanggku, bobo yang nyenyakk yahh cantikku. Aku berdoa agar kamu bobo nyenyak dan mimpi indah sayangg… jangan lupa untuk doa malamnya sayangg🌠🌠</p>
+						<p id="content">Pokoknya <strong>ILY TILL MY LAST BREATHE💕💕💕</strong></p>
 						<audio id="audio-player" src="static/music/Christian Bautista - Beautiful Girl (Official Music Video).mp3" type="audio/mp3" class="mt-4"></audio>
 
 					</div>

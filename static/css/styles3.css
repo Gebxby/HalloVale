@@ -1,0 +1,30 @@
+/* Tambahkan transisi untuk perubahan halus */
+body {
+    transition: background-image 1s ease, background-color 1s ease;
+  }
+  
+  /* Kelas untuk waktu tertentu */
+  .morning {
+    background-image: url("static/image/sunrise2.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .noon {
+    background-image: url("static/image/bacakground4.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .evening {
+    background-image: url("static/image/sunset.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .night {
+    background-image: url("static/image/night.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  

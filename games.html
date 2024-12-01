@@ -17,6 +17,7 @@
             font-family: Arial, sans-serif;
             background-image: linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi.jpg');
             background-size: cover;
+            background-position: center;
             cursor: url('static/image/cursorOrigami32.png'), auto;
         }
         a{
@@ -271,7 +272,7 @@
                     // Check for Ratu Mochi transformation
                     if (mochiS >= 100 && !player.classList.contains('ratu-mochi')) {
                         player.classList.add('ratu-mochi');
-                        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi2.jpg')"; 
+                        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi2.jpg'); background-size:cover; background-position:center; "; 
                         alert('Selamat! Kamu telah menjadi Ratu Mochi!');
                         gameContainer.classList.add('ratu-background');
                     }
@@ -319,7 +320,7 @@
 
                         if (cirengS >= 50 && !player.classList.contains('ratu-cireng')) {
                             player.classList.add('ratu-cireng');
-                            document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi3.jpg')"; 
+                            document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi3.jpg'); background-size:cover; background-position:center"; 
                             alert('Selamat! Kamu telah menjadi Ratu Cireng!');
                             gameContainer.classList.add('ratu-background');
                     }
