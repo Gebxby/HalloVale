@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">	
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hallo Valeria</title>
+	<link rel="stylesheet" href="static/css/styles4.css">
+	<script src="static/js/srcipts.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+        body {
+            cursor: url('static/image/cursorOrigami32.png'), auto;
+		
+        }
+
+		a{
+			cursor: url('static/image/hand.png'),pointer;
+		}
+		button img{
+			cursor: url('static/image/hand.png'),pointer;
+		}
+    </style>
+</head>
+<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url('static/image/sunrise.jpg'); background-size: cover; background-position: center;">
+
+	<!-- Loading screen -->
+	<div id="loading-screen">
+		<svg class="loader" viewBox="0 0 100 100">
+			<!-- "V" Letter -->
+			<path class="letter" d="M 10,10 L 50,90 L 90,10" />
+			<!-- "G" Letter -->
+			<path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
+		</svg>
+	</div>
+
+	<!-- Main content -->
+	<div style="display: none;" id="main-content" >
+		<!-- navbar -->
+		<div id="navbar">
+			<nav class="slideInY">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="flex items-center justify-between h-16">
+						<!-- Logo and Site Title -->
+						<div class="flex items-center">
+							<h1 class="text-2xl font-bold text-center text-white">
+								<a href="secretMsg.html" class="text-2xl font-bold text-center text-white">Hallo Valeria</a>
+							</h1>
+						</div>
+	
+						<!-- Desktop Menu -->
+						<div class="hidden md:flex items-center space-x-8">
+							<a class='hover:scale-150 duration-500 ' href='index.html' alt="Home"><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"></a>
+							<a class='hover:scale-150 duration-500 ' href="gallery.html" alt="Gallery"><img src="static/image/photo.png" alt="Home" class="w-10 h-10 mx-auto"></a>
+							<a class='hover:scale-150 duration-500 ' href='MochiGame.html' alt="Game"><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"></a>
+							<a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html' alt="About"><img src="static/image/about1.png" alt="About" class="w-15 h-10 mx-auto"></a>
+						</div>
+	
+						<!-- Mobile Menu Button -->
+						<div class="md:hidden flex items-center">
+							<button class="mobile-menu-button">
+								<svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+									<path d="M4 6h16M4 12h16M4 18h16"></path>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+	
+				<!-- Mobile Menu (hidden by default) -->
+				<div class="display:grid-cols-3 mobile-menu hidden md:hidden text-white text-start duration-500">
+					<a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"></a>
+					<!-- <a class='hover:scale-150 duration-500 ' href='message_box.html'><img src="static/image/send.png" alt="message" class="w-15 h-10 mx-auto"></a> -->
+					<a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/message.png" alt="gallery" class="w-10 h-10 mx-auto"></a>
+					<a class='hover:scale-150 duration-500 ' href='MochiGame.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"></a>
+					<a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/about1.png" alt="About" class="w-15 h-10 mx-auto"></a>
+				</div>
+			</nav>
+		</div>
+
+		<script>
+			const btn = document.querySelector('.mobile-menu-button');
+			const menu = document.querySelector('.mobile-menu');
+	
+			// Event listener for mobile menu button
+			btn.addEventListener('click', () => {
+				menu.classList.toggle('hidden');
+			});
+
+			// Hide loading screen and show main content once page is fully loaded
+			
+		</script>
+
+		<!-- Content -->
+		<div class="grid flex justify-center items-center h-screen slideInY">
+			<section class="contents">
+				<div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
+					<div class="praf">
+							<img src="static/image/morningImage.jpg" class="h-20 w-30" alt="">
+							<p id="content" >GUTEN MORGEN MI ALMA!!</p>
+							<p id="content" >HAPPY SUNDAY🤍😁</p>
+							<p id="content" >gimana bobonya semalam?? aku senang kalau bobonya nyenyak sayanggg;</p>
+							<p id="content" >awali hari kamu dengan doa yahh sayangg,</p>
+							<p id="content" >ucap syukur ke Tuhan untuk nafas kehidupanmu sayangg... </p>
+							<p id="content" >kalau sayang misa hari ini,</p>
+							<p id="content" >siap siapin diri dengan baik dan tetap fokus untuk memuji Tuhan hari ini sayangg🤍😁💕</p> 
+							
+							<p id="content" >hari ini juga semangat buat tugasnyaa sayangg,</p> 
+							<p id="content" >aku yakin kamu pasti bisa selesaikan,</p>
+							<p id="content" >karna kamu itu keren dan hebat....kalau ada apa apa sayangg,</p>
+							<p id="content" >kabari aku cuz i open for youuu; akan selalu berusaha ast respon untuk kamuu yahh cantik💕💕💕</p>
+							<p id="content" >ILY SIMPLY BECAUSE YOU'RE YOU🤍🤍🤍🤍</p>
+						<audio id="audio-player" src="static/music/Christian Bautista - Beautiful Girl (Official Music Video).mp3" type="audio/mp3" class="mt-4"></audio>
+
+					</div>
+					<!-- Tombol di tengah bawah dari container -->
+					<!-- <button type="button" onclick='document.getElementById("content").innerHTML=showMessage(150);' 
+						class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
+						<img src="static/image/right-arrow.png" alt="">
+					</button> -->
+				</div>
+				
+			</section>
+		</div>
+	</div>
+</body>
+</html>

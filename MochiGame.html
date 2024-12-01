@@ -16,7 +16,11 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #8fca95;
+            cursor: url('static/image/cursorOrigami32.png'), auto;
         }
+        a{
+			cursor: url('static/image/hand.png'),pointer;
+		}
         .menu-container {
                 position: absolute; /* Pastikan elemen menu berada di posisi absolut */
                 top: 10px; /* Jarak dari atas */
@@ -189,12 +193,13 @@
             <div>Sudah Mam Berapa Cireng: <span id="cireng-score">0</span></div>
             <div>Score: <span id="score">0</span></div>
         </div>
+        
     
         <!-- Menu Container -->
         <div class="menu-container absolute top-4 right-4 bottom-4 flex flex-col items-center gap-3">
-            <a href="index.html" class="hover:opacity-80"><img src="static/image/home.png" alt="Home" class="menu-icon"></a>
-            <a href="gallery.html" class="hover:opacity-80"><img src="static/image/gallery.png" alt="Gallery" class="menu-icon"></a>
-            <a href="aboutThisWeb.html" class='block px-4 py-2 rounded-xl hover:bg-pink-400 transition duration-300'><img src="static/image/about.png" alt="About" class="menu-icon"></a>
+            <a href="index.html" class='hover:scale-150 duration-500 '><img src="static/image/home.png" alt="Home" class="menu-icon"></a>
+            <a href="gallery.html" class='hover:scale-150 duration-500 '><img src="static/image/photo.png" alt="Gallery" class="menu-icon"></a>
+            <a href="aboutThisWeb.html" class='hover:scale-150 duration-500 '><img src="static/image/about1.png" alt="About" class="menu-icon"></a>
         </div>
     
         <!-- Player -->
