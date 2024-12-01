@@ -270,9 +270,9 @@
                     mochiScoreElement.textContent = mochiS;
 
                     // Check for Ratu Mochi transformation
-                    if (mochiS >= 100 && !player.classList.contains('ratu-mochi')) {
+                    if (mochiS >= 1 && !player.classList.contains('ratu-mochi')) {
                         player.classList.add('ratu-mochi');
-                        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi2.jpg'); background-size:cover; background-position:center; "; 
+                        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi2.jpg') "; 
                         alert('Selamat! Kamu telah menjadi Ratu Mochi!');
                         gameContainer.classList.add('ratu-background');
                     }
@@ -318,9 +318,9 @@
                         cireng.remove(); // Remove the cireng
                         clearInterval(fallInterval);
 
-                        if (cirengS >= 50 && !player.classList.contains('ratu-cireng')) {
+                        if (cirengS >= 1 && !player.classList.contains('ratu-cireng')) {
                             player.classList.add('ratu-cireng');
-                            document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi3.jpg'); background-size:cover; background-position:center"; 
+                            document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi3.jpg')"; 
                             alert('Selamat! Kamu telah menjadi Ratu Cireng!');
                             gameContainer.classList.add('ratu-background');
                     }
