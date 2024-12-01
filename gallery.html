@@ -44,7 +44,7 @@
 						</div>
 
 						<!-- Desktop Menu -->
-						<div class="flex items-center space-x-6 display-grid">
+						<div class="hidden md:flex items-center space-x-8">
 							<a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"></a>
 							<a class='hover:scale-150 duration-500 ' href='MochiGame.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"></a>
 							<a class='hover:scale-150 duration-500 ' href='message_box.html'><img src="static/image/love-letter.png" alt="message" class="w-15 h-10 mx-auto"></a>
@@ -63,8 +63,11 @@
 				</div>
 
 				<!-- Mobile Menu (hidden by default) -->
-				<div class="mobile-menu hidden md:hidden text-white  text-start">
-					<a class='block px-4 py-2 rounded-xl hover:bg-pink-400 transition duration-300' href='/'>Home</a>
+				<div class="mobile-menu hidden text-start grid grid-flow-col space-x-6 opacity-0 scale-95 transform transition-all duration-500">
+					<a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"></a>
+					<a class='hover:scale-150 duration-500 ' href='MochiGame.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"></a>
+					<a class='hover:scale-150 duration-500 ' href='message_box.html'><img src="static/image/love-letter.png" alt="message" class="w-15 h-10 mx-auto"></a>
+					<a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/information.png" alt="About" class="w-15 h-10 mx-auto"></a>
 				</div>
 			</nav>
 		</div>
@@ -73,12 +76,24 @@
 			const btn = document.querySelector('.mobile-menu-button');
 			const menu = document.querySelector('.mobile-menu');
 
-			// Event listener for mobile menu button
+			// Event listener untuk menu toggle
 			btn.addEventListener('click', () => {
-				menu.classList.toggle('hidden');
+			if (menu.classList.contains('hidden')) {
+				// Menu terbuka
+				menu.classList.remove('hidden');
+				setTimeout(() => {
+				menu.classList.add('opacity-100', 'scale-100');
+				menu.classList.remove('opacity-0', 'scale-95');
+				}, 50); // Sedikit delay agar transisi terlihat
+			} else {
+				// Menu tertutup
+				menu.classList.add('opacity-0', 'scale-95');
+				menu.classList.remove('opacity-100', 'scale-100');
+				setTimeout(() => {
+				menu.classList.add('hidden');
+				}, 500); // Sesuai durasi animasi Tailwind
+			}
 			});
-
-			// Hide loading screen and show main content once page is fully loaded
 		
 		
 		</script>
