@@ -148,7 +148,10 @@ nav a{
     }
 }
 
-
+a img:hover{
+    transition-duration: 1s;
+    filter: drop-shadow(1px 1px 10px #ffffff);
+}
 
 .hidden {
     display: none; /* Sembunyikan overlay secara default */

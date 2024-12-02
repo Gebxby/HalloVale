@@ -86,6 +86,28 @@
             animation: fall 5s linear infinite;
         }
 
+        .buah {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-position: center;
+            background-size: cover;
+            animation: fall 6s linear infinite;
+        }
+
+        .buah.banana {
+            background-image: url('static/image/banana.png');
+        }
+
+        .buah.apple {
+            background-image: url('static/image/apple.png');
+        }
+
+        .buah.mango {
+            background-image: url('static/image/mango.png');
+        }
+
+
         .player {
             position: absolute;
             bottom: 20px;
@@ -177,6 +199,7 @@
             }
         }
 
+
     </style>
 </head>
 <body>
@@ -219,6 +242,11 @@
         const scoreElement = document.getElementById('score');
         const mochiScoreElement = document.getElementById('mochi-score');
         const cirengScoreElement = document.getElementById('cireng-score');
+        // Sound effects
+        const hitSound = new Audio('https://artlist.io/sfx/track/mobile-game---interface-item-collection-positive/63636'); // Suara terkena buah
+        const wahTidakEnakSound = new Audio('static/music/WahTidakEnak.FLAC'); // Suara pemain
+
+
 
         let score = 0;
         let mochiS = 0;
@@ -292,7 +320,7 @@
 
         // Spawn cireng
         function spawnCireng() {
-            if (Math.random() < 0.1) { // 10% chance for cireng to spawn
+            if (Math.random() < 1) { // 10% chance for cireng to spawn
                 const cireng = document.createElement('div');
                 cireng.classList.add('cireng');
                 const cirengPosition = Math.random() * 100;
@@ -335,11 +363,61 @@
             }
         }
 
+
+        function spawnBuah() {
+            const buahTypes = ['banana', 'apple', 'mango'];
+            const randomBuah = buahTypes[Math.floor(Math.random() * buahTypes.length)];
+            
+            const buah = document.createElement('div');
+            buah.classList.add('buah', randomBuah);
+            const buahPosition = Math.random() * 100;
+            buah.style.left = buahPosition + '%';
+            gameContainer.appendChild(buah);
+
+            const fallInterval = setInterval(() => {
+                const buahTop = parseFloat(getComputedStyle(buah).getPropertyValue('top'));
+                const playerRect = player.getBoundingClientRect();
+                const buahRect = buah.getBoundingClientRect();
+
+                // Check collision (buah hits the player)
+                if (
+                    buahRect.bottom >= playerRect.top &&
+                    buahRect.left < playerRect.right &&
+                    buahRect.right > playerRect.left
+                ) {
+                    score -= 5; // Kurangi skor
+                    scoreElement.textContent = score;
+
+                    // Mainkan efek suara
+                    hitSound.play();
+                    WahTidakEnakSound.play();
+
+                    buah.remove(); // Hapus buah
+                    clearInterval(fallInterval);
+                }
+
+                // Hapus buah jika sudah jatuh ke bawah layar
+                if (buahTop >= window.innerHeight) {
+                    buah.remove();
+                    clearInterval(fallInterval);
+                }
+            }, 50);
+        }
+
+        // Spawn buah secara berkala
+        setInterval(() => {
+            if (Math.random() < 0.7) { // 70% kemungkinan buah muncul
+                spawnBuah();
+            }
+        }, 2000);
+
         // Spawn mochis and cirengs periodically
         setInterval(() => {
             spawnMochi();
-            if (score >= 10) {
+            if (mochi >= 10) {
                 spawnCireng();
+            }else if (score >= 100){
+                spawnBuah();
             }
         }, 1000);
     </script>
