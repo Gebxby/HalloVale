@@ -76,6 +76,25 @@
             animation: fall 5s linear infinite;
         }
 
+        .mochiVer2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('static/image/mochiVar1.png');
+            background-position: center;
+            background-size: covar;
+            animation: fall 5s linear infinite;
+        }
+
+        .mochiVer3 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('static/image/mochiVer2.png');
+            background-position: center;
+            background-size: cover;
+            animation: fall 5s linear infinite;
+        }
         .cireng {
             position: absolute;
             width: 150px;
@@ -107,7 +126,15 @@
             background-image: url('static/image/mango.png');
         }
 
-
+        .buah.anggur {
+            background-image: url('static/image/anggur.png');
+        }
+        .buah.naga{
+            background-image: url('static/image/naga.png');
+        }
+        .buah.semangka{
+            background-image: url('static/image/semangka.png');
+        }
         .player {
             position: absolute;
             bottom: 20px;
@@ -245,6 +272,10 @@
         // Sound effects
         const hitSound = new Audio('https://artlist.io/sfx/track/mobile-game---interface-item-collection-positive/63636'); // Suara terkena buah
         const wahTidakEnakSound = new Audio('static/music/WahTidakEnak.FLAC'); // Suara pemain
+        const wahEnakSound = new Audio('static/music/WahEnak.FLAC'); // Suara pemain
+
+        const maxItems = 10;
+        let currentItems = 0; // Jumlah item saat ini di layar
 
 
 
@@ -273,153 +304,167 @@
             player.style.left = playerPosition + '%';
         });
         // Spawn mochi
-        function spawnMochi() {
-            const mochi = document.createElement('div');
-            mochi.classList.add('mochi');
-            const mochiPosition = Math.random() * 100;
-            mochi.style.left = mochiPosition + '%';
+        // Set jumlah maksimum item yang dapat muncul di layar
+          
 
-            gameContainer.appendChild(mochi);
+            function spawnMochi() {
+                if (currentItems >= maxItems) return; // Batasi jumlah item di layar
+                const mochiTypes = ['mochi','mochiVer2','mochiVer3'];
+                const randomMochi = mochiTypes[Math.floor(Math.random() * mochiTypes.length)];
+                const mochi = document.createElement('div');
+                mochi.classList.add('mochi',randomMochi);
+                const mochiPosition = Math.random() * 100;
+                mochi.style.left = mochiPosition + '%';
+                gameContainer.appendChild(mochi);
+                currentItems++; // Tambah jumlah item di layar
 
-            const fallInterval = setInterval(() => {
-                const mochiTop = parseFloat(getComputedStyle(mochi).getPropertyValue('top'));
-                const playerRect = player.getBoundingClientRect();
-                const mochiRect = mochi.getBoundingClientRect();
+                const fallInterval = setInterval(() => {
+                    const mochiTop = parseFloat(getComputedStyle(mochi).getPropertyValue('top'));
+                    const playerRect = player.getBoundingClientRect();
+                    const mochiRect = mochi.getBoundingClientRect();
 
-                // Check collision (mochi hits the player)
-                if (
-                    mochiRect.bottom >= playerRect.top &&
-                    mochiRect.left < playerRect.right &&
-                    mochiRect.right > playerRect.left
-                ) {
-                    score += 3; // Add to total score
-                    mochiS += 1; // Add to Mochi score
-                    scoreElement.textContent = score;
-                    mochiScoreElement.textContent = mochiS;
+                    // Cek tabrakan dengan player
+                    if (
+                        mochiRect.bottom >= playerRect.top &&
+                        mochiRect.left < playerRect.right &&
+                        mochiRect.right > playerRect.left
+                    ) {
+                        score += 3;
+                        mochiS += 1;
+                        scoreElement.textContent = score;
+                        mochiScoreElement.textContent = mochiS;
 
-                    // Check for Ratu Mochi transformation
-                    if (mochiS >= 100 && !player.classList.contains('ratu-mochi')) {
-                        player.classList.add('ratu-mochi');
-                        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi2.jpg') "; 
-                        alert('Selamat! Kamu telah menjadi Ratu Mochi!');
-                        gameContainer.classList.add('ratu-background');
+                        if (mochiS >= 100 && !player.classList.contains('ratu-mochi')) {
+                            player.classList.add('ratu-mochi');
+                            document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi2.jpg')"; 
+                            alert('Selamat! Kamu telah menjadi Ratu Mochi!');
+                            gameContainer.classList.add('ratu-background');
+                        }
+
+                        wahEnakSound.currentTime = 0; // Reset waktu audio agar selalu mulai dari awal
+                        wahEnakSound.play().catch((error) => {
+                            console.error('Gagal memutar suara:', error);
+                        });
+                        mochi.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
                     }
 
-                    
-                    mochi.remove(); // Remove the mochi
-                    clearInterval(fallInterval);
-                }
+                    // Hapus mochi jika jatuh keluar layar
+                    if (mochiTop >= window.innerHeight) {
+                        mochi.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
+                    }
+                }, 50);
+            }
 
-                // Remove mochi if it falls off screen
-                if (mochiTop >= window.innerHeight) {
-                    mochi.remove();
-                    clearInterval(fallInterval);
-                }
-            }, 50);
-        }
+            function spawnCireng() {
+                if (currentItems >= maxItems) return; // Batasi jumlah item di layar
 
-        // Spawn cireng
-        function spawnCireng() {
-            if (Math.random() < 1) { // 10% chance for cireng to spawn
                 const cireng = document.createElement('div');
                 cireng.classList.add('cireng');
                 const cirengPosition = Math.random() * 100;
                 cireng.style.left = cirengPosition + '%';
-
                 gameContainer.appendChild(cireng);
+                currentItems++; // Tambah jumlah item di layar
 
                 const fallInterval = setInterval(() => {
                     const cirengTop = parseFloat(getComputedStyle(cireng).getPropertyValue('top'));
                     const playerRect = player.getBoundingClientRect();
                     const cirengRect = cireng.getBoundingClientRect();
 
-                    // Check collision (cireng hits the player)
+                    // Cek tabrakan dengan player
                     if (
                         cirengRect.bottom >= playerRect.top &&
                         cirengRect.left < playerRect.right &&
                         cirengRect.right > playerRect.left
                     ) {
-                        score += 10; // Add to total score
-                        cirengS += 1; // Add to Cireng score
+                        score += 10;
+                        cirengS += 1;
                         scoreElement.textContent = score;
                         cirengScoreElement.textContent = cirengS;
-                        cireng.remove(); // Remove the cireng
-                        clearInterval(fallInterval);
 
                         if (cirengS >= 50 && !player.classList.contains('ratu-cireng')) {
                             player.classList.add('ratu-cireng');
                             document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/backgroundMochi3.jpg')"; 
                             alert('Selamat! Kamu telah menjadi Ratu Cireng!');
                             gameContainer.classList.add('ratu-background');
-                    }
+                        }
+
+                        cireng.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
                     }
 
-                    // Remove cireng if it falls off screen
+                    // Hapus cireng jika jatuh keluar layar
                     if (cirengTop >= window.innerHeight) {
                         cireng.remove();
+                        currentItems--; // Kurangi jumlah item di layar
                         clearInterval(fallInterval);
                     }
                 }, 50);
             }
-        }
+
+            function spawnBuah() {
+                if (currentItems >= maxItems) return; // Batasi jumlah item di layar
+
+                const buahTypes = ['banana', 'apple', 'mango', 'anggur','naga','semangka'];
+                const randomBuah = buahTypes[Math.floor(Math.random() * buahTypes.length)];
+
+                const buah = document.createElement('div');
+                buah.classList.add('buah', randomBuah);
+                const buahPosition = Math.random() * 100;
+                buah.style.left = buahPosition + '%';
+                gameContainer.appendChild(buah);
+                currentItems++; // Tambah jumlah item di layar
+
+                const fallInterval = setInterval(() => {
+                    const buahTop = parseFloat(getComputedStyle(buah).getPropertyValue('top'));
+                    const playerRect = player.getBoundingClientRect();
+                    const buahRect = buah.getBoundingClientRect();
+
+                    // Cek tabrakan dengan player
+                    if (
+                        buahRect.bottom >= playerRect.top &&
+                        buahRect.left < playerRect.right &&
+                        buahRect.right > playerRect.left
+                    ) {
+                        score -=2;
+                        if (score < 0) score = 0; // Pastikan skor tidak negatif
+                        scoreElement.textContent = score;
 
 
-        function spawnBuah() {
-            const buahTypes = ['banana', 'apple', 'mango'];
-            const randomBuah = buahTypes[Math.floor(Math.random() * buahTypes.length)];
-            
-            const buah = document.createElement('div');
-            buah.classList.add('buah', randomBuah);
-            const buahPosition = Math.random() * 100;
-            buah.style.left = buahPosition + '%';
-            gameContainer.appendChild(buah);
+                        wahTidakEnakSound.currentTime = 0; // Reset waktu audio agar selalu mulai dari awal
+                        wahTidakEnakSound.play().catch((error) => {
+                            console.error('Gagal memutar suara:', error);
+                        });
 
-            const fallInterval = setInterval(() => {
-                const buahTop = parseFloat(getComputedStyle(buah).getPropertyValue('top'));
-                const playerRect = player.getBoundingClientRect();
-                const buahRect = buah.getBoundingClientRect();
 
-                // Check collision (buah hits the player)
-                if (
-                    buahRect.bottom >= playerRect.top &&
-                    buahRect.left < playerRect.right &&
-                    buahRect.right > playerRect.left
-                ) {
-                    score -= 5; // Kurangi skor
-                    scoreElement.textContent = score;
+                        buah.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
+                    }
 
-                    // Mainkan efek suara
-                    hitSound.play();
-                    WahTidakEnakSound.play();
-
-                    buah.remove(); // Hapus buah
-                    clearInterval(fallInterval);
-                }
-
-                // Hapus buah jika sudah jatuh ke bawah layar
-                if (buahTop >= window.innerHeight) {
-                    buah.remove();
-                    clearInterval(fallInterval);
-                }
-            }, 50);
-        }
-
-        // Spawn buah secara berkala
-        setInterval(() => {
-            if (Math.random() < 0.7) { // 70% kemungkinan buah muncul
-                spawnBuah();
+                    // Hapus buah jika jatuh keluar layar
+                    if (buahTop >= window.innerHeight) {
+                        buah.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
+                    }
+                }, 50);
             }
-        }, 2000);
 
-        // Spawn mochis and cirengs periodically
-        setInterval(() => {
-            spawnMochi();
-            if (mochi >= 10) {
-                spawnCireng();
-            }else if (score >= 100){
-                spawnBuah();
-            }
-        }, 1000);
+            // Spawn item secara teratur
+            setInterval(() => {
+                spawnMochi();
+                spawnBuah()
+
+                if (mochiS >= 10) { // Perbaikan dari variabel yang salah
+                    spawnCireng();
+                }
+            }, 1000);
+
     </script>
 </body>
 </html>
