@@ -45,39 +45,16 @@
 			background-size: cover;
 			background-position: center;
 		}
+		.doc-text {
+			color: white;
+			font-family: Georgia, serif;
+
+		}
   
     </style>
 </head>
 <body >
-	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			function ChangeBackground() {
-				const body = document.body;
-				const hour = new Date().getHours();
-				const greetingLink = document.getElementById("greeting");
-
-				body.className = ""; // Reset kelas pada body
-				
-				if (hour >= 6 && hour < 12) {
-					body.classList.add("morning");
-					greetingLink.textContent = "Good Morning Vale";
-				} else if (hour >= 12 && hour < 16) {
-					body.classList.add("noon");
-					greetingLink.textContent = "Good Afternoon Vale";
-				} else if (hour >= 16 && hour < 19) {
-					body.classList.add("evening");
-					greetingLink.textContent = "Good Evening Vale";
-				} else {
-					body.classList.add("night");
-					greetingLink.textContent = "Good Night Vale";
-				}
-			}
-
-			// Panggil fungsi dan set interval
-			ChangeBackground();
-			setInterval(ChangeBackground, 3600000);
-		});
-	</script>
+	
 
 
 
@@ -134,56 +111,90 @@
 			</nav>
 		</div>
 
-		<script>
-			const btn = document.querySelector('.mobile-menu-button');
-			const menu = document.querySelector('.mobile-menu');
+		
 
-			// Event listener untuk menu toggle
-			btn.addEventListener('click', () => {
-			if (menu.classList.contains('hidden')) {
-				// Menu terbuka
-				menu.classList.remove('hidden');
-				setTimeout(() => {
-				menu.classList.add('opacity-100', 'scale-100');
-				menu.classList.remove('opacity-0', 'scale-95');
-				}, 50); // Sedikit delay agar transisi terlihat
-			} else {
-				// Menu tertutup
-				menu.classList.add('opacity-0', 'scale-95');
-				menu.classList.remove('opacity-100', 'scale-100');
-				setTimeout(() => {
-				menu.classList.add('hidden');
-				}, 500); // Sesuai durasi animasi Tailwind
-			}
-			});
-
-			
-		</script>
+		
 
 		<!-- Content -->
 		<div class="grid flex justify-center items-center h-screen slideInY pt-10 mt-10">
 			<section class="contents">
 				<div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
 					<div class="praf">
-						<div class="flex items-center justify-center">
-							<img src="https://i.pinimg.com/736x/5c/49/5a/5c495ade15d5afc693db714d996c64e0.jpg" alt="Deskripsi Gambar" class="pb-8">
-						  </div>
-						<p id="content">MORNINGG SWEET HEARTH💕💕💕</p>
-						<p id="content">semoga bobonyaa nyenyak yahh sayanggg... jangan lupa doa untuk hari ini, dan selalu ucap syukur ke Tuhan sayangg... semangat buat hari ini yahh sayangg, jaga kesehatan kamu baik baik, jangan makan yang aneh2 atau minum yang aneh2</p>
-						<p id="content">>kiranya apa yang kamu lakukan hari ini, bisa maksimal dan bisa menjadi berkat bagi diri sendiri dan sesama yahh sayangg🫶🏽🫶🏽</p>
-						<p id="content">kalau butuh apa apa, just let me know yahh sayangg, aku bakal berusah bantuin kamu😚😚</p>
-						<p id="content"><stong>TE AMO🤍🤍🤍</stong></p>
-
+						<!-- <div class="flex items-center justify-center"><img src="https://i.pinimg.com/736x/5c/49/5a/5c495ade15d5afc693db714d996c64e0.jpg" alt="Deskripsi Gambar" class="pb-8"></div> -->
+						  <p class="doc-text" id="google-doc-content">mengambil konten...</p>
 					</div>
-					<!-- Tombol di tengah bawah dari container -->
-					<!-- <button type="button" onclick='document.getElementById("content").innerHTML=showMessage(150);' 
-						class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
-						<img src="static/image/right-arrow.png" alt="">
-					</button> -->
 				</div>
 				
 			</section>
 		</div>
 	</div>
+
+    <script>
+        async function fetchGoogleDocContent() {
+            try {
+                const response = await fetch("https://script.google.com/macros/s/AKfycby17iYSgtQxCmaaE1zEXfA71kl2it_tJzstLnzXt_LhNSdIi30aEGQXwIVtv5Fe8BvjMQ/exec");
+                const text = await response.text();
+                document.getElementById("google-doc-content").innerText = text;
+            } catch (error) {
+                console.error("Gagal mengambil konten:", error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", fetchGoogleDocContent);
+    </script>
+	<script>
+		const btn = document.querySelector('.mobile-menu-button');
+		const menu = document.querySelector('.mobile-menu');
+
+		// Event listener untuk menu toggle
+		btn.addEventListener('click', () => {
+		if (menu.classList.contains('hidden')) {
+			// Menu terbuka
+			menu.classList.remove('hidden');
+			setTimeout(() => {
+			menu.classList.add('opacity-100', 'scale-100');
+			menu.classList.remove('opacity-0', 'scale-95');
+			}, 50); // Sedikit delay agar transisi terlihat
+		} else {
+			// Menu tertutup
+			menu.classList.add('opacity-0', 'scale-95');
+			menu.classList.remove('opacity-100', 'scale-100');
+			setTimeout(() => {
+			menu.classList.add('hidden');
+			}, 500); // Sesuai durasi animasi Tailwind
+		}
+		});
+
+		
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			function ChangeBackground() {
+				const body = document.body;
+				const hour = new Date().getHours();
+				const greetingLink = document.getElementById("greeting");
+
+				body.className = ""; // Reset kelas pada body
+				
+				if (hour >= 6 && hour < 12) {
+					body.classList.add("morning");
+					greetingLink.textContent = "Good Morning Vale";
+				} else if (hour >= 12 && hour < 16) {
+					body.classList.add("noon");
+					greetingLink.textContent = "Good Afternoon Vale";
+				} else if (hour >= 16 && hour < 19) {
+					body.classList.add("evening");
+					greetingLink.textContent = "Good Evening Vale";
+				} else {
+					body.classList.add("night");
+					greetingLink.textContent = "Good Night Vale";
+				}
+			}
+
+			// Panggil fungsi dan set interval
+			ChangeBackground();
+			setInterval(ChangeBackground, 3600000);
+		});
+	</script>
 </body>
 </html>
