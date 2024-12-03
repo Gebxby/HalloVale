@@ -122,6 +122,7 @@
 					<div class="praf">
 						<!-- <div class="flex items-center justify-center"><img src="https://i.pinimg.com/736x/5c/49/5a/5c495ade15d5afc693db714d996c64e0.jpg" alt="Deskripsi Gambar" class="pb-8"></div> -->
 						  <p class="doc-text" id="google-doc-content">mengambil konten...</p>
+						  <p class="doc-text" ><strong id="last-paraf"  ></strong></p>
 					</div>
 				</div>
 				
@@ -195,6 +196,89 @@
 			ChangeBackground();
 			setInterval(ChangeBackground, 3600000);
 		});
+	</script>
+
+	<script>
+		function randomLoveWord() {
+			const lastParaf = document.getElementById('last-paraf');
+			// const loveWord = ['form the bottom of the sea, and from the pretty midnight sky, and even from my last breathe, Aishiteru 💗',"ILY LIM X --> 0","ILY TILL THE SUN NEVER RISE", "ILY TILL LAST BREATHE", "ILYSM"];
+
+			// const randomIndex = Math.floor(Math.random() *loveWord.length);
+			// 
+
+			const hour = new Date().getHours();
+			if (hour >= 6 && hour < 12) {
+				
+				
+				const loveWord = [
+					"form the bottom of the sea, and from the pretty midnight sky, and even from my last breathe,I Love You💗",
+					'I love you 💗',
+					"I’m always in love with you",
+					"ILY lim x --> 0",
+					"I Love You when the sun never rise again☀️💗",
+					"You’re the love of my life",
+					"You are my sunshine", 
+					"i adore you💗", 
+					"You’re amazing just the way you are", 
+					"i have love you before the sunrise💗"
+				]; 
+
+				const randomIndex = Math.floor(Math.random() *loveWord.length);
+				const randomWord = loveWord[randomIndex];
+
+				return lastParaf.textContent = randomWord;
+			} else if (hour >= 12 && hour < 16) {
+				
+				
+				const loveWord = [
+					"form the bottom of the sea, and from the pretty midnight sky, and even from my last breathe, I adore you💗💗💗",
+					"Me gustas Mi Alma",
+					"Te Amo Babeee",
+					"Eres mi media naranja",
+					"Eres el amor de mi vida",
+					"Semangatt sayanggg buat jalani harinya, ILY and always here for you",
+					"Sora no hate made, yama no chōjō made, soshite chikyū-jō no subete no ikimono wa, watashi ga anata o aishite iru koto o shitte imasu."
+				]; 
+				
+				const randomIndex = Math.floor(Math.random() *loveWord.length);
+				const randomWord = loveWord[randomIndex];
+
+				return lastParaf.textContent = randomWord;
+			} else if (hour >= 16 && hour < 19) {
+				
+				
+				const loveWord = [
+					"form the bottom of the sea, and from the pretty midnight sky, and even from my last breathe, You are my Universe",
+					"J’aime être à tes côtés",
+					"Ich liebe dich",
+					"Σ'αγαπώ",
+					"Aku Mencintaimu, Seperti Aku Mencintai Tuhan",
+					"Ti Amo Ti Amo Ti Amo💗💗",
+					"Se vai sotto qualsiasi cielo, echeggerà sempre in tutta la natura, ti amo tesoro"
+				]; 
+				
+				const randomIndex = Math.floor(Math.random() *loveWord.length);
+				const randomWord = loveWord[randomIndex];
+
+				return lastParaf.textContent = randomWord;
+			} else {
+				const loveWord = [
+					'form the bottom of the sea, and from the pretty midnight sky, and even from my last breathe, Aishiteru 💗',
+					"I love you to the moon and back🌜💗", 
+					"I'm head over heels for you💗", 
+					"what a wonderful feeling to love you 💗"
+				]; 
+				const randomIndex = Math.floor(Math.random() *loveWord.length);
+				const randomWord = loveWord[randomIndex];
+
+				return lastParaf.textContent = randomWord;
+			}
+
+			
+
+		}
+
+		randomLoveWord();
 	</script>
 </body>
 </html>
