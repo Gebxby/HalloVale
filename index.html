@@ -10,6 +10,7 @@
 	<style>
         body {
             cursor: url('static/image/cursorOrigami32.png'), auto;
+			background-clip: ;
 		
         }
 
@@ -19,10 +20,38 @@
 		button img{
 			cursor: url('static/image/hand.png'),pointer;
 		}
+		#myVideo {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			min-width: 100%;
+			min-height: 100%;
+			z-index: -1;
+		}
+
+
+		@media screen and (max-width: 414px) and (max-height: 896px){
+			#myVideo {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				min-width: 100%;
+				min-height: 100%;
+				object-fit:cover ;
+			}
+		}
+
+		
     </style>
 </head>
 <body>
-	<p style="text-align: center; margin: 0; padding: 0; margin-top: 400px; "><strong>
-		it looks like you just opened this website again, just contact me for the reason...</strong></p>
+	
+	<video autoplay muted loop id="myVideo">
+		<source src="static/image/loop3.mp4" type="video/mp4">
+	</video>
+	<audio loop autoplay >
+		<source src="static/music/Resident Evil 4 Remake - Serenity.flac">
+	</audio>
+	<p class="contact" style="text-align: center; margin: 0; padding: 0; margin-top: 400px; z-index: 1; color: white;"><strong>it looks like you just opened this website again, just contact me for the reason...</strong></p>
 </body>
 </html>
