@@ -1,118 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">	
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Idle</title>
-	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="static/css/styles4.css">
+	<script src="static/js/srcipts.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            background: radial-gradient(circle at center, #e04c7b, #A0153E, #5D0E41, #00224D);
-            animation: complexBG 15s ease infinite;
+            cursor: url('static/image/cursorOrigami32.png'), auto;
+		
         }
-
-        @keyframes complexBG {
-            0% {
-                background: radial-gradient(circle at center, #e04c7b #A0153E, #5D0E41, #00224D);
-				background-position: 100% 0%;
-            }
-            25% {
-                background: radial-gradient(circle at top left, #00224D, #5D0E41, #A0153E, #ff9a9e);
-				background-position: 75% 25%;
-            }
-            50% {
-                background: radial-gradient(circle at bottom right, #5D0E41, #00224D, #e04c7b #A0153E);
-				background-position: 50% 50%;
-            }
-            75% {
-                background: radial-gradient(circle at top right, #A0153E, #e04c7b #00224D, #5D0E41);
-				background-position: 35% 75%;
-            }
-            100% {
-                background: radial-gradient(circle at center, #e04c7b #A0153E, #5D0E41, #00224D);
-				background-position: 0% 100%;
-            }
-        }
-
-        .content {
-            text-align: center;
-            animation: fadeInOut 5s ease infinite;
-        }
-
-        @keyframes fadeInOut {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        .sparkles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .sparkle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: white;
-            opacity: 0.8;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            animation: sparkleMove 3s ease-in-out infinite;
-        }
-
-        @keyframes sparkleMove {
-            0% {
-                transform: translate(-50%, -50%) scale(0);
-                opacity: 0.5;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translate(500px, 500px) scale(1.5);
-                opacity: 0;
-            }
-        }
+        a{
+			cursor: url('static/image/hand.png'),pointer;
+		}
     </style>
+
 </head>
-<body>
-	<audio autoplay loop > <source src="static/music/Resident Evil 4 Remake - Serenity.flac"> </audio>
-	
-	
+<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5)), url('static/image/backgroundHD1Copy.jpg'); background-size: cover; background-position: center;">
 
-    <div class="container backdrop-blur-sm" style=" background-color: rgba(29, 29, 29, 0.271); width: 400px; height: auto; border-radius: 5px;">
-		<h1 class="content" style="text-align: center; margin: 0; padding: 0; margin:10px; z-index: 1; color: white;"><strong>Idle Page</strong></h1>
-		<p class="contact" style="text-align: center; margin: 0; padding: 0; margin: 10px; padding: 0; z-index: 1; color: white;"><strong>it looks like <strong><u>you just opened this website again</u></strong>, just contact me for the reason...</strong></p>
-	</div> 
-    <div class="sparkles">
-        <!-- Sparkles dynamically added via JavaScript -->
+	<!-- Loading screen -->
+	<div id="loading-screen">
+		<svg class="loader" viewBox="0 0 100 100">
+			<!-- "V" Letter -->
+			<path class="letter" d="M 10,10 L 50,90 L 90,10" />
+			<!-- "G" Letter -->
+			<path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
+		</svg>
+        
+	</div>
+    
+    <div id="navbar">
+        <nav class="slideInY mt-10">
+            <div class="mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo and Site Title -->
+                    <div class="flex items-center">
+                        <h1 class="text-2xl font-bold text-center text-white">
+                            <a href="secretMsg.html" class="text-2xl font-bold text-center text-white">Hallo Valeria</a>
+                        </h1>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
+                        <a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span class="text-white">Gallery</span></a>
+                        <a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a>
+                        <a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span class="text-white">Text</span></a>
+                    </div>
+                
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="mobile-menu-button">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (hidden by default) -->
+            <div class="mobile-menu hidden text-start grid grid-flow-col space-x-6 opacity-0 scale-95 transform transition-all duration-500">
+                <a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
+                <a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span class="text-white">Gallery</span></a>
+                <a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a>
+                <a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span class="text-white">Text</span></a>
+            </div>
+        </nav>
     </div>
-    <script>
-        const sparklesContainer = document.querySelector('.sparkles');
-        const sparkleCount = 50;
 
-        for (let i = 0; i < sparkleCount; i++) {
-            const sparkle = document.createElement('div');
-            sparkle.classList.add('sparkle');
-            sparkle.style.top = `${Math.random() * 100}%`;
-            sparkle.style.left = `${Math.random() * 100}%`;
-            sparkle.style.animationDelay = `${Math.random() * 3}s`;
-            sparklesContainer.appendChild(sparkle);
-        }
+    <script>
+        const btn = document.querySelector('.mobile-menu-button');
+			const menu = document.querySelector('.mobile-menu');
+
+			// Event listener untuk menu toggle
+			btn.addEventListener('click', () => {
+			if (menu.classList.contains('hidden')) {
+				// Menu terbuka
+				menu.classList.remove('hidden');
+				setTimeout(() => {
+				menu.classList.add('opacity-100', 'scale-100');
+				menu.classList.remove('opacity-0', 'scale-95');
+				}, 50); // Sedikit delay agar transisi terlihat
+			} else {
+				// Menu tertutup
+				menu.classList.add('opacity-0', 'scale-95');
+				menu.classList.remove('opacity-100', 'scale-100');
+				setTimeout(() => {
+				menu.classList.add('hidden');
+				}, 500); // Sesuai durasi animasi Tailwind
+			}
+			});
+        
     </script>
+
+    <!--  -->
+    <!-- main content -->
+    <div style="display: none;" id="main-content">
+        <div class="grid flex justify-center items-center h-screen">
+            <div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-400 bg-opacity-20 relative">
+                <div class="text-lg font-semibold text-white text-center">
+                    <h4>About This Website</h4>
+                    <br>
+                    <p id="content1">
+                        Website Hallo Vale adalah website statis yang di buat sebagai projek pribadi.
+                        Website statis ini akan selalu di update, sekaligus menjadi explorasi tentang cara membuat website.
+                        website ini menjadi projek pribadi yang begitu menyenangkan, karena bekerja untuk membuktikan pada seseorang
+                        bahwa beginilah dedikasi cinta dan rasa sayangku padanya. 
+                    </p>
+                    <br>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+</html>

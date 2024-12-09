@@ -1,127 +1,121 @@
+
+
+
 <!DOCTYPE html>
-<html lang="en">	
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hallo Valeria</title>
-	<link rel="stylesheet" href="static/css/styles4.css">
-	<script src="static/js/srcipts.js"></script>
-	<script src="https://cdn.tailwindcss.com"></script>
-	<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Idle</title>
+	
+    <style>
         body {
-            cursor: url('static/image/cursorOrigami32.png'), auto;
-		
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at center, #e04c7b, #A0153E, #5D0E41, #00224D);
+            animation: complexBG 15s ease infinite;
         }
 
-		a{
-			cursor: url('static/image/hand.png'),pointer;
-		}
-		button img{
-			cursor: url('static/image/hand.png'),pointer;
-		}
+        @keyframes complexBG {
+            0% {
+                background: radial-gradient(circle at center, #e04c7b #A0153E, #5D0E41, #00224D);
+				background-position: 100% 0%;
+            }
+            25% {
+                background: radial-gradient(circle at top left, #00224D, #5D0E41, #A0153E, #ff9a9e);
+				background-position: 75% 25%;
+            }
+            50% {
+                background: radial-gradient(circle at bottom right, #5D0E41, #00224D, #e04c7b #A0153E);
+				background-position: 50% 50%;
+            }
+            75% {
+                background: radial-gradient(circle at top right, #A0153E, #e04c7b #00224D, #5D0E41);
+				background-position: 35% 75%;
+            }
+            100% {
+                background: radial-gradient(circle at center, #e04c7b #A0153E, #5D0E41, #00224D);
+				background-position: 0% 100%;
+            }
+        }
+
+        .content {
+            text-align: center;
+            animation: fadeInOut 5s ease infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .sparkles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            opacity: 0.8;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: sparkleMove 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkleMove {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(500px, 500px) scale(1.5);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
-<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url('static/image/background.jpg'); background-size: cover; background-position:center; ">
-
-	<!-- Loading screen -->
-	<div id="loading-screen">
-		<svg class="loader" viewBox="0 0 100 100">
-			<!-- "V" Letter -->
-			<path class="letter" d="M 10,10 L 50,90 L 90,10" />
-			<!-- "G" Letter -->
-			<path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
-		</svg>
-	</div>
-
-	<!-- Main content -->
-	<div style="display: none;" id="main-content" >
-		<!-- navbar -->
-		<div id="navbar ">
-			<nav class="slideInY mt-10 backdrop-blur-sm">
-				<div class="mx-auto px-4 sm:px-6 lg:px-8">
-					<div class="flex items-center justify-between h-16">
-						<!-- Logo and Site Title -->
-						<div class="flex items-center">
-							<h1 class="text-2xl font-bold text-center text-white">
-								<a href="count_up.html" class="text-2xl font-bold text-center text-white">Hallo Valeria</a>
-							</h1>
-						</div>
+<body>
+	<audio autoplay loop > <source src="static/music/Resident Evil 4 Remake - Serenity.flac"> </audio>
 	
-						<!-- Desktop Menu -->
-					
-						<div class="hidden md:flex items-center space-x-8">
-							<a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"></a>
-							<a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"></a>
-							<a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/love-letter.png" alt="message" class="w-15 h-10 mx-auto"></a>
-							<a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/information.png" alt="About" class="w-15 h-10 mx-auto"></a>
-						</div>
-					
 	
-						<!-- Mobile Menu Button -->
-						<div class="md:hidden flex items-center">
-							<button class="mobile-menu-button">
-								<svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-									<path d="M4 6h16M4 12h16M4 18h16"></path>
-								</svg>
-							</button>
-						</div>
-					</div>
-				</div>
-	
-				<!-- Mobile Menu (hidden by default) -->
-				<div class="mobile-menu hidden text-start grid grid-flow-col space-x-8 opacity-0 scale-95 transform transition-all duration-500">
-					<a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"></a>
-					<a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"></a>
-					<a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/love-letter.png" alt="message" class="w-15 h-10 mx-auto"></a>
-					<a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/information.png" alt="About" class="w-15 h-10 mx-auto"></a>
-					
-				</div>
-			</nav>
-		</div>
 
-		<script>
-			const btn = document.querySelector('.mobile-menu-button');
-			const menu = document.querySelector('.mobile-menu');
+    <div class="container backdrop-blur-sm" style=" background-color: rgba(29, 29, 29, 0.271); width: 400px; height: auto; border-radius: 5px;">
+		<h1 class="content" style="text-align: center; margin: 0; padding: 0; margin:10px; z-index: 1; color: white;"><strong>Idle Page</strong></h1>
+		<p class="contact" style="text-align: center; margin: 0; padding: 0; margin: 10px; padding: 0; z-index: 1; color: white;"><strong>it looks like <strong><u>you just opened this website again</u></strong>, just contact me for the reason...</strong></p>
+	</div> 
+    <div class="sparkles">
+        <!-- Sparkles dynamically added via JavaScript -->
+    </div>
+    <script>
+        const sparklesContainer = document.querySelector('.sparkles');
+        const sparkleCount = 50;
 
-			// Event listener untuk menu toggle
-			btn.addEventListener('click', () => {
-			if (menu.classList.contains('hidden')) {
-				// Menu terbuka
-				menu.classList.remove('hidden');
-				setTimeout(() => {
-				menu.classList.add('opacity-100', 'scale-100');
-				menu.classList.remove('opacity-0', 'scale-95');
-				}, 50); // Sedikit delay agar transisi terlihat
-			} else {
-				// Menu tertutup
-				menu.classList.add('opacity-0', 'scale-95');
-				menu.classList.remove('opacity-100', 'scale-100');
-				setTimeout(() => {
-				menu.classList.add('hidden');
-				}, 500); // Sesuai durasi animasi Tailwind
-			}
-			});
-			
-		</script>
-
-		<!-- Content -->
-		<div class="grid flex justify-center items-center h-screen slideInY">
-			<section class="contents">
-				<div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
-					<div class="praf">
-						<p id="content" class="m-5">klik tombol dibawah untuk membaca pesan 💕</p>
-						<audio id="audio-player" src="static/music/Christian Bautista - Beautiful Girl (Official Music Video).mp3" type="audio/mp3" class="mt-4"></audio>
-
-					</div>
-					<!-- Tombol di tengah bawah dari container -->
-					<button type="button" onclick='document.getElementById("content").innerHTML=showMessage(150);' 
-						class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
-						<img src="static/image/right-arrow.png" alt="">
-					</button>
-				</div>
-				
-			</section>
-		</div>
-	</div>
+        for (let i = 0; i < sparkleCount; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.animationDelay = `${Math.random() * 3}s`;
+            sparklesContainer.appendChild(sparkle);
+        }
+    </script>
 </body>
-</html>
