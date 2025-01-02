@@ -9,14 +9,14 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<style>
         body {
-            cursor: url('static/image/cursorOrigami32.png'), auto;
+            cursor: url('static/image/asset/cursorOrigami32.png'), auto;
 		
         }
 		a{
-			cursor: url('static/image/hand.png'),pointer;
+			cursor: url('static/image/asset/hand.png'),pointer;
 		}
 		img .img{
-			cursor: url('static/image/hand.png'),pointer;
+			cursor: url('static/image/asset/hand.png'),pointer;
 		}
     </style>
 </head>
@@ -45,10 +45,11 @@
 
 						<!-- Desktop Menu -->
 						<div class="hidden md:flex items-center space-x-8">
-							<a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-							<a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a>
-							<a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span class="text-white">Text</span></a>
-							<a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/information.png" alt="About" class="w-15 h-10 mx-auto"><span class="text-white">About</span></a>
+							<a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
+							<a class='hover:scale-150 duration-500 ' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
+							<!-- <a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a> -->
+							<a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span class="text-white">Text</span></a>
+							<a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto"><span class="text-white">About</span></a>
 						</div>
 
 						<!-- Mobile Menu Button -->
@@ -64,10 +65,11 @@
 
 				<!-- Mobile Menu (hidden by default) -->
 				<div class="mobile-menu hidden text-start grid grid-flow-col space-x-6 opacity-0 scale-95 transform transition-all duration-500">
-					<a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-					<a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a>
-					<a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span class="text-white">Text</span></a>
-					<a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/information.png" alt="About" class="w-15 h-10 mx-auto"><span class="text-white">About</span></a>
+					<a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
+					<a class='hover:scale-150 duration-500 ' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
+					<!-- <a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a> -->
+					<a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span class="text-white">Text</span></a>
+					<a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto"><span class="text-white">About</span></a>
 				</div>
 			</nav>
 		</div>
@@ -103,7 +105,7 @@
 				<!-- Foto-foto akan dimasukkan secara dinamis oleh JavaScript -->
 			</div>
 			<div class="overlay" id="${photo.id}">
-				<a href="#" class="close-btn text-white " ><img src="static/image/close-btn.png" alt="Close Button" ></a>
+				<a href="#" class="close-btn text-white " ><img src="static/image/asset/close-btn.png" alt="Close Button" ></a>
 				
 				<img class="img" style="cursor: url('static/image/hand.png'),pointer;">
 				
@@ -116,129 +118,129 @@
 			const photos = [
 
 		// foto lendscape
-			{ url: "static/image/1.jpg", desc: "", id:"gambar 1"},
-			{ url: "static/image/2.jpg", desc: "", id:"gambar 2" },
-			{ url: "static/image/3.jpg", desc: "", id:"gambar 3" },
-			{ url: "static/image/4.jpg", desc: "", id:"gambar 4" },
-			{ url: "static/image/5.jpg", desc: "", id:"gambar 5" },
-			{ url: "static/image/8.jpg", desc: "", id:"gambar 8" },
-			{ url: "static/image/9.jpg", desc: "", id:"gambar 9" },
-			{ url: "static/image/10.jpg", desc: "", id:"gambar 10" },
-			{ url: "static/image/19.jpg", desc: "", id:"gambar 19" },
-			{ url: "static/image/42.jpg", desc: "", id:"gambar 42" },
-			{ url: "static/image/45.jpg", desc: "", id:"gambar 45" },
+			{ url: "static/image/gallary/1.jpg", desc: "", id:"gambar 1"},
+			{ url: "static/image/gallary/2.jpg", desc: "", id:"gambar 2" },
+			{ url: "static/image/gallary/3.jpg", desc: "", id:"gambar 3" },
+			{ url: "static/image/gallary/4.jpg", desc: "", id:"gambar 4" },
+			{ url: "static/image/gallary/5.jpg", desc: "", id:"gambar 5" },
+			{ url: "static/image/gallary/8.jpg", desc: "", id:"gambar 8" },
+			{ url: "static/image/gallary/9.jpg", desc: "", id:"gambar 9" },
+			{ url: "static/image/gallary/10.jpg", desc: "", id:"gambar 10" },
+			{ url: "static/image/gallary/19.jpg", desc: "", id:"gambar 19" },
+			{ url: "static/image/gallary/42.jpg", desc: "", id:"gambar 42" },
+			{ url: "static/image/gallary/45.jpg", desc: "", id:"gambar 45" },
 			
-			{ url: "static/image/53.jpg", desc: "", id:"gambar 53" },
-			{ url: "static/image/55.jpg", desc: "", id:"gambar 55" },
-			{ url: "static/image/56.jpg", desc: "", id:"gambar 56" },
-			{ url: "static/image/57.jpg", desc: "", id:"gambar 57" },
-			{ url: "static/image/58.jpg", desc: "", id:"gambar 58" },
-			{ url: "static/image/101.jpg", desc: "", id:"gambar 50" },
+			{ url: "static/image/gallary/53.jpg", desc: "", id:"gambar 53" },
+			{ url: "static/image/gallary/55.jpg", desc: "", id:"gambar 55" },
+			{ url: "static/image/gallary/56.jpg", desc: "", id:"gambar 56" },
+			{ url: "static/image/gallary/57.jpg", desc: "", id:"gambar 57" },
+			{ url: "static/image/gallary/58.jpg", desc: "", id:"gambar 58" },
+			{ url: "static/image/gallary/101.jpg", desc: "", id:"gambar 50" },
 
-			{ url: "static/image/98.jpg", desc: "", id:"gambar 50" },
-			{ url: "static/image/18.jpg", desc: "", id:"gambar 18" },
-			{ url: "static/image/20.jpg", desc: "", id:"gambar 20" },
-			{ url: "static/image/33.jpg", desc: "", id:"gambar 33" },
-			{ url: "static/image/36.jpg", desc: "", id:"gambar 36" },
-			{ url: "static/image/37.jpg", desc: "", id:"gambar 37" },
-			{ url: "static/image/38.jpg", desc: "", id:"gambar 38" },
-			{ url: "static/image/39.jpg", desc: "", id:"gambar 39" },
-			{ url: "static/image/40.jpg", desc: "", id:"gambar 40" },
-			{ url: "static/image/41.jpg", desc: "", id:"gambar 41" },
-			{ url: "static/image/43.jpg", desc: "", id:"gambar 43" },
+			{ url: "static/image/gallary/98.jpg", desc: "", id:"gambar 50" },
+			{ url: "static/image/gallary/18.jpg", desc: "", id:"gambar 18" },
+			{ url: "static/image/gallary/20.jpg", desc: "", id:"gambar 20" },
+			{ url: "static/image/gallary/33.jpg", desc: "", id:"gambar 33" },
+			{ url: "static/image/gallary/36.jpg", desc: "", id:"gambar 36" },
+			{ url: "static/image/gallary/37.jpg", desc: "", id:"gambar 37" },
+			{ url: "static/image/gallary/38.jpg", desc: "", id:"gambar 38" },
+			{ url: "static/image/gallary/39.jpg", desc: "", id:"gambar 39" },
+			{ url: "static/image/gallary/40.jpg", desc: "", id:"gambar 40" },
+			{ url: "static/image/gallary/41.jpg", desc: "", id:"gambar 41" },
+			{ url: "static/image/gallary/43.jpg", desc: "", id:"gambar 43" },
 			
-			{ url: "static/image/51.jpg", desc: "", id:"gambar 52" },
-			{ url: "static/image/47.jpg", desc: "", id:"gambar 47" },
-			{ url: "static/image/48.jpg", desc: "", id:"gambar 48" },
-			{ url: "static/image/49.jpg", desc: "", id:"gambar 49" },
-			{ url: "static/image/50.jpg", desc: "", id:"gambar 50" },
+			{ url: "static/image/gallary/51.jpg", desc: "", id:"gambar 52" },
+			{ url: "static/image/gallary/47.jpg", desc: "", id:"gambar 47" },
+			{ url: "static/image/gallary/48.jpg", desc: "", id:"gambar 48" },
+			{ url: "static/image/gallary/49.jpg", desc: "", id:"gambar 49" },
+			{ url: "static/image/gallary/50.jpg", desc: "", id:"gambar 50" },
 			
-			{ url: "static/image/102.jpg", desc: "", id:"gambar 102" },
-			{ url: "static/image/103.jpg", desc: "", id:"gambar 103" },
-			{ url: "static/image/104.jpg", desc: "", id:"gambar 104" },
+			{ url: "static/image/gallary/102.jpg", desc: "", id:"gambar 102" },
+			{ url: "static/image/gallary/103.jpg", desc: "", id:"gambar 103" },
+			{ url: "static/image/gallary/104.jpg", desc: "", id:"gambar 104" },
 
 			
-			{ url: "static/image/59.jpg", desc: "", id:"gambar 59" },
-			{ url: "static/image/70.jpg", desc: "", id:"gambar 70" },
-			{ url: "static/image/71.jpg", desc: "", id:"gambar 71" },
-			{ url: "static/image/72.jpg", desc: "", id:"gambar 72" },
-			{ url: "static/image/73.jpg", desc: "", id:"gambar 73" },
-			{ url: "static/image/74.jpg", desc: "", id:"gambar 74" },
-			{ url: "static/image/75.jpg", desc: "", id:"gambar 75" },
-			{ url: "static/image/79.jpg", desc: "", id:"gambar 79" },
-			{ url: "static/image/82.jpg", desc: "", id:"gambar 82" },
-			{ url: "static/image/94.jpg", desc: "", id:"gambar 95" },
-			{ url: "static/image/PIXECT1.jpg", desc: "", id:"gambar PIXECT1"},
-			{ url: "static/image/PIXECT2.jpg", desc: "", id:"gambar PIXECT2"},
-			{ url: "static/image/PIXECT3.jpg", desc: "", id:"gambar PIXECT3"},
-			{ url: "static/image/PIXECT4.jpg", desc: "", id:"gambar PIXECT4"},
-			{ url: "static/image/webcam1.jpg", desc: "", id:"gambar webcam1"},
-			{ url: "static/image/webcam2.jpg", desc: "", id:"gambar webcam2"},
-			{ url: "static/image/webcam3.jpg", desc: "", id:"gambar webcam3"},
-			{ url: "static/image/webcam4.jpg", desc: "", id:"gambar webcam4"},
-			{ url: "static/image/webcam5.jpg", desc: "", id:"gambar webcam5"},
-			{ url: "static/image/webcam6.jpg", desc: "", id:"gambar webcam6"},
-			{ url: "static/image/webcam7.jpg", desc: "", id:"gambar webcam7"},
-			{ url: "static/image/webcam8.jpg", desc: "", id:"gambar webcam8"},
-			{ url: "static/image/webcam9.jpg", desc: "", id:"gambar webcam9"},
-			{ url: "static/image/webcam10.jpg", desc: "", id:"gambar webcam10"},
-			{ url: "static/image/webcam11.jpg", desc: "", id:"gambar webcam11"},
-			{ url: "static/image/webcam12.jpg", desc: "", id:"gambar webcam12"},
+			{ url: "static/image/gallary/59.jpg", desc: "", id:"gambar 59" },
+			{ url: "static/image/gallary/70.jpg", desc: "", id:"gambar 70" },
+			{ url: "static/image/gallary/71.jpg", desc: "", id:"gambar 71" },
+			{ url: "static/image/gallary/72.jpg", desc: "", id:"gambar 72" },
+			{ url: "static/image/gallary/73.jpg", desc: "", id:"gambar 73" },
+			{ url: "static/image/gallary/74.jpg", desc: "", id:"gambar 74" },
+			{ url: "static/image/gallary/75.jpg", desc: "", id:"gambar 75" },
+			{ url: "static/image/gallary/79.jpg", desc: "", id:"gambar 79" },
+			{ url: "static/image/gallary/82.jpg", desc: "", id:"gambar 82" },
+			{ url: "static/image/gallary/94.jpg", desc: "", id:"gambar 95" },
+			{ url: "static/image/gallary/PIXECT1.jpg", desc: "", id:"gambar PIXECT1"},
+			{ url: "static/image/gallary/PIXECT2.jpg", desc: "", id:"gambar PIXECT2"},
+			{ url: "static/image/gallary/PIXECT3.jpg", desc: "", id:"gambar PIXECT3"},
+			{ url: "static/image/gallary/PIXECT4.jpg", desc: "", id:"gambar PIXECT4"},
+			{ url: "static/image/gallary/webcam1.jpg", desc: "", id:"gambar webcam1"},
+			{ url: "static/image/gallary/webcam2.jpg", desc: "", id:"gambar webcam2"},
+			{ url: "static/image/gallary/webcam3.jpg", desc: "", id:"gambar webcam3"},
+			{ url: "static/image/gallary/webcam4.jpg", desc: "", id:"gambar webcam4"},
+			{ url: "static/image/gallary/webcam5.jpg", desc: "", id:"gambar webcam5"},
+			{ url: "static/image/gallary/webcam6.jpg", desc: "", id:"gambar webcam6"},
+			{ url: "static/image/gallary/webcam7.jpg", desc: "", id:"gambar webcam7"},
+			{ url: "static/image/gallary/webcam8.jpg", desc: "", id:"gambar webcam8"},
+			{ url: "static/image/gallary/webcam9.jpg", desc: "", id:"gambar webcam9"},
+			{ url: "static/image/gallary/webcam10.jpg", desc: "", id:"gambar webcam10"},
+			{ url: "static/image/gallary/webcam11.jpg", desc: "", id:"gambar webcam11"},
+			{ url: "static/image/gallary/webcam12.jpg", desc: "", id:"gambar webcam12"},
 			
 		
 			// foto pendek
-			{ url: "static/image/87.jpg", desc: "", id:"gambar 87"},
-			{ url: "static/image/95.jpg", desc: "", id:"gambar 95"},
-			{ url: "static/image/6.jpg", desc: "", id:"gambar 6"},
-			{ url: "static/image/29.jpg", desc: "", id:"gambar 29"},
-			{ url: "static/image/34.jpg", desc: "", id:"gambar 34"},
-			{ url: "static/image/35.jpg", desc: "", id:"gambar 35"},
-			{ url: "static/image/60.jpg", desc: "", id:"gambar 60"},
-			{ url: "static/image/12.jpg", desc: "", id:"gambar 12"},
-			{ url: "static/image/13.jpg", desc: "", id:"gambar 13"},
-			{ url: "static/image/76.jpg", desc: "", id:"gambar 76"},
-			{ url: "static/image/77.jpg", desc: "", id:"gambar 77"},
-			{ url: "static/image/89.jpg", desc: "", id:"gambar 89"},
-			{ url: "static/image/80.jpg", desc: "", id:"gambar 80"},
-			{ url: "static/image/99.jpg", desc: "", id:"gambar 50" },
-			{ url: "static/image/100.jpg", desc: "", id:"gambar 50" },
+			{ url: "static/image/gallary/87.jpg", desc: "", id:"gambar 87"},
+			{ url: "static/image/gallary/95.jpg", desc: "", id:"gambar 95"},
+			{ url: "static/image/gallary/6.jpg", desc: "", id:"gambar 6"},
+			{ url: "static/image/gallary/29.jpg", desc: "", id:"gambar 29"},
+			{ url: "static/image/gallary/34.jpg", desc: "", id:"gambar 34"},
+			{ url: "static/image/gallary/35.jpg", desc: "", id:"gambar 35"},
+			{ url: "static/image/gallary/60.jpg", desc: "", id:"gambar 60"},
+			{ url: "static/image/gallary/12.jpg", desc: "", id:"gambar 12"},
+			{ url: "static/image/gallary/13.jpg", desc: "", id:"gambar 13"},
+			{ url: "static/image/gallary/76.jpg", desc: "", id:"gambar 76"},
+			{ url: "static/image/gallary/77.jpg", desc: "", id:"gambar 77"},
+			{ url: "static/image/gallary/89.jpg", desc: "", id:"gambar 89"},
+			{ url: "static/image/gallary/80.jpg", desc: "", id:"gambar 80"},
+			{ url: "static/image/gallary/99.jpg", desc: "", id:"gambar 50" },
+			{ url: "static/image/gallary/100.jpg", desc: "", id:"gambar 50" },
 			
 		// foto potrait
 			
-			{ url: "static/image/78.jpg", desc: "", id:"gambar 78"},
-			{ url: "static/image/81.jpg", desc: "", id:"gambar 81"},
-			{ url: "static/image/83.jpg", desc: "", id:"gambar 83"},
-			{ url: "static/image/84.jpg", desc: "", id:"gambar 84"},
-			{ url: "static/image/85.jpg", desc: "", id:"gambar 85"},
-			{ url: "static/image/86.jpg", desc: "", id:"gambar 86"},
-			{ url: "static/image/88.jpg", desc: "", id:"gambar 88"},
-			{ url: "static/image/90.jpg", desc: "", id:"gambar 90"},
-			{ url: "static/image/91.jpg", desc: "", id:"gambar 91"},
-			{ url: "static/image/92.jpg", desc: "", id:"gambar 92"},
-			{ url: "static/image/93.jpg", desc: "", id:"gambar 93"},
-			{ url: "static/image/7.jpg", desc: "", id:"gambar 7"},
-			{ url: "static/image/11.jpg", desc: "", id:"gambar 11"},
-			{ url: "static/image/16.jpg", desc: "", id:"gambar 16"},
-			{ url: "static/image/17.jpg", desc: "", id:"gambar 17"},
-			{ url: "static/image/21.jpg", desc: "", id:"gambar 21"},
-			{ url: "static/image/22.jpg", desc: "", id:"gambar 22"},
-			{ url: "static/image/27.jpg", desc: "", id:"gambar 27"},
-			{ url: "static/image/30.jpg", desc: "", id:"gambar 30"},
-			{ url: "static/image/31.jpg", desc: "", id:"gambar 31"},
-			{ url: "static/image/32.jpg", desc: "", id:"gambar 32"},
-			{ url: "static/image/44.jpg", desc: "", id:"gambar 44"},
-			{ url: "static/image/46.jpg", desc: "", id:"gambar 46"},
-			{ url: "static/image/52.jpg", desc: "", id:"gambar 52"},
-			{ url: "static/image/54.jpg", desc: "", id:"gambar 54"},
-			{ url: "static/image/61.jpg", desc: "", id:"gambar 61"},
-			{ url: "static/image/63.jpg", desc: "", id:"gambar 63"},
-			{ url: "static/image/64.jpg", desc: "", id:"gambar 64"},
-			{ url: "static/image/65.jpg", desc: "", id:"gambar 65"},
-			{ url: "static/image/66.jpg", desc: "", id:"gambar 66"},
-			{ url: "static/image/67.jpg", desc: "", id:"gambar 67"},
-			{ url: "static/image/68.jpg", desc: "", id:"gambar 68"},
-			{ url: "static/image/96.jpg", desc: "", id:"gambar 96"},
-			{ url: "static/image/97.jpg", desc: "", id:"gambar97"},
+			{ url: "static/image/gallary/78.jpg", desc: "", id:"gambar 78"},
+			{ url: "static/image/gallary/81.jpg", desc: "", id:"gambar 81"},
+			{ url: "static/image/gallary/83.jpg", desc: "", id:"gambar 83"},
+			{ url: "static/image/gallary/84.jpg", desc: "", id:"gambar 84"},
+			{ url: "static/image/gallary/85.jpg", desc: "", id:"gambar 85"},
+			{ url: "static/image/gallary/86.jpg", desc: "", id:"gambar 86"},
+			{ url: "static/image/gallary/88.jpg", desc: "", id:"gambar 88"},
+			{ url: "static/image/gallary/90.jpg", desc: "", id:"gambar 90"},
+			{ url: "static/image/gallary/91.jpg", desc: "", id:"gambar 91"},
+			{ url: "static/image/gallary/92.jpg", desc: "", id:"gambar 92"},
+			{ url: "static/image/gallary/93.jpg", desc: "", id:"gambar 93"},
+			{ url: "static/image/gallary/7.jpg", desc: "", id:"gambar 7"},
+			{ url: "static/image/gallary/11.jpg", desc: "", id:"gambar 11"},
+			{ url: "static/image/gallary/16.jpg", desc: "", id:"gambar 16"},
+			{ url: "static/image/gallary/17.jpg", desc: "", id:"gambar 17"},
+			{ url: "static/image/gallary/21.jpg", desc: "", id:"gambar 21"},
+			{ url: "static/image/gallary/22.jpg", desc: "", id:"gambar 22"},
+			{ url: "static/image/gallary/27.jpg", desc: "", id:"gambar 27"},
+			{ url: "static/image/gallary/30.jpg", desc: "", id:"gambar 30"},
+			{ url: "static/image/gallary/31.jpg", desc: "", id:"gambar 31"},
+			{ url: "static/image/gallary/32.jpg", desc: "", id:"gambar 32"},
+			{ url: "static/image/gallary/44.jpg", desc: "", id:"gambar 44"},
+			{ url: "static/image/gallary/46.jpg", desc: "", id:"gambar 46"},
+			{ url: "static/image/gallary/52.jpg", desc: "", id:"gambar 52"},
+			{ url: "static/image/gallary/54.jpg", desc: "", id:"gambar 54"},
+			{ url: "static/image/gallary/61.jpg", desc: "", id:"gambar 61"},
+			{ url: "static/image/gallary/63.jpg", desc: "", id:"gambar 63"},
+			{ url: "static/image/gallary/64.jpg", desc: "", id:"gambar 64"},
+			{ url: "static/image/gallary/65.jpg", desc: "", id:"gambar 65"},
+			{ url: "static/image/gallary/66.jpg", desc: "", id:"gambar 66"},
+			{ url: "static/image/gallary/67.jpg", desc: "", id:"gambar 67"},
+			{ url: "static/image/gallary/68.jpg", desc: "", id:"gambar 68"},
+			{ url: "static/image/gallary/96.jpg", desc: "", id:"gambar 96"},
+			{ url: "static/image/gallary/97.jpg", desc: "", id:"gambar97"},
 			
 		];
 

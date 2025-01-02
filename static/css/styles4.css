@@ -12,7 +12,7 @@
 
 body{
     cursor: url('static/image/cursor2.png'),auto;
-    background-color: #e6e6e6;
+    
     transition: background-image 1s ease, background-color 1s ease;
     
    
@@ -39,12 +39,12 @@ nav a{
 }
 
 
-#content {
+#content-1, #Indexcontent{
     color: white;
     font-family: Georgia, serif;
 
 }
-#content:hover{
+#content-1, #Indexcontent:hover{
     color: white;
     background-color: #ff58bfce;
     border-radius: 10px;
@@ -52,6 +52,21 @@ nav a{
     transition-duration: 0.5s;
     
 }
+
+#content-2 {
+    color: white;
+    font-family: Georgia, serif;
+
+}
+#content-2:hover{
+    color: white;
+    background-color: #ff58bfce;
+    border-radius: 10px;
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    
+}
+
 #content1{
     color: white;
     font-family: semibold;

@@ -75,7 +75,7 @@ function showMessage(seconds) {
     hasPlayesAudio = false
 
     let messageToShow = pesan[currentMessageIndex];
-    document.getElementById("content").innerHTML = messageToShow;
+    document.getElementById("Indexcontent").innerHTML = messageToShow;
 	const audioPlayer = document.getElementById("audio-player");
     audioPlayer.currentTime = seconds;
     // Check if we have reached the last message

@@ -1,0 +1,33 @@
+/* Carousel container */
+.carousel-container {
+    display: flex; /* Cards in a row */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable scroll snapping */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    scrollbar-width: none; /* For Firefox */
+-ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+.carousel-container::-webkit-scrollbar {
+display: none; /* For Chrome, Safari, and Opera */
+}
+/* Individual card */
+.card {
+    flex: 0 0 100%; /* Each card takes full width of the viewport */
+    /* height: 100%; Full height of the container */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    scroll-snap-align: center; /* Snap card to the center */
+}
+
+/* Smooth scrolling */
+.carousel-container {
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+/* Card content */
+.content {
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Of The Year</title>
+    <link rel="stylesheet" href="../static/css/recapStyle.css">
+    <link rel="stylesheet" href="../static/css/styles4.css">
+    <script src="../static/js/srcipts.js"></script>
+    
+    
+</head>
+<body >
+   
+    <!-- Loading screen -->
+    <div id="loading-screen">
+        <svg class="loader" viewBox="0 0 100 100">
+            <path class="letter" d="M 10,10 L 50,90 L 90,10" />
+            <path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
+        </svg>
+    </div>
+    
+    <div class="fixed top-0 right-0 m-4 " style="position: fixed; top: 0; right: 0; margin: 40px;"><a href="../recap.html" id="home-btn" ><img id="home-btn" src="../static/image/asset/close-btn.png" style="width: 50px; height: auto; filter: drop-shadow(1px 1px 10px hwb(0 100% 0%));" alt=""></a></div>
+    
+    <img id="welcome-sign1" src="../static/image/recap/photossign.png" alt="Welcome Sign">
+    <div class="photo-slider-container">
+        <button class="nav-button prev" id="prev">&#10094;</button>
+        <div class="photo-slider">
+            <div class="slide">
+                <img id="image" src="../static/image/gallary/108.jpg" alt="Photo 1">
+                <p class="caption">Photo 1: Best Marry Christmas ever on life</p>
+            </div>
+            <div class="slide">
+                <img id="image" src="../static/image/gallary/102.jpg" alt="Photo 2">
+                <p class="caption">Photo 2: So much cute, when we try a couple shirt</p>
+            </div>
+            <div class="slide">
+                <img id="image" src="../static/image/gallary/47.jpg" alt="Photo 3">
+                <p class="caption">Photo 3: first photo booth, and that's <br>still the beautiful one on my memories</p>
+            </div>
+            <div class="slide">
+                <img id="image" src="../static/image/asset/background.jpg" alt="Photo 4">
+                <p class="caption">Photo 4: we first Jumper in pusgiwa, i really <br>like and very happy mass with you</p>
+            </div>
+            <div class="slide">
+                <img id="image" src="../static/image/gallary/152.png" alt="Photo 5">
+                <p class="caption">Photo 5: even not too long with you in eco park tebet,<br>i feel so happy, and my face on this photo can't hide that happines</p>
+            </div>
+            <div class="slide">
+                <img id="image" src="../static/image/gallary/webcam14.jpg" alt="Photo 6">
+                <p class="caption">Photo 6: This is our cutest photo ever </p>
+            </div>
+            <div class="slide">
+                <img id="image" src="../static/image/recap/photorecap2.png" alt="Photo 7">
+                <p class="caption">That's all Photos of the Year</p>
+            </div>
+        </div>
+        <button class="nav-button next" id="next">&#10095;</button>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.photo-slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+
+        function updateSlidePosition() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+            updateSlidePosition();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+            updateSlidePosition();
+        });
+
+        // Drag functionality
+        let isDragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Kecepatan geser
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>

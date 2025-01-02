@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Of The Year</title>
+    <link rel="stylesheet" href="../static/css/recapStyle.css">
+    <link rel="stylesheet" href="../static/css/styles4.css">
+    <script src="../static/js/srcipts.js"></script>
+    
+    
+</head>
+<body >
+    
+    <!-- Loading screen -->
+    <div id="loading-screen">
+        <svg class="loader" viewBox="0 0 100 100">
+            <path class="letter" d="M 10,10 L 50,90 L 90,10" />
+            <path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
+        </svg>
+    </div>
+    
+    
+        <div class="fixed top-0 right-0 m-4 " style="position: fixed; top: 0; right: 0; margin: 40px;"><a href="../recap.html" id="home-btn" ><img id="home-btn" src="../static/image/asset/close-btn.png" style="width: 50px; height: auto; filter: drop-shadow(1px 1px 10px hwb(0 100% 0%));" alt=""></a></div>
+    
+        <img id="welcome-sign1" src="../static/image/recap/placesign.png" alt="Welcome Sign">
+        <div class="photo-slider-container">
+            <button class="nav-button prev" id="prev">&#10094;</button>
+            <div class="photo-slider">
+                <div class="slide">
+                    <img id="image" src="../static/image/gallary/47.jpg" alt="Photo 1">
+                    <p class="caption">Photo 1: our first photobooth at 18 october 2024, <br> afeter parade</p>
+                </div>
+                <div class="slide">
+                    <img id="image" src="../static/image/gallary/74.jpg" alt="Photo 2">
+                
+                        <p class="caption">Photo 2: our second photobooth at 10 november 2024 <br> look how ecited you are with new hair style</p>
+                    
+                </div>
+                <div class="slide">
+                    <img id="image" src="../static/image/gallary/102.jpg" alt="Photo 3">
+                    <p class="caption">Photo 3: our third times go to the same photobooth at 1 december 2024. <br> and this is our first time couple shirt </p>
+                </div>
+                <div class="slide">
+                    <video controls autoplay loop muted playsinline><source src="../static/image/gallary/vid1.mp4" type="video/mp4"></video>
+                    <p class="caption">Photo 4: our fourth times in photoboot, <br> but this time the photobooth place in <br> eco park tebet</p>
+                </div>
+                
+                <div class="slide">
+                    <img id="image" src="../static/image/gallary/134.jpg" alt="Photo 6">
+                    <p class="caption">Photo 5: perpusat is our basecamp huh HAHAHAAHA  </p>
+                </div>
+                <div class="slide">
+                    <img id="image" src="../static/image/gallary/webcam14.jpg" alt="Photo 6">
+                    <p class="caption">Photo 6: i guess the answer is yes (perpusat is our basecamp),<br>just look how cute it is</p>
+                </div>
+                <div class="slide">
+                    <img id="image" src="../static/image/gallary/94.jpg" alt="Photo 6">
+                    <p class="caption">Photo 7: another perpusat photos HAHAHAHAHA</p>
+                </div>
+                <div class="slide">
+                    <img id="image" src="../static/image/gallary/101.jpg" alt="Photo 6">
+                    <p class="caption">Photo 8: when i suprised you with pacil jersey in perpusat,<br> the reaction is perfect HAHAHAHA</p>
+                </div>
+                <div class="slide">
+                    <img id="image" src="../static/image/gallary/36.jpg" alt="Photo 5">
+                    <p class="caption">Photo 9: this is the first time you went to pusgiwa, <br> jumper with me, noone describe how happy i am>///<</p>
+                </div>
+                <div class="slide">
+                    <img id="image" src="../static/image/recap/placeRecap.png" alt="Photo 7">
+                    <p class="caption">And Here It is The Place Of The Year</p>
+                </div>
+                
+            </div>
+            <button class="nav-button next" id="next">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.photo-slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+
+        function updateSlidePosition() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+            updateSlidePosition();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+            updateSlidePosition();
+        });
+
+        // Drag functionality
+        let isDragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Kecepatan geser
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>

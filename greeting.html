@@ -9,38 +9,38 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<style>
         body {
-            cursor: url('static/image/cursorOrigami32.png'), auto;
+            cursor: url('static/image/asset/cursorOrigami32.png'), auto;
         }
 
 		a{
-			cursor: url('static/image/hand.png'),pointer;
+			cursor: url('static/image/asset/hand.png'),pointer;
 		}
 		
 		button img{
-			cursor: url('static/image/hand.png'),pointer;
+			cursor: url('static/image/asset/hand.png'),pointer;
 		}
 
 		/* Kelas untuk waktu tertentu */
 		.morning {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/sunrise2.jpg");
+			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/asset/sunrise2.jpg");
 			background-size: cover;
 			background-position: center;
 		}
 		
 		.noon {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/background4.jpg");
+			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/asset/background4.jpg");
 			background-size: cover;
 			background-position: center;
 		}
 		
 		.evening {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/sunset.jpg");
+			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/asset/sunset.jpg");
 			background-size: cover;
 			background-position: center;
 		}
 		
 		.night {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/night.jpg");
+			background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url("static/image/asset/night.jpg");
 			background-size: cover;
 			background-position: center;
 		}
@@ -83,10 +83,11 @@
 	
 						<!-- Desktop Menu -->
 						<div class="hidden md:flex items-center space-x-8">
-							<a class='hover:scale-150 duration-500' href='index.html'><img id="drop-shadow"  src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-							<a class='hover:scale-150 duration-500' href="gallery.html"><img id="drop-shadow" src="static/image/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span class="text-white">Gallery</span></a>
-							<a class='hover:scale-150 duration-500' href='games.html'><img id="drop-shadow" src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a>
-							<a class='hover:scale-150 duration-500' href='aboutThisWeb.html'><img id="drop-shadow" src="static/image/information.png" alt="About" class="w-15 h-10 mx-auto" ><span class="text-white">About</span></a>
+							<a class='hover:scale-150 duration-500' href='index.html'><img id="drop-shadow"  src="static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
+							<a class='hover:scale-150 duration-500 ' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
+							<a class='hover:scale-150 duration-500' href="gallery.html"><img id="drop-shadow" src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span class="text-white">Gallery</span></a>
+							<!-- <a class='hover:scale-150 duration-500' href='games.html'><img id="drop-shadow" src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a> -->
+							<a class='hover:scale-150 duration-500' href='aboutThisWeb.html'><img id="drop-shadow" src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto" ><span class="text-white">About</span></a>
 						</div>
 
 						<!-- Mobile Menu Button -->
@@ -102,13 +103,15 @@
 	
 				<!-- Mobile Menu (hidden by default) -->
 				<div class="mobile-menu hidden text-start grid grid-flow-col space-x-6 opacity-0 scale-95 transform transition-all duration-500">
-					<a class='hover:scale-150 duration-500' href='index.html'><img id="drop-shadow"  src="static/image/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-					<a class='hover:scale-150 duration-500' href="gallery.html"><img id="drop-shadow" src="static/image/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span class="text-white">Gallery</span></a>
-					<a class='hover:scale-150 duration-500' href='games.html'><img id="drop-shadow" src="static/image/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a>
-					<a class='hover:scale-150 duration-500' href='aboutThisWeb.html'><img id="drop-shadow" src="static/image/information.png" alt="About" class="w-15 h-10 mx-auto" ><span class="text-white">Abou</span>t</a>
+					<a class='hover:scale-150 duration-500' href='index.html'><img id="drop-shadow"  src="static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
+					<a class='hover:scale-150 duration-500 ' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
+					<a class='hover:scale-150 duration-500' href="gallery.html"><img id="drop-shadow" src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span class="text-white">Gallery</span></a>
+					<!-- <a class='hover:scale-150 duration-500' href='games.html'><img id="drop-shadow" src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a> -->
+					<a class='hover:scale-150 duration-500' href='aboutThisWeb.html'><img id="drop-shadow" src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto" ><span class="text-white">Abou</span>t</a>
 				</div>
 			</nav>
 		</div>
+		
 
 		
 
@@ -122,6 +125,7 @@
 						<!-- <div class="flex items-center justify-center"><img src="https://i.pinimg.com/736x/5c/49/5a/5c495ade15d5afc693db714d996c64e0.jpg" alt="Deskripsi Gambar" class="pb-8"></div> -->
 						  <p class="doc-text" id="google-doc-content">mengambil konten...</p>
 						  <p class="doc-text" ><strong id="last-paraf"  ></strong></p>
+						  
 					</div>
 				</div>
 				

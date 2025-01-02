@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Of The Year</title>
+    <link rel="stylesheet" href="../static/css/recapStyle.css">
+    <link rel="stylesheet" href="../static/css/styles4.css">
+    <script src="../static/js/srcipts.js"></script>
+    
+    
+</head>
+<body >
+    
+    <!-- Loading screen -->
+    <div id="loading-screen">
+        <svg class="loader" viewBox="0 0 100 100">
+            <path class="letter" d="M 10,10 L 50,90 L 90,10" />
+            <path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
+        </svg>
+    </div>
+    
+    <div class="fixed top-0 right-0 m-4 " style="position: fixed; top: 0; right: 0; margin: 40px;"><a href="../recap.html" id="home-btn" ><img id="home-btn" src="../static/image/asset/close-btn.png" style="width: 50px; height: auto; filter: drop-shadow(1px 1px 10px hwb(0 100% 0%));" alt=""></a></div>
+    
+    <img id="welcome-sign1" src="../static/image/recap/musicssign.png" alt="Welcome Sign">
+    <div class="photo-slider-container">
+        <button class="nav-button prev" id="prev">&#10094;</button>
+        <div class="photo-slider">
+            <div class="slide">
+                <img id="image" src="../static/image/recap/back at one.jpg" alt="Photo 1">
+                <p class="caption">Music 1:When you hear this for fisrt time in september, <br> the lyrics just describe the condition you have right now</p>
+            </div>
+            <div class="slide">
+                <img id="image" src="../static/image/recap/juno.png" alt="Photo 3">
+                <p class="caption">Music 2: junno is the memorable song when you came into my life... <br> in my mind, it's just describe your feeling and represent your desire</p>
+            </div>
+            <div class="slide">
+                <img id="image" src="../static/image/recap/santa doesnt know u like i do.jpg" alt="Photo 4">
+                <p class="caption">Music 3: this song is remind me a lot of you and how cutest you are,<br>and from your persepctive, this song is describe you so much</p>
+            </div>
+            <div class="slide">
+                <img id="image" src="../static/image/recap/die_with_a_smile.png" alt="Photo 2">
+                <p class="caption">Music 4:  song is my favorite song this year, cuz it'ss really<br> describe my love, and i just think this song is just remind me of you</p>
+            </div>
+            
+            <div class="slide">
+                <img id="image" src="../static/image/recap/The_Color_of_Love_Single.jpg" alt="Photo 5">
+                <p class="caption">Music 5: i have not ability to make you see how sepcial you are <br> from my eyes, but this song describe you in my eyes </p>
+            </div>
+          
+            <div class="slide">
+                <img id="image" src="../static/image/recap/kita.png" alt="Photo 5">
+                <p class="caption">Music 6: i think this first song really sticks with us</p>
+            </div>
+            
+            <div class="slide">
+                <img id="image" src="../static/image/recap/musicRecap1.png" alt="Photo 7">
+                <p class="caption">music of the Year</p>
+            </div>
+            <div class="slide">
+                <img id="image" src="../static/image/recap/musicRecap2.png" alt="Photo 7">
+                <p class="caption">That's all music of the Year</p>
+            </div>
+        </div>
+        <button class="nav-button next" id="next">&#10095;</button>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.photo-slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+
+        function updateSlidePosition() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+            updateSlidePosition();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+            updateSlidePosition();
+        });
+
+        // Drag functionality
+        let isDragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Kecepatan geser
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>
