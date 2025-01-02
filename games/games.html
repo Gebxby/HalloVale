@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/styles4.css">
+    <script src="static/js/srcipts.js"></script>
+    <title>Game Mochi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/asset/backgroundMochi.jpg');
+            background-size: cover;
+            background-position: center;
+            cursor: url('static/image/asset/asset/cursorOrigami32.png'), auto;
+        }
+        a{
+			cursor: url('static/image/asset/asset/hand.png'),pointer;
+		}
+        .menu-container {
+    position: absolute;
+    top: 20px; /* Jarak dari atas */
+    right: 20px; /* Jarak dari kanan */
+    z-index: 10; /* Pastikan menu berada di atas elemen lainnya */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Jarak antar ikon */
+    padding: 5px; /* Tambahkan padding agar lebih rapi */
+}
+
+.menu-icon {
+    width: 50px; /* Ukuran ikon yang pas */
+    height: 50px;
+    transition: transform 0.2s ease;
+}
+
+.menu-icon:hover {
+    transform: scale(1.2); /* Efek hover lebih menonjol */
+}
+
+@media screen and (max-width: 768px) {
+    .menu-container {
+        top: 10px; /* Kurangi jarak pada layar kecil */
+        right: 10px;
+    }
+
+    .menu-icon {
+        width: 40px; /* Ukuran ikon lebih kecil */
+        height: 40px;
+    }
+}
+
+
+        .menu-icon:hover {
+            transform: scale(1.1); /* Efek hover */
+        }
+
+        .score-container {
+            position: absolute;
+            top: 60px; /* Jarak dari atas, sehingga tidak tumpang tindih dengan menu */
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 5; /* Lebih rendah dari menu */
+        }
+
+
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            
+            overflow: hidden;
+        }
+
+        .mochi {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('static/image/asset/mochi2.png');
+            background-position: center;
+            background-size: cover;
+            animation: fall 5s linear infinite;
+        }
+
+        .mochiVer2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('static/image/asset/mochiVar1.png');
+            background-position: center;
+            background-size: covar;
+            animation: fall 5s linear infinite;
+        }
+
+        .mochiVer3 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('static/image/asset/mochiVer2.png');
+            background-position: center;
+            background-size: cover;
+            animation: fall 5s linear infinite;
+        }
+        .cireng {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-image: url('static/image/asset/cireng5.png');
+            background-position: center;
+            background-size: cover;
+            animation: fall 5s linear infinite;
+        }
+
+        .buah {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-position: center;
+            background-size: cover;
+            animation: fall 6s linear infinite;
+        }
+
+        .buah.banana {
+            background-image: url('static/image/asset/banana.png');
+        }
+
+        .buah.apple {
+            background-image: url('static/image/asset/apple.png');
+        }
+
+        .buah.mango {
+            background-image: url('static/image/asset/mango.png');
+        }
+
+        .buah.anggur {
+            background-image: url('static/image/asset/anggur.png');
+        }
+        .buah.naga{
+            background-image: url('static/image/asset/naga.png');
+        }
+        .buah.semangka{
+            background-image: url('static/image/asset/semangka.png');
+        }
+        .player {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 200px;
+            background-image: url('static/image/asset/player.png');
+            background-position: center;
+            background-size: cover;
+        }
+        .player.ratu-mochi {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 250px;
+            background-image: url('static/image/asset/RatuMochi.png');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .player.ratu-cireng {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 250px;
+            background-image: url('static/image/asset/RatuCireng.png');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .score {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -50px;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+
+        .score-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .score-container div {
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: 768px) {
+            .menu-container {
+                top: 5px; /* Mengurangi jarak pada layar kecil */
+                right: 5px;
+            }
+
+            .menu-icon {
+                width: 30px; /* Ikon lebih kecil */
+                height: 30px;
+            }
+
+            .score-container {
+                top: 50px; /* Geser lebih rendah untuk memberi ruang menu */
+                left: 5px;
+                font-size: 14px; /* Ukuran font lebih kecil */
+            }
+
+            .player {
+                width: 100px; /* Ukuran pemain lebih kecil */
+                height: 150px;
+            }
+
+            .mochi, .cireng {
+                width: 80px; /* Ukuran objek lebih kecil */
+                height: 80px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+		<svg class="loader" viewBox="0 0 100 100">
+			<!-- "V" Letter -->
+			<path class="letter" d="M 10,10 L 50,90 L 90,10" />
+			<!-- "G" Letter -->
+			<path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
+		</svg>
+	</div>
+    <div class="game-container relative">
+        <!-- Score Container -->
+        <div class="score-container absolute top-4 left-4 margin-bottom bg-white p-4 rounded-lg shadow-md text-sm">
+            <div>Sudah Mam Berapa Mochi: <span id="mochi-score">0</span></div>
+            <div>Sudah Mam Berapa Cireng: <span id="cireng-score">0</span></div>
+            <div>Score: <span id="score">0</span></div>
+        </div>
+        
+    
+        <!-- Menu Container -->
+        <div class="menu-container absolute top-4 right-4 bottom-4 flex flex-col items-center gap-3 mr-10">
+            <a href="index.html" class='hover:scale-150 duration-500 '><img src="static/image/asset/home.png" alt="Home" class="menu-icon"></a>
+            <a href="recap.html" class='hover:scale-150 duration-500 '><img src="static/image/asset/repeat.png" alt="Repeat" class="menu-icon"></a>
+            <a href="gallery.html" class='hover:scale-150 duration-500 '><img src="static/image/asset/gallery.png" alt="Gallery" class="menu-icon"></a>
+            <a href="greeting.html" class='hover:scale-150 duration-500 '><img src="static/image/asset/love-letter.png" alt="message" class="menu-icon"></a>
+            <a href="aboutThisWeb.html" class='hover:scale-150 duration-500 '><img src="static/image/asset/information.png" alt="About" class="menu-icon"></a>
+        </div>
+    
+        <!-- Player -->
+        <div class="player" id="player"></div>
+    </div>
+    
+
+   
+    <audio loop autoplay> <source src="static/music/Naruto - Naruto's Daily Life.mp4" ></audio>
+
+    <script>
+        const gameContainer = document.querySelector('.game-container');
+        const player = document.getElementById('player');
+        const scoreElement = document.getElementById('score');
+        const mochiScoreElement = document.getElementById('mochi-score');
+        const cirengScoreElement = document.getElementById('cireng-score');
+        // Sound effects
+        const hitSound = new Audio('https://artlist.io/sfx/track/mobile-game---interface-item-collection-positive/63636'); // Suara terkena buah
+        const wahTidakEnakSound = new Audio('static/music/WahTidakEnak.FLAC'); // Suara pemain
+        const wahEnakSound = new Audio('static/music/WahEnak.FLAC'); // Suara pemain
+
+        const maxItems = 10;
+        let currentItems = 0; // Jumlah item saat ini di layar
+
+
+
+        let score = 0;
+        let mochiS = 0;
+        let cirengS = 0;
+
+        // Player movement
+        let playerPosition = 50;
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft' && playerPosition > 0) {
+                playerPosition -= 5;
+            } else if (event.key === 'ArrowRight' && playerPosition < 100) {
+                playerPosition += 5;
+            }
+            player.style.left = playerPosition + '%';
+        });
+        // Player movement using touch
+        gameContainer.addEventListener('touchstart', (event) => {
+            const touchX = event.touches[0].clientX; // Mendapatkan posisi X dari sentuhan
+            const gameContainerRect = gameContainer.getBoundingClientRect(); // Mendapatkan posisi game container
+            const touchPosition = ((touchX - gameContainerRect.left) / gameContainerRect.width) * 100;
+
+            // Update posisi pemain berdasarkan sentuhan
+            playerPosition = Math.min(Math.max(touchPosition, 0), 100); // Membatasi posisi agar tetap dalam area game
+            player.style.left = playerPosition + '%';
+        });
+        // Spawn mochi
+        // Set jumlah maksimum item yang dapat muncul di layar
+          
+
+            function spawnMochi() {
+                if (currentItems >= maxItems) return; // Batasi jumlah item di layar
+                const mochiTypes = ['mochi','mochiVer2','mochiVer3'];
+                const randomMochi = mochiTypes[Math.floor(Math.random() * mochiTypes.length)];
+                const mochi = document.createElement('div');
+                mochi.classList.add('mochi',randomMochi);
+                const mochiPosition = Math.random() * 100;
+                mochi.style.left = mochiPosition + '%';
+                gameContainer.appendChild(mochi);
+                currentItems++; // Tambah jumlah item di layar
+
+                const fallInterval = setInterval(() => {
+                    const mochiTop = parseFloat(getComputedStyle(mochi).getPropertyValue('top'));
+                    const playerRect = player.getBoundingClientRect();
+                    const mochiRect = mochi.getBoundingClientRect();
+
+                    // Cek tabrakan dengan player
+                    if (
+                        mochiRect.bottom >= playerRect.top &&
+                        mochiRect.left < playerRect.right &&
+                        mochiRect.right > playerRect.left
+                    ) {
+                        score += 3;
+                        mochiS += 1;
+                        scoreElement.textContent = score;
+                        mochiScoreElement.textContent = mochiS;
+
+                        if (mochiS >= 100 && !player.classList.contains('ratu-mochi')) {
+                            player.classList.add('ratu-mochi');
+                            document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/asset/backgroundMochi2.jpg')"; 
+                            alert('Selamat! Kamu telah menjadi Ratu Mochi!');
+                            gameContainer.classList.add('ratu-background');
+                        }
+
+                        wahEnakSound.currentTime = 0; // Reset waktu audio agar selalu mulai dari awal
+                        wahEnakSound.play().catch((error) => {
+                            console.error('Gagal memutar suara:', error);
+                        });
+                        mochi.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
+                    }
+
+                    // Hapus mochi jika jatuh keluar layar
+                    if (mochiTop >= window.innerHeight) {
+                        mochi.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
+                    }
+                }, 50);
+            }
+
+            function spawnCireng() {
+                if (currentItems >= maxItems) return; // Batasi jumlah item di layar
+
+                const cireng = document.createElement('div');
+                cireng.classList.add('cireng');
+                const cirengPosition = Math.random() * 100;
+                cireng.style.left = cirengPosition + '%';
+                gameContainer.appendChild(cireng);
+                currentItems++; // Tambah jumlah item di layar
+
+                const fallInterval = setInterval(() => {
+                    const cirengTop = parseFloat(getComputedStyle(cireng).getPropertyValue('top'));
+                    const playerRect = player.getBoundingClientRect();
+                    const cirengRect = cireng.getBoundingClientRect();
+
+                    // Cek tabrakan dengan player
+                    if (
+                        cirengRect.bottom >= playerRect.top &&
+                        cirengRect.left < playerRect.right &&
+                        cirengRect.right > playerRect.left
+                    ) {
+                        score += 10;
+                        cirengS += 1;
+                        scoreElement.textContent = score;
+                        cirengScoreElement.textContent = cirengS;
+
+                        if (cirengS >= 50 && !player.classList.contains('ratu-cireng')) {
+                            player.classList.add('ratu-cireng');
+                            document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.671)),url('static/image/asset/backgroundMochi3.jpg')"; 
+                            alert('Selamat! Kamu telah menjadi Ratu Cireng!');
+                            gameContainer.classList.add('ratu-background');
+                        }
+
+                        cireng.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
+                    }
+
+                    // Hapus cireng jika jatuh keluar layar
+                    if (cirengTop >= window.innerHeight) {
+                        cireng.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
+                    }
+                }, 50);
+            }
+
+            function spawnBuah() {
+                if (currentItems >= maxItems) return; // Batasi jumlah item di layar
+
+                const buahTypes = ['banana', 'apple', 'mango', 'anggur','naga','semangka'];
+                const randomBuah = buahTypes[Math.floor(Math.random() * buahTypes.length)];
+
+                const buah = document.createElement('div');
+                buah.classList.add('buah', randomBuah);
+                const buahPosition = Math.random() * 100;
+                buah.style.left = buahPosition + '%';
+                gameContainer.appendChild(buah);
+                currentItems++; // Tambah jumlah item di layar
+
+                const fallInterval = setInterval(() => {
+                    const buahTop = parseFloat(getComputedStyle(buah).getPropertyValue('top'));
+                    const playerRect = player.getBoundingClientRect();
+                    const buahRect = buah.getBoundingClientRect();
+
+                    // Cek tabrakan dengan player
+                    if (
+                        buahRect.bottom >= playerRect.top &&
+                        buahRect.left < playerRect.right &&
+                        buahRect.right > playerRect.left
+                    ) {
+                        score -=2;
+                        if (score < 0) score = 0; // Pastikan skor tidak negatif
+                        scoreElement.textContent = score;
+
+
+                        wahTidakEnakSound.currentTime = 0; // Reset waktu audio agar selalu mulai dari awal
+                        wahTidakEnakSound.play().catch((error) => {
+                            console.error('Gagal memutar suara:', error);
+                        });
+
+
+                        buah.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
+                    }
+
+                    // Hapus buah jika jatuh keluar layar
+                    if (buahTop >= window.innerHeight) {
+                        buah.remove();
+                        currentItems--; // Kurangi jumlah item di layar
+                        clearInterval(fallInterval);
+                    }
+                }, 50);
+            }
+
+            // Spawn item secara teratur
+            setInterval(() => {
+                spawnMochi();
+                spawnBuah()
+
+                if (mochiS >= 10) { // Perbaikan dari variabel yang salah
+                    spawnCireng();
+                }
+            }, 1000);
+
+    </script>
+</body>
+</html>  
