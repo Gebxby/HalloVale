@@ -49,11 +49,11 @@ a {
   transition-duration: 1s;
 }
 
-#imgRecap1:hover { filter: drop-shadow(1px 1px 10px hwb(209 11% 0%)); }
+/* #imgRecap1:hover { filter: drop-shadow(1px 1px 10px hwb(209 11% 0%)); }
 #imgRecap2:hover { filter: drop-shadow(1px 1px 10px #ff9d9d); }
 #imgRecap3:hover { filter: drop-shadow(1px 1px 10px #ff409c); }
 #imgRecap4:hover { filter: drop-shadow(1px 1px 10px #fff30f); }
-#imgRecap5:hover { filter: drop-shadow(1px 1px 10px #0fffc7); }
+#imgRecap5:hover { filter: drop-shadow(1px 1px 10px #0fffc7); } */
 
 #imgrecap1,#imgrecap2,#imgrecap3,#imgrecap4,#imgrecap5:hover{
   filter: drop-shadow(1px 1px 10px #000000);
@@ -74,8 +74,6 @@ a {
   }
 }
 
-
-/* media query buat halaman utama recap */
 @media (min-width: 414px) and (max-width: 500px) {
   #welcome-sign {
       max-width: 90%;
@@ -100,155 +98,4 @@ a {
   line-height: 1.4; /* Tambahkan jarak antar baris agar lebih mudah dibaca */
   padding: 0 10px; /* Tambahkan padding untuk menghindari teks menyentuh tepi layar */
   text-align: center; /* Teks rata tengah untuk tampilan lebih baik */
-}
-
-/* Tombol navigasi */
-.nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 24px;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10; /* Tambahkan z-index */
-  pointer-events: auto; /* Pastikan tombol dapat diklik */
-}
-
-/* Tombol prev */
-.prev {
-  left: 10px; /* Jarak dari tepi kiri */
-}
-
-/* Tombol next */
-.next {
-  right: 10px; /* Jarak dari tepi kanan */
-}
-
-/* Container untuk slider */
-.photo-slider-container {
-  position: relative;
-  width: 80%;
-  margin: 60px;
-  margin-bottom: 200px;
-  overflow: hidden;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh; /* Atur tinggi slider */
-}
-
-/* Slider utama */
-.photo-slider {
-  display: flex;
-  transition: transform 1.5s ease-in-out; /* Transisi halus */
-  width: calc(100% * 7); /* 7 adalah jumlah slide */
-  align-items: center;
-}
-
-/* Setiap slide */
-.slide {
-  min-width: 100%;
-  text-align: center;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Gambar */
-.slide img {
-  max-width: 80%; /* Batasi lebar gambar */
-  max-height: 50vh; /* Batasi tinggi gambar */
-  object-fit: contain; /* Pastikan gambar tidak terpotong */
-  border-radius: 10px;
-}
-
-/* Keterangan */
-.caption {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #f0f0f0;
-}
-
-/* media query untuk tiap recap page */
-@media (min-width: 768px) and (max-width: 1700px) {
-  #welcome-sign1 {
-  max-width: 70%;
-  margin-top: 100px;
-}
-.photo-slider-container {
-  width: 100%; /* Gunakan seluruh lebar layar */
-  height: auto; /* Biarkan tinggi menyesuaikan *//
-}
-
-.slide img, .slide video {
-  max-width: 90%;
-  max-height: 40vh;
-}
-
-.caption {
-  font-size: 0.9rem; /* Ukuran teks yang lebih kecil */
-  word-wrap: break-word; /* Memastikan kata panjang akan dipotong */
-  white-space: normal; /* Izinkan teks menyusun ke bawah */
-  line-height: 1.4; /* Tambahkan jarak antar baris agar lebih mudah dibaca */
-  padding: 0 10px; /* Tambahkan padding untuk menghindari teks menyentuh tepi layar */
-  text-align: center; /* Teks rata tengah untuk tampilan lebih baik */
-}
-
-.nav-button {
-  font-size: 18px;
-  padding: 8px;
-}
-}
-
-@media (min-width: 414px) and (max-width: 480px) {
-.photo-slider-container {
-  width: 100%; /* Gunakan seluruh lebar layar */
-  height: auto; /* Biarkan tinggi menyesuaikan *//
-}
-.slide{
-  min-width: 100%; /* Sesuaikan lebar slide */
-  padding: 10px; /* Tambahkan padding untuk memberi ruang */
-}
-
-.slide img, .slide video {
-  
-  max-width: 100%;
-  max-height: 30vh;
-}
-
-.caption {
-  font-size: 0.9rem; /* Ukuran teks yang lebih kecil */
-  word-wrap: break-word; /* Memastikan kata panjang akan dipotong */
-  white-space: normal; /* Izinkan teks menyusun ke bawah */
-  line-height: 1; /* Tambahkan jarak antar baris agar lebih mudah dibaca */
-  padding: 0 15px; /* Tambahkan padding untuk menghindari teks menyentuh tepi layar */
-  text-align: center; /* Teks rata tengah untuk tampilan lebih baik */
-}
-
-.nav-button {
-  font-size: 16px;
-  padding: 5px;
-}
-}
-#welcome-sign1{
-display: grid;
-justify-items: center;
-align-items: center;
-max-height: auto;
-max-width: 80%;
-object-fit: contain;
-
-
-}
-@media (min-width: 414px) and (max-width: 500px) {
-#welcome-sign1 {
-  max-width: 90%;
-  margin-top: 100px;
-}
 }
