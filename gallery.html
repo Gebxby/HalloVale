@@ -99,20 +99,24 @@
 		
 		
 		</script>
-		<!-- <br><br><br><br><br><br><br> -->
-		<div class="image-container ">
-			<div id="photo-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-center items-center ">
+		<div class="image-container">
+			<div id="photo-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-center items-center">
 				<!-- Foto-foto akan dimasukkan secara dinamis oleh JavaScript -->
 			</div>
-			<div class="overlay" id="${photo.id}">
-				<a href="#" class="close-btn text-white " ><img src="static/image/asset/close-btn.png" alt="Close Button" ></a>
-				
-				<img class="img" style="cursor: url('static/image/hand.png'),pointer;">
-				
+		
+			<!-- Overlay -->
+		
+			<div class="overlay  fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+				<div class="relative bg-white p-6 rounded-lg max-w-[90%] text-center">
+					<img class="overlay-img max-w-full max-h-[70vh] rounded-lg" alt="Overlay Image">
+					<p class="caption mt-4 text-gray-800"></p>
+					<button class="close-btn absolute top-2 right-2 text-black bg-gray-200 rounded-full p-2 hover:bg-gray-300">✕</button>
+				</div>
 			</div>
+			
 		</div>
-	</div>
-
+		
+	
 	<script>
 		function clickImg() {
 			const photos = [
@@ -244,51 +248,53 @@
 			
 		];
 
-    // Referensi ke elemen grid
-    const photoGrid = document.getElementById("photo-grid");
+		const photoGrid = document.getElementById("photo-grid");
+        const overlay = document.querySelector(".overlay");
+        const overlayImg = overlay.querySelector(".overlay-img");
+        const overlayCaption = overlay.querySelector(".caption");
+        const closeButton = overlay.querySelector(".close-btn");
 
-    // Referensi ke elemen overlay
-    const overlay = document.querySelector(".overlay");
-    const overlayImg = overlay.querySelector("img");
+        // Loop untuk membuat elemen foto di grid
+        photos.forEach((photo) => {
+            const photoDiv = document.createElement("div");
+            photoDiv.className = "photo w-full h-auto object-cover bg-white rounded-lg";
 
-	const photoPerPage = 12;
-	const currenPage= 1;
+            photoDiv.innerHTML = `
+                <img src="${photo.url}" alt="${photo.desc}" style="cursor: url('static/image/hand.png'),pointer;" 
+                     class="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer">
+                <div class="desc text-center text-gray-700 mt-2">${photo.desc}</div>
+            `;
 
-    // Loop melalui array data gambar
-    photos.forEach(photo => {
-        // Buat elemen div
-        const photoDiv = document.createElement("div");
-        photoDiv.className = "photo w-full h-auto object-cover bg-white rounded-lg";
+            // Event klik untuk menampilkan overlay
+            photoDiv.querySelector("img").addEventListener("click", () => {
+                overlayImg.src = photo.url; // Set gambar di overlay
+                overlayCaption.textContent = photo.desc || "Tidak ada deskripsi"; // Set caption
+                overlay.classList.remove("hidden"); // Tampilkan overlay
+                overlay.classList.add("flex"); // Flexbox untuk posisi tengah
+            });
 
-        // Tambahkan elemen anchor dan img
-        photoDiv.innerHTML = `
-            <img src="${photo.url}" alt="${photo.desc}" style="cursor: url('static/image/hand.png'),pointer;" 
-                 class="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer">
-            <div class="desc text-center text-gray-700 mt-2">${photo.desc}</div>
-        `;
+            photoGrid.appendChild(photoDiv); // Tambahkan ke grid
+        });
 
-        // Tambahkan event listener untuk klik gambar
-			photoDiv.querySelector("img").addEventListener("click", () => {
-				overlayImg.src = photo.url; // Set gambar di overlay
-				overlay.classList.remove("hidden"); // Tampilkan overlay
-			});
+        // Event klik untuk menutup overlay
+        closeButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            overlay.classList.add("hidden"); // Sembunyikan overlay
+            overlay.classList.remove("flex");
+        });
 
-				// Tambahkan elemen ke grid
-				photoGrid.appendChild(photoDiv);
-			});
+        // Tutup overlay jika pengguna mengklik area luar gambar
+        overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) {
+                overlay.classList.add("hidden");
+                overlay.classList.remove("flex");
+            }
+        });
+    }
 
-    // Event listener untuk menutup overlay
-			
-			overlay.classList.add("hidden"); // Sembunyikan overlay
-
-			document.querySelector(".close-btn").addEventListener("click", () => {
-				overlay.classList.add("hidden"); // Sembunyikan overlay
-			});
-			
-		};
-		clickImg();
-		
-	</script>
+    // Panggil fungsi setelah DOM siap
+    document.addEventListener("DOMContentLoaded", clickImg);
+</script>
 	
 
 <footer class="footer mt-20 py-4 bg-gray-200 text-center text-gray-700">  

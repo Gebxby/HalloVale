@@ -91,21 +91,60 @@ nav a{
 }
 
 /* Gaya default untuk overlay */
-.overlay {
-    
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.61);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 50;
-    padding: 20px; /* Sesuaikan padding */
+/* Tampilan galeri */
+.image-container .photo img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.image-container .photo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-container .photo .desc {
+    font-size: 0.9rem;
+    color: #4A5568; /* Gray-700 */
+}
+.hidden {
+    display: none;
+}
+
+/* Overlay */
+.overlay {
+    display: none;
+}
+
+.overlay.flex {
+    display: flex;
+}
+
+.overlay .overlay-img {
+    border-radius: 10px;
+    cursor: url('static/image/hand.png'), pointer;
+}
+
+.overlay .close-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.overlay .close-btn:hover {
+    transform: scale(1.1);
+}
+
+
+/* Responsiveness */
+@media (max-width: 640px) {
+    .image-container .photo img {
+        transform: scale(1.05);
+    }
+
+    .overlay .close-btn {
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
 
 .overlay img {
     max-height: 90%; /* Batasi tinggi gambar maksimum */
