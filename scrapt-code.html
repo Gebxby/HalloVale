@@ -1,0 +1,52 @@
+<!-- Carousel Container -->
+<div class="carousel-container">
+    <!-- Slider -->
+    <div class="carousel-slider">
+        <!-- Card 1 -->
+        <section class="card">
+            <div class="container p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
+                <p id="content-1" class="m-5">klik tombol di bawah untuk membaca pesan 💕</p>
+                <audio id="audio-player" src="static/music/Rocco - l-o-v-e (Official Lyric Video).flac" type="audio/mp3" class="mt-4"></audio>
+                <button type="button" onclick='document.getElementById("content-1").innerHTML=showMessage(150,true,false);' class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
+                    <img src="static/image/right-arrow.png" alt="">
+                </button>
+            </div>
+        </section>
+
+        <!-- Card 2 -->
+        <section class="card">
+            <div class="container p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-blue-500 bg-opacity-25 relative">
+                <p id="content-2" class="m-5">hallo mi amor</p>
+                <button type="button" onclick='document.getElementById("content-2").innerHTML=showMessage(0,false,true);' class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
+                    <img src="static/image/right-arrow.png" alt="">
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button class="nav-button prev" id="prev">&#10094;</button>
+    <button class="nav-button next" id="next">&#10095;</button>
+</div>
+
+<script>
+    const slider = document.querySelector('.carousel-slider');
+    const cards = document.querySelectorAll('.card');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+
+    function updateSlidePosition() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
+        updateSlidePosition();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+        updateSlidePosition();
+    });
+</script>

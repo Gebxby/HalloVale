@@ -44,7 +44,7 @@ nav a{
     font-family: Georgia, serif;
 
 }
-#content-1, #Indexcontent:hover{
+#content-1:hover, #Indexcontent:hover{
     color: white;
     background-color: #ff58bfce;
     border-radius: 10px;
