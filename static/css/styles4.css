@@ -369,3 +369,77 @@ a img:hover{
 
 
 
+/* love timeline style */
+
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+    color: white;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: scale(1.05);
+}
+
+.timeline-content {
+    padding: 10px 20px;
+    background-color: #fe4baa57;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #e91e63;
+    border-radius: 50%;
+    top: 20px;
+    left: -5px;
+}
+
+.timeline-item:nth-child(odd)::before {
+    left: -5px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: calc(100% - 5px);
+}
+
+.edit-timeline-button {
+    display: inline-block;
+    margin-left:0; /* Mengatur margin atas dan bawah, serta auto untuk kiri dan kanan */
+    padding: 10px 20px;
+    background-color: #e91e63; /* Warna latar belakang sesuai tema */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.edit-timeline-button:hover {
+    background-color: #ff4081; /* Warna latar belakang saat hover */
+    transform: translateY(-2px); /* Efek mengangkat saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.edit-timeline-button:active {
+    transform: translateY(0); /* Efek saat tombol ditekan */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
