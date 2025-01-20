@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hallo Valeria</title>
-    <link rel="stylesheet" href="static/css/styles4.css">
-    <link rel="stylesheet" href="static/css/contentIndexStyles.css">
-    <script src="static/js/srcipts.js"></script>
+    <title>Quizy</title>
+    <link rel="stylesheet" href="../../static/css/styles4.css">
+   
+    <script src="../../static/js/srcipts.js"></script>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -102,6 +102,23 @@
                 min-width: 25%; /* Show 4 cards at once */
             }
         }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff58bf;
+        }
     </style>
 </head>
 <body style="background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url('static/image/gallary/110.jpg'); background-size: cover; background-position:center; ">
@@ -127,8 +144,7 @@
 						<!-- Desktop Menu -->
 					
 						<div class="hidden md:flex items-center space-x-8">
-                            <a class='hover:scale-150 duration-500 ' href='modul/Love timeline/LoveTimeline.html'><img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Love Timeline</span></a>
-                            <a class='hover:scale-150 duration-500 ' href='modul/viritual Letter/ViritualLoveLetter.html'><img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">VLL</span></a>
+                            <a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
 							<a class='hover:scale-150 duration-500 ' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
 							<a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
 							<!-- <a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Game</span></a> -->
@@ -186,24 +202,73 @@
         </script>
 
         <!-- Content -->
-		<div class="grid flex justify-center items-center h-screen slideInY">
-			<section class="contents">
-				<div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
-					<div class="praf">
-						<p id="Indexcontent" class="m-5">klik tombol dibawah untuk membaca pesan 💕</p>
-						<audio id="audio-player" src="static/music/Christian Bautista - Beautiful Girl (Official Music Video).mp3" type="audio/mp3" class="mt-4"></audio>
-
-					</div>
-					<!-- Tombol di tengah bawah dari container -->
-					<button type="button" onclick='document.getElementById("Indexcontent").innerHTML=showMessage(150);' 
-						class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
-						<img src="static/image/asset/right-arrow.png" alt="">
-					</button>
-				</div>
-				
-			</section>
-		</div>
-        
+        <div id="couple-quiz" class="mt-10">
+            <h2 class="text-3xl font-bold text-center text-white mb-8">Couple Quiz</h2>
+            <div class="quiz-container">
+                <div id="question" class="text-xl text-white mb-4"></div>
+                <div id="options" class="mb-4">
+                    <!-- Options will be dynamically inserted here -->
+                </div>
+                <button id="next-question" class="px-6 py-2 bg-pink-500 text-white rounded-md hover:bg-pink-600">Next Question</button>
+                <div id="score" class="mt-4 text-white">Score: 0</div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is your partner's favorite color?",
+                options: ["Red", "Blue", "Green", "Yellow"],
+                answer: "Blue"
+            },
+            {
+                question: "Where did you first meet?",
+                options: ["School", "Work", "Party", "Online"],
+                answer: "Online"
+            },
+            {
+                question: "What is your partner's favorite food?",
+                options: ["Pizza", "Sushi", "Burger", "Pasta"],
+                answer: "Sushi"
+            },
+            // Add more questions as needed
+        ];
+    
+        let currentQuestionIndex = 0;
+        let score = 0;
+    
+        function loadQuestion() {
+            const questionElement = document.getElementById('question');
+            const optionsElement = document.getElementById('options');
+            const currentQuestion = questions[currentQuestionIndex];
+    
+            questionElement.textContent = currentQuestion.question;
+            optionsElement.innerHTML = '';
+    
+            currentQuestion.options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.className = 'option-button px-4 py-2 bg-white text-black rounded-md mr-2 mb-2';
+                button.addEventListener('click', () => checkAnswer(option));
+                optionsElement.appendChild(button);
+            });
+        }
+    
+        function checkAnswer(selectedOption) {
+            const currentQuestion = questions[currentQuestionIndex];
+            if (selectedOption === currentQuestion.answer) {
+                score++;
+            }
+            document.getElementById('score').textContent = `Score: ${score}`;
+            currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+            loadQuestion();
+        }
+    
+        document.getElementById('next-question').addEventListener('click', loadQuestion);
+    
+        // Initial load
+        loadQuestion();
+    </script>
+    
 </body>
-</html>
