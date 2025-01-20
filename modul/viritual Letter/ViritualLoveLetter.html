@@ -128,12 +128,12 @@
 						<!-- Desktop Menu -->
 					
 						<div class="hidden md:flex items-center space-x-8">
-                            <a class='hover:scale-150 duration-500 ' href='index.html'><img src="../../static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-							<a class='hover:scale-150 duration-500 ' href='recap.html'><img src="../../static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
+                            <a class='hover:scale-150 duration-500 ' href='../../index.html'><img src="../../static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
+							<a class='hover:scale-150 duration-500 ' href='../../recap.html'><img src="../../static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
 							<a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="../../static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
-							<!-- <a class='hover:scale-150 duration-500 ' href='games.html'><img src="../../static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Game</span></a> -->
-							<a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="../../static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white text-center">Text</span></a>
-							<a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="../../static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">About</span></a>
+							<!-- <a class='hover:scale-150 duration-500 ' href='../../games.html'><img src="../../static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Game</span></a> -->
+							<a class='hover:scale-150 duration-500 ' href='../../greeting.html'><img src="../../static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white text-center">Text</span></a>
+							<a class='hover:scale-150 duration-500 ' href='../../aboutThisWeb.html'><img src="../../static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">About</span></a>
 						</div>
 					
 	
@@ -186,7 +186,7 @@
         </script>
 
         <!-- Content -->
-        <div id="virtual-love-letter" class="mt-10">
+        <div id="virtual-love-letter" class="mt-10 h-screen">
             <h2 class="text-3xl font-bold text-center text-white mb-8">Virtual Love Letter</h2>
             <div class="letter-container">
                 <textarea id="love-letter" class="w-full p-4 text-black rounded-md" rows="10" placeholder="Write your love letter here..."></textarea>
@@ -199,5 +199,50 @@
         </div>
         </div>
     </div>
+    <script>
+        
+    function renderLetters() {
+        const lettersContainer = document.getElementById('letters');
+        lettersContainer.innerHTML = '';
+        const letters = JSON.parse(localStorage.getItem('letters') || '[]');
+
+        letters.forEach((letter, index) => {
+            const letterDiv = document.createElement('div');
+            letterDiv.className = 'letter-item mb-4 p-4 bg-white text-black rounded-md';
+            letterDiv.innerHTML = `
+                <p>${letter}</p>
+                <button class="delete-letter bg-red-500 text-white rounded-md px-4 py-1 mt-2" data-index="${index}">Delete</button>
+            `;
+            lettersContainer.appendChild(letterDiv);
+        });
+    }
+
+    document.getElementById('post-letter').addEventListener('click', () => {
+        const newLetter = document.getElementById('new-letter').value;
+        if (newLetter.trim() !== '') {
+            let letters = JSON.parse(localStorage.getItem('letters') || '[]');
+            letters.push(newLetter);
+            localStorage.setItem('letters', JSON.stringify(letters));
+            document.getElementById('new-letter').value = '';
+            renderLetters();
+        }
+    });
+
+    document.getElementById('letters').addEventListener('click', (e) => {
+        if (e.target.classList.contains('delete-letter')) {
+            const index = e.target.getAttribute('data-index');
+            let letters = JSON.parse(localStorage.getItem('letters') || '[]');
+            letters.splice(index, 1);
+            localStorage.setItem('letters', JSON.stringify(letters));
+            renderLetters();
+        }
+    });
+
+    // Initial render
+    window.addEventListener('load', () => {
+        renderLetters();
+    });
+
+    </script>
     
 </body>
