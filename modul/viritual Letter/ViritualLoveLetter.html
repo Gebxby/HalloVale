@@ -186,21 +186,19 @@
         </script>
 
         <!-- Content -->
-        <div id="virtual-love-letter" class="mt-10 h-screen">
-            <h2 class="text-3xl font-bold text-center text-white mb-8">Virtual Love Letter</h2>
-            <div class="letter-container">
-                <textarea id="love-letter" class="w-full p-4 text-black rounded-md" rows="10" placeholder="Write your love letter here..."></textarea>
-                <button id="save-letter" class="mt-4 px-6 py-2 bg-pink-500 text-white rounded-md hover:bg-pink-600">Save Letter</button>
-                <div id="saved-message" class="mt-4 text-white hidden">Your love letter has been saved!</div>
-            </div>
-            <div id="letters" class="mt-8">
-                <!-- Posted letters will be dynamically inserted here -->
-            </div>
-        </div>
-        </div>
+<div id="virtual-love-letter" class="mt-10 h-screen">
+    <h2 class="text-3xl font-bold text-center text-white mb-8">Virtual Love Letter</h2>
+    <div class="letter-container">
+        <textarea id="love-letter" class="w-full p-4 text-black rounded-md" rows="10" placeholder="Write your love letter here..."></textarea>
+        <button id="save-letter" class="mt-4 px-6 py-2 bg-pink-500 text-white rounded-md hover:bg-pink-600">Save Letter</button>
+        <div id="saved-message" class="mt-4 text-white hidden">Your love letter has been saved!</div>
     </div>
-    <script>
-        
+    <div id="letters" class="mt-8">
+        <!-- Posted letters will be dynamically inserted here -->
+    </div>
+</div>
+
+<script>
     function renderLetters() {
         const lettersContainer = document.getElementById('letters');
         lettersContainer.innerHTML = '';
@@ -217,13 +215,17 @@
         });
     }
 
-    document.getElementById('post-letter').addEventListener('click', () => {
-        const newLetter = document.getElementById('new-letter').value;
+    document.getElementById('save-letter').addEventListener('click', () => {
+        const newLetter = document.getElementById('love-letter').value;
         if (newLetter.trim() !== '') {
             let letters = JSON.parse(localStorage.getItem('letters') || '[]');
             letters.push(newLetter);
             localStorage.setItem('letters', JSON.stringify(letters));
-            document.getElementById('new-letter').value = '';
+            document.getElementById('love-letter').value = '';
+            document.getElementById('saved-message').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('saved-message').classList.add('hidden');
+            }, 3000);
             renderLetters();
         }
     });
@@ -242,7 +244,6 @@
     window.addEventListener('load', () => {
         renderLetters();
     });
-
-    </script>
+</script>
     
 </body>
