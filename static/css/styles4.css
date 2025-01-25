@@ -18,9 +18,18 @@ body{
    
 }
 
-
+.navbar{
+    /* background-color: #fe4baa57; */
+    background-color: #e12d81a7;
+    border-radius: 25px;
+    margin: auto;
+    padding: 10px 20px;
+    max-width: 2500px;   
+    
+} 
 nav{
-    background-color: #fe4baa57;
+    /* background-color: #fe4baa57; */
+    background-color: #ff83f084;
     border: solid;
     border-color: white;
  

@@ -50,3 +50,123 @@
         updateSlidePosition();
     });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Main content -->
+ <div style="display: none;" id="main-content">
+    <!-- Navbar -->
+    <div id="navbar">
+        <nav class="slideInY mt-10 backdrop-blur-sm">
+            <div class="mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flax display block">
+                        <img src="static/image/asset/wave hand.png" alt="" class="w-10 h-auto deg-3">
+                        <h1 class="text-2xl font-bold text-white">
+                            <a href="count_up.html" class="text-2xl font-bold text-center text-white">Hallo Valeria</a>
+                        </h1>
+                    </div>
+                    <!-- Desktop Menu -->
+                
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a class='hover:scale-150 duration-500 ' href='modul/Love timeline/LoveTimeline.html'><img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Love Timeline</span></a>
+                        <a class='hover:scale-150 duration-500 ' href='modul/viritual Letter/ViritualLoveLetter.html'><img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">VLL</span></a>
+                        
+                        <a class='hover:scale-150 duration-500 ' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
+                        <a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
+                        <!-- <a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Game</span></a> -->
+                        <a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white text-center">Text</span></a>
+                        <a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">About</span></a>
+                    </div>
+                
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="mobile-menu-button">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (hidden by default) -->
+            <div class="mobile-menu hidden text-start grid grid-flow-col space-x-8 opacity-0 scale-95 transform transition-all duration-500">
+                <a class='hover:scale-150 duration-500 ' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
+                <a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
+                <!-- <a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Game</span></a> -->
+                <a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white text-center">Text</span></a>
+                <a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">About</span></a>
+                
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        const btn = document.querySelector('.mobile-menu-button');
+        const menu = document.querySelector('.mobile-menu');
+
+        // Event listener untuk menu toggle
+        btn.addEventListener('click', () => {
+        if (menu.classList.contains('hidden')) {
+            // Menu terbuka
+            menu.classList.remove('hidden');
+            setTimeout(() => {
+            menu.classList.add('opacity-100', 'scale-100');
+            menu.classList.remove('opacity-0', 'scale-95');
+            }, 50); // Sedikit delay agar transisi terlihat
+        } else {
+            // Menu tertutup
+            menu.classList.add('opacity-0', 'scale-95');
+            menu.classList.remove('opacity-100', 'scale-100');
+            setTimeout(() => {
+            menu.classList.add('hidden');
+            }, 500); // Sesuai durasi animasi Tailwind
+        }
+        });
+        
+    </script>
+
+    <!-- Carousel Container -->
+    <div class="carousel-container">
+        <!-- Slider -->
+        <div class="carousel-slider">
+            <!-- Card 1 -->
+            <section class="card">
+                <div class="container p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
+                    <p id="content-1" class="m-5">klik tombol di bawah untuk membaca pesan 💕</p>
+                    <audio id="audio-player" src="static/music/Rocco - l-o-v-e (Official Lyric Video).flac" type="audio/mp3" class="mt-4"></audio>
+                    <button type="button" onclick='document.getElementById("content-1").innerHTML=showMessage(150,true,false);' class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
+                        <img src="static/image/asset/right-arrow.png" alt="">
+                    </button>
+                </div>
+            </section>
+
+            <!-- Card 2 -->
+            <section class="card">
+                <div class="container p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-blue-500 bg-opacity-25 relative">
+                    <p id="content-2" class="m-5">hallo mi amor</p>
+                    <button type="button" onclick='document.getElementById("content-2").innerHTML=showMessage(0,false,true);' class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
+                        <img src="static/image/asset/right-arrow.png" alt="">
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="nav-button prev" id="prev">&#10094;</button>
+        <button class="nav-button next" id="next">&#10095;</button>
+    </div>
+
+    
+</div>
