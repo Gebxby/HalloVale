@@ -1,5 +1,6 @@
-// Your existing photo array remains the same
-const allPhotos = [ 
+
+    // Your existing photo array remains the same
+    const allPhotos = [ 
     { url: "static/image/gallary/1.jpg", desc: "Lporis adipisci consectetur iure soluta placeat, consequuntur sint quaerat provident aliquid, quam suscipit?", id:"gambar 1"},
     { url: "static/image/gallary/2.jpg", desc: "", id:"gambar 2" },
             { url: "static/image/gallary/3.jpg", desc: "", id:"gambar 3" },
@@ -259,17 +260,3 @@ overlay.classList.remove("flex");
             });
         });
     }
-
-    // Initialize
-    document.addEventListener("DOMContentLoaded", () => {
-        loadImages(1);
-        setupImageOverlay();
-    });
-
-    // Pagination handlers
-    document.querySelectorAll('.page-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            currentPage = parseInt(btn.dataset.page);
-            loadImages(currentPage);
-        });
-    });
