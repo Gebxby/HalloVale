@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Love Timeline</title>
     <link rel="stylesheet" href="../../static/css/styles4.css">
+    <link rel="stylesheet" href="../Love timeline/static/LTstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <script src="../../static/js/srcipts.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -20,84 +22,10 @@
             cursor: url('../../static/image/asset/hand.png'), pointer;
         }
 
-        .edit-timeline-button {
-            display: inline-block;
-            margin: 20px auto;
-            padding: 10px 30px;
-            background-color: #e91e63;
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 25px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .edit-timeline-button:hover {
-            background-color: #ff4081;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .edit-timeline-button:active {
-            transform: translateY(0);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .iframe-container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 80%;
-            max-width: 800px;
-            height: 80vh;
-            position: relative;
-        }
-
-        .iframe-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 10px;
-        }
-
-        .close-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #e91e63;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 20px;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            z-index: 1100; /* Ensure button is above the iframe */
-        }
-
-        .close-button:hover {
-            background-color: #ff4081;
-        }
+        
     </style>
 </head>
-<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url('../../static/image/gallary/110.jpg'); background-size: cover; background-position:center; ">
+<body style="background-color: antiquewhite;">
     <!-- Loading screen -->
     <div id="loading-screen">
         <svg class="loader" viewBox="0 0 100 100">
@@ -105,58 +33,120 @@
             <path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
         </svg>
     </div>
+    <div id="bakcgrouund-head m-10">
+        <img src="../Love timeline/static/img/LT-head.png" alt="">
+    </div>
     <!-- Main content -->
-    <div id="main-content">
+    <div style="height: 2000px; background-color: antiquewhite; position: relative;">
         <!-- Navbar -->
         <div id="navbar">
-            <nav class="slideInY mt-10 backdrop-blur-sm">
-                <div class="mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex items-center justify-between h-16">
-                        <h1 class="text-2xl font-bold text-center text-white">
-                            <a href="count_up.html" class="text-2xl font-bold text-center text-white">Hallo Valeria</a>
-                        </h1>
-                        <!-- Desktop Menu -->
-                        <div class="hidden md:flex items-center space-x-8">
-                            <a class='hover:scale-150 duration-500' href='../../index.html'><img id="drop-shadow" src="../../static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-                            <a class='hover:scale-150 duration-500 ' href='../../recap.html'><img src="../../static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
-                            <a class='hover:scale-150 duration-500 ' href="../../gallery.html"><img src="../../static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
-                            <a class='hover:scale-150 duration-500 ' href='../../greeting.html'><img src="../../static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white text-center">Text</span></a>
-                            <a class='hover:scale-150 duration-500 ' href='../../aboutThisWeb.html'><img src="../../static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">About</span></a>
-                        </div>
-                        <!-- Mobile Menu Button -->
-                        <div class="md:hidden flex items-center">
-                            <button class="mobile-menu-button">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M4 6h16M4 12h16M4 18h16"></path>
-                                </svg>
-                            </button>
-                        </div>
+            <nav class="bg-amber-900 bg-opacity-50 backdrop-blur p-4 mt-10">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-2xl font-bold text-white"><a href="count_up.html">HALLO VALERIA</a></h1>
+        
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a class='hover:scale-150 duration-500 ' href='../../index.html'><img src="../../static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white text-center">Home</span></a>
+                        <a class='hover:scale-150 duration-500 ' href='../../modul/poetry/poetry.html'><img src="../../static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Poetry</span></a>
+                        <a class='hover:scale-150 duration-500 ' href='../../modul/recap/recap.html'><img src="../../static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Recap</span></a>
+                        <a class='hover:scale-150 duration-500 ' href="../../gallery.html"><img src="../../static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
+                        <a class='hover:scale-150 duration-500 ' href='../../greeting.html'><img src="../../static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white text-center">Text</span></a>
+                        <a class='hover:scale-150 duration-500 ' href='../../aboutThisWeb.html'><img src="../../static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">About</span></a>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="mobile-menu-button text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
-                <!-- Mobile Menu (hidden by default) -->
-                <div class="mobile-menu hidden text-start grid grid-flow-col space-x-8 opacity-0 scale-95 transform transition-all duration-500">
-                    <a class='hover:scale-150 duration-500' href='../../index.html'><img id="drop-shadow" src="../../static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-                    <a class='hover:scale-150 duration-500 ' href='../../recap.html'><img src="../../static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
-                    <a class='hover:scale-150 duration-500 ' href="../../gallery.html"><img src="../../static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
-                    <a class='hover:scale-150 duration-500 ' href='../../greeting.html'><img src="../../static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white text-center">Text</span></a>
-                    <a class='hover:scale-150 duration-500 ' href='../../aboutThisWeb.html'><img src="../../static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">About</span></a>
-                </div>
             </nav>
-        </div>
+
+            <div class="drawer mobile-menu backdrop-blur">
+                <a href="#" class="close text-white flex text-center mb-4"><img src="../../static/image/asset/close-btn.png" alt="" class="w-10 h-10"></a>
+                <a class="hover:scale-150 duration-500 " href="../../index.html">
+                    <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                        <img src="../../static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto">
+                        <span class="text-white text-center px-16">Home</span>
+                    </div>
+                </a>
+                
+                <a class="hover:scale-150 duration-500 " href="../../modul/poetry/poetry.html">
+                    <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                        <img src="../../static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto">
+                        <span class="text-white text-center px-16">Poetry</span>
+                    </div>
+                </a>
+                <a class="hover:scale-150 duration-500 " href="../../modul/recap/recap.html">
+                    <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                        <img src="../../static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto">
+                        <span class="text-white text-center px-16">Recap</span>
+                    </div>
+                </a>
+                <a class="hover:scale-150 duration-500 " href="../../gallery.html">
+                    <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                        <img src="../../static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto">
+                        <span class="text-white text-center px-16">Gallery</span>
+                    </div>
+                </a>
+                <a class="hover:scale-150 duration-500 " href="../../greeting.html">
+                    <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                        <img src="../../static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto">
+                        <span class="text-white text-center px-16">Text</span>
+                    </div>
+                </a>
+                <a class="hover:scale-150 duration-500 " href="../../aboutThisWeb.html">
+                    <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                        <img src="../../static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto">
+                        <span class="text-white text-center px-16">About</span>
+                    </div>
+                </a>
+            </div>
+        
+            <!-- Overlay -->
+            <div class="overlay"></div>
+        
+            <script>
+                const btn = document.querySelector('.mobile-menu-button');
+                const clsebtn = document.querySelector('.close');
+                const drawer = document.querySelector('.drawer');
+                const overlay = document.querySelector('.overlay');
+        
+                // Toggle the drawer menu
+                btn.addEventListener('click', () => {
+                    drawer.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                });
+        
+                // Close the drawer menu when clicking the close button
+                clsebtn.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    drawer.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+        
+                // Close the drawer menu when clicking outside
+                overlay.addEventListener('click', () => {
+                    drawer.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+            </script>
+
+           
 
         <!-- Content -->
         <div id="love-timeline" class="mt-10 h-screen">
-            <h2 class="text-3xl font-bold text-center text-white mb-8">Love Timeline 2025</h2>
+           
             <div class="timeline-container">
                 <div id="timeline-item">
                     <!-- Timeline items will be dynamically inserted here -->
                 </div>
             </div>
-            <button class="edit-timeline-button"><a href="https://docs.google.com/document/d/1Y76PGfbeC7ZxPUBR5J9vv58jiCXGV9FeJP8X7JFyOZo/edit?usp=sharing">Edit Timeline</a></button>
+            <button class="edit-timeline-button flex items-center justify-center"><a href="https://docs.google.com/document/d/1Y76PGfbeC7ZxPUBR5J9vv58jiCXGV9FeJP8X7JFyOZo/edit?usp=sharing">Edit Timeline</a></button>
         </div>
-        <!-- onclick="showGoogleDoc()" -->
     </div>
-
+    
     <!-- Overlay for Google Doc -->
     <div class="overlay" id="overlay">
         <button class="close-button" onclick="closeGoogleDoc()">×</button>
@@ -176,27 +166,7 @@
             overlay.style.display = 'none';
         }
 
-        const btn = document.querySelector('.mobile-menu-button');
-        const menu = document.querySelector('.mobile-menu');
-
-        // Event listener untuk menu toggle
-        btn.addEventListener('click', () => {
-            if (menu.classList.contains('hidden')) {
-                // Menu terbuka
-                menu.classList.remove('hidden');
-                setTimeout(() => {
-                    menu.classList.add('opacity-100', 'scale-100');
-                    menu.classList.remove('opacity-0', 'scale-95');
-                }, 50); // Sedikit delay agar transisi terlihat
-            } else {
-                // Menu tertutup
-                menu.classList.add('opacity-0', 'scale-95');
-                menu.classList.remove('opacity-100', 'scale-100');
-                setTimeout(() => {
-                    menu.classList.add('hidden');
-                }, 500); // Sesuai durasi animasi Tailwind
-            }
-        });
+        
 
         async function fetchTimelineData() {
             try {

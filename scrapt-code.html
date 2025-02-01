@@ -114,6 +114,24 @@
 
     <script>
         const btn = document.querySelector('.mobile-menu-button');
+        const drawer = document.querySelector('.drawer');
+        const overlay = document.querySelector('.overlay');
+
+        // Event listener untuk menu toggle
+        btn.addEventListener('click', () => {
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        // Event listener untuk menutup drawer saat overlay diklik
+        overlay.addEventListener('click', () => {
+            drawer.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
+
+    <script>
+        const btn = document.querySelector('.mobile-menu-button');
         const menu = document.querySelector('.mobile-menu');
 
         // Event listener untuk menu toggle

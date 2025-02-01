@@ -9,15 +9,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
          body {
-            display: flex;
+            
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Tinggi 100% dari viewport untuk vertikal centering */
+            height: auto;
             margin: 5;
             font-family: Arial, sans-serif;
             cursor: url('static/image/cursorOrigami32.png'), auto;
             
             
+        }
+
+        .cumulative-days{
+            font-size: xx-large;
+        }
+        .Allcontents{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+            padding: 0;
+           height: 100px;
         }
         #timer-container{
             display: grid;
@@ -26,11 +38,11 @@
             text-align: center;
             margin: 5;
         }
-        .timer-value {
+        .timer-value ,  .cumulative-days{
             font-size: 100px;
-            color: #000000;
+            color: #ffffff;
         }
-        .foot-timer {
+        .foot-timer , #days-value{
             font-size: 25px;
             color: #ffffff;
         }
@@ -57,9 +69,11 @@
 			    cursor: url('static/image/hand.png'),pointer;
 		    }
         }
+        
+      
     </style>
 </head>
-<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5)), url('static/image/gallary/110.jpg'); background-size: cover; background-position: center;">
+<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.5)), url('static/image/gallary/110.jpg'); background-size: cover;background-attachment: fixed; background-position: center;">
 
     <div id="loading-screen">
 		<svg class="loader" viewBox="0 0 100 100">
@@ -70,32 +84,140 @@
 		</svg>
 	</div>
 
-    <div id="timer-container" class="m-5 p-5 bg-pink-400 bg-opacity-50 border-2 border-black rounded-xl ">
-        <!-- Bagian nilai waktu -->
-        <div id="years" class="timer-value">0:</div>
-        <div id="months" class="timer-value">0:</div>
-        <div id="days" class="timer-value">0:</div>
-        <div id="hours" class="timer-value">0:</div>
-        <div id="minutes" class="timer-value">0:</div>
-        <div id="seconds" class="timer-value">0</div>
+    <header>
 
-        <!-- Bagian label untuk setiap unit waktu -->
-        <div class="foot-timer"><p><strong>years</strong></p></div>
-        <div class="foot-timer"><p><strong>months</strong></p></div>
-        <div class="foot-timer"><p><strong>days</strong></p></div>
-        <div class="foot-timer"><p><strong>hours</strong></p></div>
-        <div class="foot-timer"><p><strong>minutes</strong></p></div>
-        <div class="foot-timer"><p><strong>seconds</strong></p></div>
-    </div>
+    </header>
+    
+    <nav class="bg-pink-700 bg-opacity-50 backdrop-blur p-4 mt-10">
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white"><a href="count_up.html">COUNT UP</a></h1>
 
-    <div class="link-container">
-        <a href="index.html">
-            <img src="static/image/asset/home.png" alt="Home" class="w-7 h-7">
+            <div class="hidden md:flex items-center space-x-8">
+                <a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/asset/home.png" alt="message" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white text-center">Home</span></a>
+                <a class='hover:scale-150 duration-500 ' href='modul/Love timeline/LoveTimeline.html'><img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Love Timeline</span></a>
+                <a class='hover:scale-150 duration-500 ' href='modul/poetry/poetry.html'><img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Poetry</span></a>
+                <a class='hover:scale-150 duration-500 ' href='modul/recap/recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Recap</span></a>
+                <a class='hover:scale-150 duration-500 ' href="modul/Gallery/Gallery.html"><img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
+                <a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white text-center">Text</span></a>
+                <a class='hover:scale-150 duration-500 ' href='modul/about.html'><img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">About</span></a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button class="mobile-menu-button text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="drawer mobile-menu backdrop-blur">
+        <a href="#" class="close text-white flex text-center mb-4"><img src="static/image/asset/close-btn.png" alt="" class="w-10 h-10"></a>
+        <a class="hover:scale-150 duration-500 " href="index.html">
+            <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                <img src="static/image/asset/home.png" alt="message" class="w-15 h-10 mx-auto">
+                <span class="text-white text-center px-16">Home</span>
+            </div>
         </a>
-        <a href="gallery.html" class="text-white px-4 py-2 ">
-            <img src="static/image/asset/gallery.png" alt="Gallery" class="w-7 h-7">
+        <a class="hover:scale-150 duration-500 " href="modul/Love timeline/LoveTimeline.html">
+            <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                <img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto">
+                <span class="text-white text-center px-16">Love Timeline</span>
+            </div>
+        </a>
+        <a class="hover:scale-150 duration-500 " href="modul/poetry/poetry.html">
+            <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                <img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto">
+                <span class="text-white text-center px-16">Poetry</span>
+            </div>
+        </a>
+        <a class="hover:scale-150 duration-500 " href="recap.html">
+            <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                <img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto">
+                <span class="text-white text-center px-16">Recap</span>
+            </div>
+        </a>
+        <a class="hover:scale-150 duration-500 " href="gallery.html">
+            <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                <img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto">
+                <span class="text-white text-center px-16">Gallery</span>
+            </div>
+        </a>
+        <a class="hover:scale-150 duration-500 " href="greeting.html">
+            <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                <img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto">
+                <span class="text-white text-center px-16">Text</span>
+            </div>
+        </a>
+        <a class="hover:scale-150 duration-500 " href="modul/about.html">
+            <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                <img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto">
+                <span class="text-white text-center px-16">About</span>
+            </div>
         </a>
     </div>
+    <div class="overlay"></div>
+    
+    <script>
+        const btn = document.querySelector('.mobile-menu-button');
+        const clsebtn = document.querySelector('.close');
+        const drawer = document.querySelector('.drawer');
+        const overlay = document.querySelector('.overlay');
+
+        // Toggle the drawer menu
+        btn.addEventListener('click', () => {
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        // Close the drawer menu when clicking the close button
+        clsebtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            drawer.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Close the drawer menu when clicking outside
+        overlay.addEventListener('click', () => {
+            drawer.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
+
+    <div class="Allcontents">
+        <section class="content" id="clock-timeUp">
+            <div id="timer-container" class="m-5 p-5 bg-pink-700 bg-opacity-50 backdrop-blur border-2 border-white rounded-xl ">
+                <!-- Bagian nilai waktu -->
+                <div id="years" class="timer-value">0:</div>
+                <div id="months" class="timer-value">0:</div>
+                <div id="days" class="timer-value">0:</div>
+                <div id="hours" class="timer-value">0:</div>
+                <div id="minutes" class="timer-value">0:</div>
+                <div id="seconds" class="timer-value">0</div>
+        
+                <!-- Bagian label untuk setiap unit waktu -->
+                <div class="foot-timer"><p><strong>years</strong></p></div>
+                <div class="foot-timer"><p><strong>months</strong></p></div>
+                <div class="foot-timer"><p><strong>days</strong></p></div>
+                <div class="foot-timer"><p><strong>hours</strong></p></div>
+                <div class="foot-timer"><p><strong>minutes</strong></p></div>
+                <div class="foot-timer"><p><strong>seconds</strong></p></div>
+            </div>
+        
+           
+        </section>
+    
+        <section class="content" id="count-days">
+            <div class="m-5 p-5 bg-pink-700 bg-opacity-50 backdrop-blur border-2 border-white rounded-xl flex justify-between gap-4 items-center">
+                <div class="cumulative-days" id="days-value"> 0 </div>
+                <div class="foot-timer text-2xl"><p><strong>DAYS</strong></p></div>
+            </div>
+           
+        </section>
+    </div>
+    
 
     <script>
         // Set tanggal mulai (29 Agustus 2024)
@@ -103,12 +225,14 @@
 
         function updateTimer() {
             // Ambil waktu sekarang
+            
             const now = new Date();
             
             // Hitung selisih dalam milidetik
             let diff = now - startDate;
             
             // Mengonversi selisih waktu ke tahun, bulan, hari, jam, menit, dan detik
+            let cumulativeDays = Math.floor(diff / (1000* 60*60*24));
             let years = now.getFullYear() - startDate.getFullYear();
             let months = now.getMonth() - startDate.getMonth();
             let days = now.getDate() - startDate.getDate();
@@ -140,6 +264,7 @@
             }
 
             // Tampilkan hasil di setiap elemen
+            document.getElementById("days-value").textContent = `${cumulativeDays}`;
             document.getElementById("years").textContent = `${years} :`;
             document.getElementById("months").textContent = `${months} :`;
             document.getElementById("days").textContent = `${days} :`;

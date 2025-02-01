@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hallo Valeria Text</title>
+	<title>Greeting</title>
 	<link rel="stylesheet" href="static/css/styles4.css">
 	<script src="static/js/srcipts.js"></script>
 	<script src="https://cdn.tailwindcss.com"></script>
@@ -71,48 +71,107 @@
 	<div id="main-content" >
 		<!-- navbar -->
 		<div id="navbar">
-			<nav class="slideInY mt-10 backdrop-blur-sm">
-				<div class="mx-auto px-4 sm:px-6 lg:px-8">
-					<div class="flex items-center justify-between h-16">
-						<!-- Logo and Site Title -->
-						<div class="flex items-center">
-							<h1  class="text-2xl font-bold text-center text-white">
-								<a id="greeting" href="count_up.html.html" class="text-2xl font-bold text-center text-white"></a>
-							</h1>
-						</div>
-	
-						<!-- Desktop Menu -->
-						<div class="hidden md:flex items-center space-x-8">
-							<a class='hover:scale-150 duration-500 ' href='modul/Love timeline/LoveTimeline.html'><img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Love Timeline</span></a>
-                            <a class='hover:scale-150 duration-500 ' href='modul/viritual Letter/ViritualLoveLetter.html'><img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">VLL</span></a>
-							<a class='hover:scale-150 duration-500' href='index.html'><img id="drop-shadow"  src="static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-							<a class='hover:scale-150 duration-500 ' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
-							<a class='hover:scale-150 duration-500' href="gallery.html"><img id="drop-shadow" src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span class="text-white">Gallery</span></a>
-							<!-- <a class='hover:scale-150 duration-500' href='games.html'><img id="drop-shadow" src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a> -->
-							<a class='hover:scale-150 duration-500' href='aboutThisWeb.html'><img id="drop-shadow" src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto" ><span class="text-white">About</span></a>
-						</div>
-
-						<!-- Mobile Menu Button -->
-						<div class="md:hidden flex items-center">
-							<button class="mobile-menu-button">
-								<svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-									<path d="M4 6h16M4 12h16M4 18h16"></path>
-								</svg>
-							</button>
-						</div>
+			<nav class="bg-pink-700 bg-opacity-50 backdrop-blur p-4 mt-10">
+				<div class="flex justify-between items-center">
+					<!-- Logo and Site Title -->
+					<div class="flex items-center">
+						<h1  class="text-2xl font-bold text-center text-white">
+							<a id="greeting" href="count_up.html.html" class="text-2xl font-bold text-center text-white"></a>
+						</h1>
+					</div>
+		
+					<div class="hidden md:flex items-center space-x-8">
+						<a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white text-center">Home</span></a>
+						<a class='hover:scale-150 duration-500 ' href='modul/Love timeline/LoveTimeline.html'><img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Love Timeline</span></a>
+						<a class='hover:scale-150 duration-500 ' href='modul/poetry/poetry.html'><img src="static/image/asset/letter.png" alt="poetry" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Poetry</span></a>
+						<a class='hover:scale-150 duration-500 ' href='modul/recap/recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Recap</span></a>
+						<a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
+						<a class='hover:scale-150 duration-500 ' href='modul/about.html'><img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">About</span></a>
+					</div>
+					<!-- Mobile Menu Button -->
+					<div class="md:hidden flex items-center">
+						<button class="mobile-menu-button text-white">
+							<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+							</svg>
+						</button>
 					</div>
 				</div>
-	
-				<!-- Mobile Menu (hidden by default) -->
-				<div class="mobile-menu hidden text-start grid grid-flow-col space-x-6 opacity-0 scale-95 transform transition-all duration-500">
-					<a class='hover:scale-150 duration-500' href='index.html'><img id="drop-shadow"  src="static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-					<a class='hover:scale-150 duration-500 ' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
-					<a class='hover:scale-150 duration-500' href="gallery.html"><img id="drop-shadow" src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span class="text-white">Gallery</span></a>
-					<!-- <a class='hover:scale-150 duration-500' href='games.html'><img id="drop-shadow" src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a> -->
-					<a class='hover:scale-150 duration-500' href='aboutThisWeb.html'><img id="drop-shadow" src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto" ><span class="text-white">Abou</span>t</a>
-				</div>
 			</nav>
-		</div>
+		
+			<!-- Mobile Drawer Menu -->
+			 
+			<div class="drawer mobile-menu backdrop-blur">
+				
+				<a href="#" class="close text-white flex text-center mb-4"><img src="static/image/asset/close-btn.png" alt="" class="w-10 h-10"></a>
+				<a class="hover:scale-150 duration-500 " href="index.html">
+					<div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+						<img src="static/image/asset/home.png" alt="message" class="w-15 h-10 mx-auto">
+						<span class="text-white text-center px-16">Home</span>
+					</div>
+				</a>
+				<a class="hover:scale-150 duration-500 " href="modul/Love timeline/LoveTimeline.html">
+					<div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+						<img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto">
+						<span class="text-white text-center px-16">Love Timeline</span>
+					</div>
+				</a>
+				<a class="hover:scale-150 duration-500 " href="modul/poetry/poetry.html">
+					<div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+						<img src="static/image/asset/letter.png" alt="poetry" class="w-15 h-10 mx-auto">
+						<span class="text-white text-center px-16">Poetry</span>
+					</div>
+				</a>
+				<a class="hover:scale-150 duration-500 " href="recap.html">
+					<div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+						<img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto">
+						<span class="text-white text-center px-16">Recap</span>
+					</div>
+				</a>
+				<a class="hover:scale-150 duration-500 " href="gallery.html">
+					<div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+						<img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto">
+						<span class="text-white text-center px-16">Gallery</span>
+					</div>
+				</a>
+				
+				<a class="hover:scale-150 duration-500 " href="modul/about.html">
+					<div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+						<img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto">
+						<span class="text-white text-center px-16">About</span>
+					</div>
+				</a>
+			</div>
+		
+			<!-- Overlay -->
+			<div class="overlay"></div>
+		
+			<script>
+				const btn = document.querySelector('.mobile-menu-button');
+				const clsebtn = document.querySelector('.close');
+				const drawer = document.querySelector('.drawer');
+				const overlay = document.querySelector('.overlay');
+		
+				// Toggle the drawer menu
+				btn.addEventListener('click', () => {
+					drawer.classList.toggle('active');
+					overlay.classList.toggle('active');
+				});
+		
+				// Close the drawer menu when clicking the close button
+				clsebtn.addEventListener('click', (e) => {
+					e.preventDefault(); // Prevent default anchor behavior
+					drawer.classList.remove('active');
+					overlay.classList.remove('active');
+				});
+		
+				// Close the drawer menu when clicking outside
+				overlay.addEventListener('click', () => {
+					drawer.classList.remove('active');
+					overlay.classList.remove('active');
+				});
+			</script>
+			
 		
 
 		
@@ -148,31 +207,7 @@
 
         document.addEventListener("DOMContentLoaded", fetchGoogleDocContent);
     </script>
-	<script>
-		const btn = document.querySelector('.mobile-menu-button');
-		const menu = document.querySelector('.mobile-menu');
-
-		// Event listener untuk menu toggle
-		btn.addEventListener('click', () => {
-		if (menu.classList.contains('hidden')) {
-			// Menu terbuka
-			menu.classList.remove('hidden');
-			setTimeout(() => {
-			menu.classList.add('opacity-100', 'scale-100');
-			menu.classList.remove('opacity-0', 'scale-95');
-			}, 50); // Sedikit delay agar transisi terlihat
-		} else {
-			// Menu tertutup
-			menu.classList.add('opacity-0', 'scale-95');
-			menu.classList.remove('opacity-100', 'scale-100');
-			setTimeout(() => {
-			menu.classList.add('hidden');
-			}, 500); // Sesuai durasi animasi Tailwind
-		}
-		});
-
-		
-	</script>
+	
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
 			function ChangeBackground() {

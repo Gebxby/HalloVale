@@ -1,10 +1,3 @@
-// $(document).ready(function() {
-//     $('#status-button').click(function() {
-//         $('#status-message').text('Status: Proyek web ini sedang berjalan!');
-//     });
-// });
-
-
 
 let currentMessageIndex = 0;
 audioHasPlay = false

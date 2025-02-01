@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About This Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles4.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('../static/image/asset/about-head2.jpg');
+            background-attachment: fixed;
+            overflow-x: hidden;
+            cursor: url('static/image/cursorOrigami32.png'), auto;
+            scroll-behavior: smooth;
+        }
+        a{
+			cursor: url('static/image/hand.png'),pointer;
+		}
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .hero p{
+            color: #c3cfe2;
+        }
+
+        .section {
+            padding: 100px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section:nth-child(even) {
+            background: white;
+        }
+
+        .content, .image {
+            flex: 1;
+            position: relative;
+        }
+
+        .content {
+            max-width: 600px;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            color: #e91e63;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e91e63;
+            transition: width 0.3s ease;
+        }
+
+        h2:hover::after {
+            width: 100px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #4b5458;
+        }
+
+        .contact-info {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #e91e63;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(233, 30, 99, 0.3);
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2em;
+            position: relative;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-left: 4px solid #e91e63;
+            margin: 20px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #2d3436;
+            color: white;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: inherit;
+            transform: skewY(-2deg);
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background: white;
+            color: #2d3436;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                padding: 50px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .content, .image {
+                width: 100%;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #e91e63;
+            transform-origin: left;
+            z-index: 1000;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: rgba(233, 30, 99, 0.9);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4);
+            background: rgba(233, 30, 99, 1);
+        }
+
+        .back-button:active {
+            transform: translateY(0);
+        }
+
+        .back-button svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover svg {
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .back-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* Add animation for back button */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .back-button {
+            animation: slideIn 0.5s ease-out;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.display = 'none';
+                
+                hasPlayesAudio = false
+                
+            }, 2500); // 5000 milliseconds = 5 seconds
+            document.getElementById('main-content').style.display = 'block';
+        });
+
+    </script>
+</head>
+<body>
+    <div id="loading-screen">
+		<svg class="loader" viewBox="0 0 100 100">
+			<!-- "V" Letter -->
+			<path class="letter" d="M 10,10 L 50,90 L 90,10" />
+			<!-- "G" Letter -->
+			<path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
+		</svg>
+        
+	</div>
+    <div class="scroll-indicator"></div>
+
+    <!-- Back Button -->
+    <a href="../index.html" class="back-button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Back to Home
+    </a>  
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <script>
+        // Previous AOS initialization
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const windowScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (windowScroll / height) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+    </script>
+    <section class="hero">
+        <div data-aos="fade-up">
+            <h1>Welcome to My Story</h1>
+            <p>A journey through creativity and passion</p>
+        </div>
+    </section>
+
+    <section class="section" data-aos="fade-right">
+        <div class="content">
+            <h2>About the Developer</h2>
+            <p>HALLOO INTERNET!<br> My Name is Gabriel,CS UI 23. this is my mini project, i was really excited to make a web after leraning PBP(platform-based programming) in term 3. i was excited in UI/UX, and then try to build a static web like this. i used to practice some kind of UI/UX things like css on this website. in the future, i will learn to make my own portofolio web with node js! </p>
+            <a href="gabrielfenanilmupengetahuan@gmail.com" class="contact-info">Contact Me</a>
+        </div>
+        <div class="image" data-aos="fade-left">
+            <img src="../static/image/asset/GabrielSelwasAboyamanFenanlampir_ FotoDiri.png" alt="Developer" class="profile-pic ">
+        </div>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+        <div class="image">
+            <img src="../static/image/gallary/102-transformed.jpeg" alt="Motivation Image 1">
+        </div>
+        <div class="content">
+            <h2>Back Story About This Web</h2>
+            <p>me and Vale is just a couple, we met about 6 months ago on SBKMK. i was her mentor on a group, we fall in love then we've been toghther. there are many things happend, and the wind are never stop, we just can go forward together; i really love her, so do her. then after 3 months together, i decide to make her a website that can be use to her to remember me. and another reason i want to made a website for her to proof mu love and dedicate, commit and true color of me. i really like to do supprised everyone who i love, and work on this project is so fun, cuz i work for love, and it bring me a love for my work.</p>
+            <div class="quote">
+                "life without love is like a tree without blossoms or fruits"
+                <br>-Kahlil Gibran
+            </div>
+        </div>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+        <div class="content">
+            
+            <div class="quote">
+                "Cara Menciptakan Masa Depan Adalah Dengan Menciptakannya"
+                <br>- Abraham Lincoln
+            </div>
+        </div>
+        <div class="image">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg/640px-Abraham_Lincoln_O-77_matte_collodion_print.jpg" alt="Motivation Image 2">
+        </div>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+        <div class="content">
+            <h2>An Open Letter</h2>
+            <p>Dear Users,</p>
+            <p>Thank you for visiting this website. It is a labor of love and dedication. I aim to provide value and inspire others through my work.</p>
+            <p>With gratitude,<br>Gabriel</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div data-aos="fade-up">
+            <p>&copy; 2024 Gabriel. All Rights Reserved.</p>
+            <!-- <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div> -->
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+   
+</body>
+</html>

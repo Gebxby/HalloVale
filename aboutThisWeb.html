@@ -3,12 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About This Web</title>
 	<link rel="stylesheet" href="static/css/styles4.css">
 	<script src="static/js/srcipts.js"></script>
 	<script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             cursor: url('static/image/cursorOrigami32.png'), auto;
+            scroll-behavior: smooth;
 		
         }
         a{
@@ -29,75 +31,104 @@
 		</svg>
         
 	</div>
+
+    
     
     <div id="navbar">
-        <nav class="slideInY mt-10">
-            <div class="mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-16">
-                    <!-- Logo and Site Title -->
-                    <div class="flex items-center">
-                        <h1 class="text-2xl font-bold text-center text-white">
-                            <a href="secretMsg.html" class="text-2xl font-bold text-center text-white">Hallo Valeria</a>
-                        </h1>
-                    </div>
-
-                    <!-- Desktop Menu -->
-                
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a class='hover:scale-150 duration-500 ' href='modul/Love timeline/LoveTimeline.html'><img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Love Timeline</span></a>
-                        <a class='hover:scale-150 duration-500 ' href='modul/viritual Letter/ViritualLoveLetter.html'><img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">VLL</span></a>
-                        <a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-                        <a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span class="text-white">Gallery</span></a>
-                        <a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a>
-                        <a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span class="text-white">Text</span></a>
-                    </div>
-                
-
-                    <!-- Mobile Menu Button -->
-                    <div class="md:hidden flex items-center">
-                        <button class="mobile-menu-button">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
-                    </div>
+        <nav class="bg-pink-700 bg-opacity-50 backdrop-blur p-4 mt-10">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-white">ABOUT THIS WEB</h1>
+    
+                <div class="hidden md:flex items-center space-x-8">
+                    
+					<a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/asset/home.png" alt="message" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white text-center">Home</span></a>
+                    <a class='hover:scale-150 duration-500 ' href='modul/Love timeline/LoveTimeline.html'><img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Love Timeline</span></a>
+                    <a class='hover:scale-150 duration-500 ' href='modul/viritual Letter/ViritualLoveLetter.html'><img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">VLL</span></a>
+                    <a class='hover:scale-150 duration-500 ' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Recap</span></a>
+                    <a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white text-center">Text</span></a>
+                    <a class='hover:scale-150 duration-500 ' href='aboutThisWeb.html'><img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">About</span></a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
-
-            <!-- Mobile Menu (hidden by default) -->
-            <div class="mobile-menu hidden text-start grid grid-flow-col space-x-6 opacity-0 scale-95 transform transition-all duration-500">
-                <a class='hover:scale-150 duration-500 ' href='index.html'><img src="static/image/asset/home.png" alt="Home" class="w-15 h-10 mx-auto"><span class="text-white">Home</span></a>
-                <a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span class="text-white">Gallery</span></a>
-                <a class='hover:scale-150 duration-500 ' href='games.html'><img src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span class="text-white">Game</span></a>
-                <a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span class="text-white">Text</span></a>
-            </div>
         </nav>
-    </div>
-
-    <script>
-        const btn = document.querySelector('.mobile-menu-button');
-			const menu = document.querySelector('.mobile-menu');
-
-			// Event listener untuk menu toggle
-			btn.addEventListener('click', () => {
-			if (menu.classList.contains('hidden')) {
-				// Menu terbuka
-				menu.classList.remove('hidden');
-				setTimeout(() => {
-				menu.classList.add('opacity-100', 'scale-100');
-				menu.classList.remove('opacity-0', 'scale-95');
-				}, 50); // Sedikit delay agar transisi terlihat
-			} else {
-				// Menu tertutup
-				menu.classList.add('opacity-0', 'scale-95');
-				menu.classList.remove('opacity-100', 'scale-100');
-				setTimeout(() => {
-				menu.classList.add('hidden');
-				}, 500); // Sesuai durasi animasi Tailwind
-			}
-			});
-        
-    </script>
+    
+        <!-- Mobile Drawer Menu -->
+        <div class="drawer mobile-menu backdrop-blur">
+            <a href="#" class="close text-white flex text-center mb-4"><img src="static/image/asset/close-btn.png" alt="" class="w-10 h-10"></a>
+           
+			<a class="hover:scale-150 duration-500 " href="index.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/home.png" alt="message" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">Home</span>
+                </div>
+            </a>
+            <a class="hover:scale-150 duration-500 " href="modul/Love timeline/LoveTimeline.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">Love Timeline</span>
+                </div>
+            </a>
+            <a class="hover:scale-150 duration-500 " href="modul/viritual Letter/ViritualLoveLetter.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">VLL</span>
+                </div>
+            </a>
+            <a class="hover:scale-150 duration-500 " href="recap.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">Recap</span>
+                </div>
+            </a>
+            <a class="hover:scale-150 duration-500 " href="greeting.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">Text</span>
+                </div>
+            </a>
+            <a class="hover:scale-150 duration-500 " href="aboutThisWeb.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">About</span>
+                </div>
+            </a>
+        </div>
+    
+        <!-- Overlay -->
+        <div class="overlay"></div>
+    
+        <script>
+            const btn = document.querySelector('.mobile-menu-button');
+            const clsebtn = document.querySelector('.close');
+            const drawer = document.querySelector('.drawer');
+            const overlay = document.querySelector('.overlay');
+    
+            // Toggle the drawer menu
+            btn.addEventListener('click', () => {
+                drawer.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
+    
+            // Close the drawer menu when clicking the close button
+            clsebtn.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                drawer.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+    
+            // Close the drawer menu when clicking outside
+            overlay.addEventListener('click', () => {
+                drawer.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        </script>
 
     <!--  -->
     <!-- main content -->
@@ -105,17 +136,14 @@
         <div class="grid flex justify-center items-center h-screen">
             <div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-400 bg-opacity-20 relative">
                 <div class="text-lg font-semibold text-white text-center">
-                    <h4>About This Website</h4>
-                    <br>
-                    <p id="content1">
-                        Website Hallo Vale adalah website statis yang di buat sebagai projek pribadi.
-                        Website statis ini akan selalu di update, sekaligus menjadi explorasi tentang cara membuat website.
-                        website ini menjadi projek pribadi yang begitu menyenangkan, karena bekerja untuk membuktikan pada seseorang
-                        bahwa beginilah dedikasi cinta dan rasa sayangku padanya. 
-                    </p>
-                    <br>
-                    
+                    <img src="static/image/gallary/webcam8.jpg" alt="">
+                    <p class="text-2xl font-serif">Hallo Internet, This is Us!!</p>
+                    <p class="text-2xl font-serif">Here some backstory about Us!</p>
+                    <p>me and Vale is just a couple, we met about 6 months ago on SBKMK. i was her mentor on a group, we fall in love then we've been toghther. there are many things happend, and the wind are never stop, we just can go forward together; i really love her, so do her. then after 3 months together, i decide to make her a website that can be use to her to remember me. and another reason i want to made a website for her to proof mu love and dedicate, commit and true color of me. i really like to do supprised everyone who i love, and work on this project is so fun, cuz i work for love, and it bring me a love for my work.</p>
+
+
                 </div>
+                
             </div>
         </div>
     </div>

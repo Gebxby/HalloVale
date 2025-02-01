@@ -1,0 +1,152 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(#1e293b, #0f172a, #020617);
+    color: white;
+    min-height: 100vh;
+}
+
+
+
+
+
+.letter {
+    stroke: #e91e63;
+    stroke-width: 6;
+    fill: none;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: fillAnimation 3s ease-in-out infinite;
+}
+
+/* Navigation */
+nav {
+    animation: slideDown 0.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+}
+
+/* Drawer Menu */
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(254, 83, 163, 0.9);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.drawer.active {
+    right: 0;
+}
+
+/* Image Grid */
+.image-container .photo img {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.9);
+}
+
+.image-container .photo img:hover {
+    transform: scale(1.08) translateY(-5px);
+    filter: brightness(1.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
+                0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Overlay */
+.image-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: white;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #e91e63;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fillAnimation {
+    0% { stroke-dashoffset: 300; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -300; }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 0.875rem;
+    }
+
+    .image-overlay .overlay-img {
+        max-width: 90%;
+        max-height: 80vh;
+    }
+}

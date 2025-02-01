@@ -1,0 +1,61 @@
+body {
+    cursor: url('static/image/asset/cursorOrigami32.png'), auto;
+
+}
+a{
+    cursor: url('static/image/asset/hand.png'),pointer;
+}
+img .img{
+    cursor: url('static/image/asset/hand.png'),pointer;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.page-btn {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 0.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.page-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.page-btn.active {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+.close-btn {
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+transform: rotate(90deg);
+background-color: #f3f4f6;
+}
+
+/* Pastikan overlay memiliki z-index yang tepat */
+.overlayimg {
+z-index: 50;
+}
+
+/* Pastikan tombol close selalu di atas */
+.close-btn {
+z-index: 60;
+}
+
+/* Prevent text selection pada tombol */
+.close-btn svg {
+user-select: no}

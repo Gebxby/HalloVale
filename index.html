@@ -7,129 +7,20 @@
     <link rel="stylesheet" href="static/css/styles4.css">
     <link rel="stylesheet" href="static/css/contentIndexStyles.css">
     <script src="static/js/srcipts.js"></script>
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             cursor: url('static/image/asset/cursorOrigami32.png'), auto;
         }
 
-        a {
+        a, button img {
             cursor: url('static/image/asset/hand.png'), pointer;
         }
 
-        button img {
-            cursor: url('static/image/asset/hand.png'), pointer;
-        }
-
-        .carousel-container {
-            position: relative;
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .carousel-slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .card {
-            min-width: 100%;
-            text-align: center;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .card p {
-            font-size: 18px;
-            color: #333;
-        }
-
-        /* Positioning navigation buttons */
-        .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            font-size: 24px;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 10; /* Ensure buttons are on top */
-        }
-
-        .prev {
-            left: 0;
-        }
-
-        .next {
-            right: 0;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #ff83f084;
-            border-radius: 15px;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {
-            background-color: #ff83f084;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .carousel-container {
-                width: 70%; /* Adjust width for larger screens */
-            }
-
-            .carousel-slider {
-                gap: 20px; /* Add spacing between cards */
-            }
-
-            .card {
-                min-width: 33%; /* Show 3 cards at once on larger screens */
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .carousel-container {
-                width: 60%; /* Adjust width for very large screens */
-            }
-
-            .carousel-slider {
-                gap: 30px; /* Add more space between cards */
-            }
-
-            .card {
-                min-width: 25%; /* Show 4 cards at once */
-            }
-        }
+        
+        
     </style>
-    <!-- <script>
+    <script>
         window.addEventListener('load', () => {
 	setTimeout(() => {
 		document.getElementById('loading-screen').style.display = 'none';
@@ -139,191 +30,148 @@
 	}, 2500); // 5000 milliseconds = 5 seconds
 	document.getElementById('main-content').style.display = 'block';
 });
-    </script> -->
+    </script>
+    <script src="static/js/scriptContent2.js"></script>
+    
 </head>
-<!-- <body> -->
-<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url('static/image/gallary/110.jpg'); background-size: cover; background-position:center; ">
-
-    <!-- Loading screen -->
-    <!-- <div id="loading-screen">
+<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.671)), url('static/image/gallary/110.jpg'); background-size: cover; background-attachment: fixed; background-position:center;">
+    <div id="loading-screen">
         <svg class="loader" viewBox="0 0 100 100">
             <path class="letter" d="M 10,10 L 50,90 L 90,10" />
             <path class="letter" d="M 45,50 L 65,50 L 65,62 A 20,20 0 1,1 65,38" stroke="black" stroke-width="5" fill="none" />
         </svg>
-    </div> -->
-    <!-- navbar -->
-    <div class=" flex items-center justify-center p-5">
-        <div class="navbar flex items-center gap-80 justify-between h-16 border-white border-2  ">
+    </div>
+    <!-- Navbar -->
+    <div style="display: none;" id="main-content">
+        <nav class="bg-pink-700 bg-opacity-50 backdrop-blur p-4 mt-10">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-white"><a href="count_up.html">HALLO VALERIA</a></h1>
     
-            <div class="flex items-center">
-                <h1 class="text-2xl font-bold text-center text-white">
-                    <a class='text-2xl font-bold text-center text-white' href='count_up.html'>Hallo Vale</a>
-                </h1>
-            </div>
-            
-            <div class="dropdown">
-                <button><h3 class="text-white font-bold">Menu</h3></button>
-                <div class="dropdown-content">
-                    <a class='' href='modul/Love timeline/LoveTimeline.html'><img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Love Timeline</span></a>
-                    <a class='' href='modul/viritual Letter/ViritualLoveLetter.html'><img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">VLL</span></a>
-                    <a class='' href='recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Recap</span></a>
-                    <a class='' href="gallery.html"><img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
-                    <a class='' href='games.html'><img src="static/image/asset/jigsaw.png" alt="Game" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">Game</span></a>
-                    <a class='' href='greeting.html'><img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white text-center">Text</span></a>
-                    <a class='' href='aboutThisWeb.html'><img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto"><span id="content-span" class="text-white">About</span></a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a class='hover:scale-150 duration-500 ' href='modul/Love timeline/LoveTimeline.html'><img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Love Timeline</span></a>
+                    <a class='hover:scale-150 duration-500 ' href='modul/poetry/poetry.html'><img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Poetry</span></a>
+                    <a class='hover:scale-150 duration-500 ' href='modul/recap/recap.html'><img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">Recap</span></a>
+                    <a class='hover:scale-150 duration-500 ' href="gallery.html"><img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto"><span id="content-span" class="text-white">Gallery</span></a>
+                    <a class='hover:scale-150 duration-500 ' href='greeting.html'><img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white text-center">Text</span></a>
+                    <a class='hover:scale-150 duration-500 ' href='modul/about.html'><img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto "><span id="content-span" class="text-white">About</span></a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
+        </nav>
+    
+        <!-- Mobile Drawer Menu -->
+        <div class="drawer mobile-menu backdrop-blur">
+            <a href="#" class="close text-white flex text-center mb-4"><img src="static/image/asset/close-btn.png" alt="" class="w-10 h-10"></a>
+            <a class="hover:scale-150 duration-500 " href="modul/Love timeline/LoveTimeline.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/timeline.png" alt="Love Timeline" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">Love Timeline</span>
+                </div>
+            </a>
+            <a class="hover:scale-150 duration-500 " href="modul/poetry/poetry.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/letter.png" alt="Viritual Love Letter" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">Poetry</span>
+                </div>
+            </a>
+            <a class="hover:scale-150 duration-500 " href="recap.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/repeat.png" alt="About" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">Recap</span>
+                </div>
+            </a>
+            <a class="hover:scale-150 duration-500 " href="gallery.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/gallery.png" alt="gallery" class="w-10 h-10 mx-auto">
+                    <span class="text-white text-center px-16">Gallery</span>
+                </div>
+            </a>
+            <a class="hover:scale-150 duration-500 " href="greeting.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/love-letter.png" alt="message" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">Text</span>
+                </div>
+            </a>
+            <a class="hover:scale-150 duration-500 " href="modul/about.html">
+                <div class="hover:scale-150 duration-500 flex flex-col items-center justify-center pt-10">
+                    <img src="static/image/asset/information.png" alt="About" class="w-15 h-10 mx-auto">
+                    <span class="text-white text-center px-16">About</span>
+                </div>
+            </a>
+        </div>
+    
+        <!-- Overlay -->
+        <div class="overlay"></div>
+    
+        <script>
+            const btn = document.querySelector('.mobile-menu-button');
+            const clsebtn = document.querySelector('.close');
+            const drawer = document.querySelector('.drawer');
+            const overlay = document.querySelector('.overlay');
+    
+            // Toggle the drawer menu
+            btn.addEventListener('click', () => {
+                drawer.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
+    
+            // Close the drawer menu when clicking the close button
+            clsebtn.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                drawer.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+    
+            // Close the drawer menu when clicking outside
+            overlay.addEventListener('click', () => {
+                drawer.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        </script>
+    
+        <!-- Content -->
+        <div class="flex flex-col items-center justify-center h-screen px-4">
+            <details class="bg-pink-800 bg-opacity-15 border-2 border-white rounded-xl p-4 m-4 mb-5">
+                <summary id="content1" class="flex animate-pulse text-3xl text-center">3 Month Message</summary>
+                <section class="contents">
+                    <div class="container p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
+                        <div class="praf">
+                            <p id="Indexcontent" class="m-5">klik tombol dibawah untuk membaca pesan 💕</p>
+                            <audio id="audio-player" src="static/music/Christian Bautista - Beautiful Girl (Official Music Video).mp3" type="audio/mp3" class="mt-4"></audio>
+                        </div>
+                        <!-- Tombol di tengah bawah dari container -->
+                        <button type="button" onclick='document.getElementById("Indexcontent").innerHTML=showMessage(150);' 
+                            class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
+                            <img src="static/image/asset/right-arrow.png" alt="">
+                        </button>
+                    </div>
+                </section>
+            </details>
+            
+            <details class="bg-pink-800 bg-opacity-15 border-2 border-white rounded-xl p-4 m-4">
+                <summary id="content1" class="flex animate-pulse text-3xl text-center">Valentine's message</summary>
+                <section class="contents">
+                    <div class="container p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
+                        <div class="praf">
+                            <p id="Indexcontent2" class="m-5">klik tombol dibawah untuk membaca pesan 💕</p>
+                            <audio id="audio-player" src="static/music/Christian Bautista - Beautiful Girl (Official Music Video).mp3" type="audio/mp3" class="mt-4"></audio>
+                        </div>
+                        <!-- Tombol di tengah bawah dari container -->
+                        <button type="button" onclick='document.getElementById("Indexcontent2").innerHTML=showValentineMessage(150);' 
+                            class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
+                            <img src="static/image/asset/right-arrow.png" alt="">
+                        </button>
+                    </div>
+                </section>
+            </details>
         </div>
     </div>
-
-    <!-- contet -->
-    <div class="grid flex justify-center items-center h-screen ">
-       
-
-        <details class="bg-pink-800 bg-opacity-15 border-2 border-white rounded-xl ">
-            <summary id="content1" class="flex animate-pulse text-3xl text-center"> 3 Month Message </summary>
-            <section class="contents">
-				<div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
-					<div class="praf">
-						<p id="Indexcontent" class="m-5">klik tombol dibawah untuk membaca pesan 💕</p>
-						<audio id="audio-player" src="static/music/Christian Bautista - Beautiful Girl (Official Music Video).mp3" type="audio/mp3" class="mt-4"></audio>
-
-					</div>
-					<!-- Tombol di tengah bawah dari container -->
-					<button type="button" onclick='document.getElementById("Indexcontent").innerHTML=showMessage(150);' 
-						class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
-						<img src="static/image/asset/right-arrow.png" alt="">
-					</button>
-				</div>
-				
-			</section>
-            <!-- <p id="content1">"Hallo sayangku",
-        
-                "gimana kabarnya?? semoga dalam keadaan baik,damai dan sehat walafiat saat membuka ini yahhh...\
-                kamu pasti kaget tiba tiba ada ginian yah??\
-                jadi ini adalah website yang aku buat dari awal awal kita pacaran,\
-                aku mikirin konsep,desain dan fitur apa aja yang mau aku tambahin.\
-                maaf kalau aku harus berbohong/ngarang cerita soal ini, karena aku mau jadiin ini suprise(well sekarang enggak)",
-        
-                "pertama-tama mari anggungkan dulu Tuhan atas semuanya ini, atas semua yang telah terjadi;\
-                Cinta tuh kayak datang tiba tiba dalam hidupku, dan tak pernah sedikitpun terlintas di kepalaku,\
-                kalau Tuhan mempertemukan aku dengan seseorang gadis baik hati, penuh pengertian, tulus dan tentunya yang berhasil nembus hati aku.\
-                Tuhan telah menunjukan secara nyata padaku, arti sesungguhnya hati\
-                bernari-nari melihat kekasih, apalagi orangnya itu kamu. aku juga sadar kalau Tuhan menunjukan padaku kasih yang nyata melalui kamu.",
-        
-                "siapa sangka, Tuhan mengirimkan seorang <a href='https://id.wikipedia.org/wiki/Afrodit'> Aphrodite(kamu bisa klik)<a> kepadaku,\
-                dan semua itu seakan masih terasa berlebihan di mataku. cantikmu itu tak wajar karena setiap harinya cantikmu akan selalu bisa buat aku terperanga dan tak dapat melepaskan pandanganku darimu;\
-                bahkan bulan saja tidak bisa buat aku terperanga meski hanya sesaat.\
-                parasmu itu spesial buat aku, exclusive hanya untuk aku, karna tanpa benda benda yang kamu lekat/pakai di wajah pun, kamu tetap bisa menandingi alam semesta ini.\
-                kamu selalu berhasil buat aku ketawa, kamu juga ngajarin aku banyak hal tentang dunia baru, ngajarin aku cara mencintai diri sendiri, dan terutama jadikan aku orang yang suka memuji Tuhan begitu melihat kamu.\
-                ",
-        
-                "Mi Amor, kita telah berlayar melewati banyak hal. banyak hal di lautan lepas ini yang sudah kita lepas dan ambil. banyak hal yang kita\
-                syukuri, yang kita sesali, dan yang kita Amini. 3 bulan ini terasa begitu singkat ketika kita sudah berada di penghujung tahun, padahal\
-                3 bulan itu bukan waktu yang sebentar bagi kita berdua untuk menerima, memaafkan dan melepaskan apa yang baik dan buruk, apa yang nyaman dan tidak\
-                bagi diri kita masing masing.",
-        
-                "seperti yang sayang tau, kita banyak trial dan error dalam hal komunikasi, berulang kali terjadi kesalahpahaman, tapi\
-                percayalah bahwa kita bisa mengarunginya bersama selagi kita mau mencoba. tidak peduli seberapa banyak kita gagal dalam memahami/menyelesaikan masalahnya,\
-                tapi lihat dan ingat pada seberapa banyak kita berhasil menyelesaikannya sebelumnya. \
-                tidak peduli sekeras apapun masalahnya, aku percaya kita bisa laluin ini bareng bareng sampai aku masang cincin di jari manis kamu.",
-        
-                "melalui message box ini juga, aku mau tegasin lagi ke kamu, rasaku padamu tidak akan pernah berubah. selama nafasku masih berdesah, dan jantungku masih berdetak,\
-                kamu akan selalu menjadi satu satunya cinta pertama dan terakhirku yang akan hidup bersamaku sampai matahari tak lagi bersinar bagi kita berdua,\
-                sampai perahu ini lapuk dan tenggelam, dan sampai kita tak dapat melihat lagi dunia fana ini; melalui ini aku juga tegasin kalau kamu selalu cukup buat aku.\
-                kedepannya akan ada banyak hal yang akan kita lalui sayang. tentunya aku mau kita kerjasama dalam hal apapun saat menghadapinya.\
-                kedapannya juga kita akan membangun cinta yang lebih lagi, apapun kondisinya kita harus tetap lindungi bareng bareng, bahkan jika roboh, kita bangun ulang kembali sama sama.",
-        
-                "sekali lagi, thanks to all you did to me. hidupku jadi penuh akan warna baru, yaitu the color of you. dan warnamu itu unik, hanya satu hingga tak ada yang dapat\
-                menggantikannya. aku kedepannya akan terus menerus memberikan yang terbaik dalam hal apapun, termasuk mencintai dan menyayangimu seperti yang Tuhan lakukan pada umat manusia.\
-                karna sesungguhnya, aku akan menjadikan Yakub sebagai teladan dalam mengejar dan mempertahankan cintanya pada Rachel selama 14 tahun.",</p> -->
-        </details>
-        
-        <details class="bg-pink-800 bg-opacity-15 border-2 border-white rounded-xl ">
-            <summary id="content1" class="flex animate-pulse text-3xl text-center"> Valentine's message </summary>
-            <section class="contents">
-				<div class="container  p-5 max-w-2xl mx-auto border-2 hover:border-white rounded-xl bg-pink-500 bg-opacity-25 relative">
-					<div class="praf">
-						<p id="Indexcontent" class="m-5">klik tombol dibawah untuk membaca pesan 💕</p>
-						<audio id="audio-player" src="static/music/Christian Bautista - Beautiful Girl (Official Music Video).mp3" type="audio/mp3" class="mt-4"></audio>
-
-					</div>
-					<!-- Tombol di tengah bawah dari container -->
-					<button type="button" onclick='document.getElementById("Indexcontent").innerHTML=showMessage(150);' 
-						class="inline-flex bottom-[-40px] left-1 transform -translate-x-1/9 w-16 h-16 ">
-						<img src="static/image/asset/right-arrow.png" alt="">
-					</button>
-				</div>
-				
-			</section>
-            <!-- <p id="content1">"Hallo sayangku",
-        
-                "gimana kabarnya?? semoga dalam keadaan baik,damai dan sehat walafiat saat membuka ini yahhh...\
-                kamu pasti kaget tiba tiba ada ginian yah??\
-                jadi ini adalah website yang aku buat dari awal awal kita pacaran,\
-                aku mikirin konsep,desain dan fitur apa aja yang mau aku tambahin.\
-                maaf kalau aku harus berbohong/ngarang cerita soal ini, karena aku mau jadiin ini suprise(well sekarang enggak)",
-        
-                "pertama-tama mari anggungkan dulu Tuhan atas semuanya ini, atas semua yang telah terjadi;\
-                Cinta tuh kayak datang tiba tiba dalam hidupku, dan tak pernah sedikitpun terlintas di kepalaku,\
-                kalau Tuhan mempertemukan aku dengan seseorang gadis baik hati, penuh pengertian, tulus dan tentunya yang berhasil nembus hati aku.\
-                Tuhan telah menunjukan secara nyata padaku, arti sesungguhnya hati\
-                bernari-nari melihat kekasih, apalagi orangnya itu kamu. aku juga sadar kalau Tuhan menunjukan padaku kasih yang nyata melalui kamu.",
-        
-                "siapa sangka, Tuhan mengirimkan seorang <a href='https://id.wikipedia.org/wiki/Afrodit'> Aphrodite(kamu bisa klik)<a> kepadaku,\
-                dan semua itu seakan masih terasa berlebihan di mataku. cantikmu itu tak wajar karena setiap harinya cantikmu akan selalu bisa buat aku terperanga dan tak dapat melepaskan pandanganku darimu;\
-                bahkan bulan saja tidak bisa buat aku terperanga meski hanya sesaat.\
-                parasmu itu spesial buat aku, exclusive hanya untuk aku, karna tanpa benda benda yang kamu lekat/pakai di wajah pun, kamu tetap bisa menandingi alam semesta ini.\
-                kamu selalu berhasil buat aku ketawa, kamu juga ngajarin aku banyak hal tentang dunia baru, ngajarin aku cara mencintai diri sendiri, dan terutama jadikan aku orang yang suka memuji Tuhan begitu melihat kamu.\
-                ",
-        
-                "Mi Amor, kita telah berlayar melewati banyak hal. banyak hal di lautan lepas ini yang sudah kita lepas dan ambil. banyak hal yang kita\
-                syukuri, yang kita sesali, dan yang kita Amini. 3 bulan ini terasa begitu singkat ketika kita sudah berada di penghujung tahun, padahal\
-                3 bulan itu bukan waktu yang sebentar bagi kita berdua untuk menerima, memaafkan dan melepaskan apa yang baik dan buruk, apa yang nyaman dan tidak\
-                bagi diri kita masing masing.",
-        
-                "seperti yang sayang tau, kita banyak trial dan error dalam hal komunikasi, berulang kali terjadi kesalahpahaman, tapi\
-                percayalah bahwa kita bisa mengarunginya bersama selagi kita mau mencoba. tidak peduli seberapa banyak kita gagal dalam memahami/menyelesaikan masalahnya,\
-                tapi lihat dan ingat pada seberapa banyak kita berhasil menyelesaikannya sebelumnya. \
-                tidak peduli sekeras apapun masalahnya, aku percaya kita bisa laluin ini bareng bareng sampai aku masang cincin di jari manis kamu.",
-        
-                "melalui message box ini juga, aku mau tegasin lagi ke kamu, rasaku padamu tidak akan pernah berubah. selama nafasku masih berdesah, dan jantungku masih berdetak,\
-                kamu akan selalu menjadi satu satunya cinta pertama dan terakhirku yang akan hidup bersamaku sampai matahari tak lagi bersinar bagi kita berdua,\
-                sampai perahu ini lapuk dan tenggelam, dan sampai kita tak dapat melihat lagi dunia fana ini; melalui ini aku juga tegasin kalau kamu selalu cukup buat aku.\
-                kedepannya akan ada banyak hal yang akan kita lalui sayang. tentunya aku mau kita kerjasama dalam hal apapun saat menghadapinya.\
-                kedapannya juga kita akan membangun cinta yang lebih lagi, apapun kondisinya kita harus tetap lindungi bareng bareng, bahkan jika roboh, kita bangun ulang kembali sama sama.",
-        
-                "sekali lagi, thanks to all you did to me. hidupku jadi penuh akan warna baru, yaitu the color of you. dan warnamu itu unik, hanya satu hingga tak ada yang dapat\
-                menggantikannya. aku kedepannya akan terus menerus memberikan yang terbaik dalam hal apapun, termasuk mencintai dan menyayangimu seperti yang Tuhan lakukan pada umat manusia.\
-                karna sesungguhnya, aku akan menjadikan Yakub sebagai teladan dalam mengejar dan mempertahankan cintanya pada Rachel selama 14 tahun.",</p> -->
-        </details>
-        
-    </div>
-    
-
-   
-
-    
-    <!-- <script>
-        const slider = document.querySelector('.carousel-slider');
-        const cards = document.querySelectorAll('.card');
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-        let currentIndex = 0;
-
-        function updateSlidePosition() {
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
-            updateSlidePosition();
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
-            updateSlidePosition();
-        });
-    </script> -->
 </body>
 </html>
