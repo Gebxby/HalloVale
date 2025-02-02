@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gallery</title>
+	<link rel="stylesheet" href="static/css/styles4.css">
+	<!-- <link rel="stylesheet" href="static/css/gallery.css"> -->
+    <link rel="stylesheet" href="static/css/neo.css">
+	<script src="static/js/srcipts.js"></script>
+	<!-- <script src="static/js/gallery.js"></script> -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	
+</head>
+<!--  -->
+<body style="background-image:linear-gradient(rgba(0, 0, 0, 0.041), rgba(0, 0, 0, 0.59)),url('static/image/asset/about-head2.jpg'); background-attachment: fixed;">
+    <div class="image-container">
+        <div class="pagination">
+            <button class="page-btn active" data-page="1">Just Valerie</button>
+            <button class="page-btn" data-page="2">Dumpy Photo</button>
+            <button class="page-btn" data-page="3">Photobooth</button>
+            <button class="page-btn" data-page="4">Just Two of Us</button>
+        </div>
+    
+        <div id="loading" class="loading-spinner hidden"></div>
+        
+        <div id="photo-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+        </div>
+    
+        <!-- Overlay HTML sama seperti sebelumnya -->
+    </div>
+    
+    <script src="gallery.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadImages(1);
+            setupImageOverlay();
+    
+            document.querySelectorAll('.page-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentPage = parseInt(btn.dataset.page);
+                    loadImages(currentPage);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
