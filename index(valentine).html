@@ -40,8 +40,69 @@
 
 </head>
 
-<body
-    style="background-image: linear-gradient(rgba(0, 0, 0, 0.041), #ff7bbd38), url('static/image/gallary/110.jpg'); background-size: cover; background-attachment: fixed; background-position:center;">
+<!-- Tambahkan class Tailwind pada body -->
+<body class="bg-[url('static/image/gallary/110.jpg')] bg-cover bg-fixed bg-center relative overflow-hidden">
+    <!-- Overlay gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/[0.041] to-[#ff7bbd44] pointer-events-none"></div>
+
+    <!-- Container untuk floating hearts -->
+    <div id="hearts-container" class="fixed inset-0 pointer-events-none z-50"></div>
+
+    <!-- Konten website lainnya -->
+    <div class="relative z-10">
+        <!-- Konten website Anda di sini -->
+    </div>
+
+    <!-- Script untuk animasi floating hearts -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💗';
+            heart.className = 'absolute text-2xl transform -translate-x-1/2 animate-float-up';
+            
+            // Random position dari kiri
+            const leftPosition = Math.random() * 100;
+            heart.style.left = `${leftPosition}%`;
+            heart.style.bottom = '-20px';
+            
+            // Random size
+            const size = Math.random() * (30 - 15) + 15;
+            heart.style.fontSize = `${size}px`;
+            
+            // Random rotation
+            const rotation = Math.random() * 360;
+            heart.style.transform = `rotate(${rotation}deg)`;
+            
+            document.getElementById('hearts-container').appendChild(heart);
+            
+            // Hapus heart setelah animasi selesai
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        // Buat heart baru setiap 2 detik
+        setInterval(createHeart, 2000);
+    </script>
+
+    <style>
+        /* Animasi floating up */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .animate-float-up {
+            animation: floatUp 10s linear forwards;
+        }
+    </style>
+
     <div id="loading-screen">
         <svg class="loader" viewBox="0 0 100 100">
             <path class="letter" d="M 10,10 L 50,90 L 90,10" />
@@ -53,7 +114,7 @@
     <div style="display: none;" id="main-content">
         <nav class="bg-pink-700 bg-opacity-50 backdrop-blur p-4 mt-10">
             <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-white"><a href="count_up.html">HALLO VALERIA! HAPPY VALENTINE DAY</a></h1>
+                <h1 class="text-2xl font-bold text-white"><a href="count_up.html">HALLO VALERIA</a></h1>
 
                 <div class="hidden md:flex items-center space-x-8">
                     <a class='hover:scale-150 duration-500 ' href='modul/Love timeline/LoveTimeline.html'><img
@@ -164,9 +225,9 @@
             <!-- First Details Section -->
             <details class="group w-full max-w-2xl mb-6 rounded-2xl bg-pink-800 bg-opacity-25 shadow-lg hover:shadow-xl transition-all duration-300">
                 <summary 
-                    class="flex items-center justify-between p-4 rounded-xl cursor-pointer bg-gradient-to-r from-pink-100 to-pink-400 text-pink-800 hover:text-pink-600"
+                    class="flex items-center justify-between p-4 rounded-xl cursor-pointer bg-gradient-to-r from-pink-100 to-pink-300 text-pink-800 hover:text-pink-600"
                 >
-                    <span class="text-2xl font-semibold italic font-mono">3 Month Message</span>
+                    <span class="text-2xl font-semibold">3 Month Message</span>
                     <svg 
                         class="w-6 h-6 transform transition-transform duration-300 group-open:rotate-180" 
                         fill="none" 
@@ -200,9 +261,9 @@
             <!-- Second Details Section -->
             <details class="group w-full max-w-2xl rounded-2xl bg-pink-800 bg-opacity-25 shadow-lg hover:shadow-xl transition-all duration-300">
                 <summary 
-                    class="flex items-center justify-between p-4 rounded-xl cursor-pointer bg-gradient-to-r from-pink-100 to-pink-400 text-pink-800 hover:text-pink-600"
+                    class="flex items-center justify-between p-4 rounded-xl cursor-pointer bg-gradient-to-r from-pink-100 to-pink-300 text-pink-800 hover:text-pink-600"
                 >
-                    <span class="text-2xl font-semibold italic font-mono">Valentine's Message</span>
+                    <span class="text-2xl font-semibold">Valentine's Message</span>
                     <svg 
                         class="w-6 h-6 transform transition-transform duration-300 group-open:rotate-180" 
                         fill="none" 

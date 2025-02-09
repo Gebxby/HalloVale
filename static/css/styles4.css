@@ -90,31 +90,27 @@ nav a{
 }
 
 
-#content-1, #Indexcontent{
+#content-1,#coontent-2, #Indexcontent{
     color: white;
-    font-family: Georgia, serif;
+    /* font-family: Georgia, serif; */
+    font-family: monospace;
+
 
 }
 #content-1:hover, #Indexcontent:hover{
     color: white;
-    background-color: #ff58bfce;
+    background-color: #ff58bf2f;
     border-radius: 10px;
-    transform: scale(1.02);
-    transition-duration: 0.5s;
+ 
     
 }
 
-#content-2 {
-    color: white;
-    font-family: Georgia, serif;
 
-}
 #content-2:hover{
     color: white;
     background-color: #ff58bfce;
     border-radius: 10px;
-    transform: scale(1.02);
-    transition-duration: 0.5s;
+   
     
 }
 
