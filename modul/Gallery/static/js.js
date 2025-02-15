@@ -188,161 +188,182 @@ const JustTwoOfUs = [
 	{ url: "static/image/gallary/160.jpg", desc: "", id: "gambar 160" }
 ]
 
+const photoCollections = {
+    JustValerie: JustValerie,
+    dumpyPhoto: dumpyPhoto,
+    photobooth: photobooth,
+    JustTwoOfUs: JustTwoOfUs
+};
 
-			const photosPerPage = Math.ceil(allPhotos.length / 2);
-			const photoPages = {
-				1: allPhotos.slice(0, photosPerPage),
-				2: allPhotos.slice(photosPerPage)
-			};
+let currentCollection = 'JustValerie';
+let currentPage = 1;
+let currentPhotoIndex = 0;
 
-			let currentPage = 1;
-			let currentPhotoIndex = 0;
+function showPhotoContent(collectionName) {
+    // Update active tab
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.toLowerCase().includes(collectionName.toLowerCase())) {
+            btn.classList.add('active');
+        }
+    });
 
-			function loadImages(page) {
-				const photoGrid = document.getElementById("photo-grid");
-				const loading = document.getElementById("loading");
-				
-				loading.classList.remove("hidden");
-				photoGrid.innerHTML = "";
+    // Update current collection
+    currentCollection = collectionName;
+    currentPage = 1;
+    
+    // Calculate photos per page for the new collection
+    const allPhotos = photoCollections[collectionName];
+    const photosPerPage = Math.ceil(allPhotos.length / 2);
+    
+    // Create pages for the current collection
+    const photoPages = {
+        1: allPhotos.slice(0, photosPerPage),
+        2: allPhotos.slice(photosPerPage)
+    };
 
-				document.querySelectorAll('.page-btn').forEach(btn => {
-					btn.classList.toggle('active', btn.dataset.page == page);
-				});
+    // Update pagination buttons visibility
+    updatePaginationButtons(photoPages);
 
-				photoPages[page].forEach((photo, index) => {
-					const photoDiv = document.createElement("div");
-					photoDiv.className = "photo w-full aspect-square overflow-hidden bg-white rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-2xl";
+    // Load first page of the new collection
+    loadImages(1, photoPages);
+}
 
-					photoDiv.innerHTML = `
-						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-							data-src="${photo.url}"
-							data-index="${index}"
-							alt="${photo.desc}"
-							class="lazy-image w-full h-full object-cover rounded-lg transform transition-all duration-500 hover:scale-110">
-						<div class="desc absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black to-transparent text-white text-center opacity-0 transition-opacity duration-300">${photo.desc}</div>
-					`;
+function updatePaginationButtons(photoPages) {
+    const pagination = document.querySelector('.pagination');
+    const hasPage2 = photoPages[2] && photoPages[2].length > 0;
+    
+    document.querySelectorAll('.page-btn').forEach(btn => {
+        const page = btn.dataset.page;
+        if (page === '2') {
+            btn.style.display = hasPage2 ? 'block' : 'none';
+        }
+    });
+}
 
-					photoGrid.appendChild(photoDiv);
-				});
+function loadImages(page, photoPages) {
+    const photoGrid = document.getElementById("photo-grid");
+    const loading = document.getElementById("loading");
+    
+    loading.classList.remove("hidden");
+    photoGrid.innerHTML = "";
 
-				setupLazyLoading();
-			}
+    document.querySelectorAll('.page-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.page == page);
+    });
 
-			function setupLazyLoading() {
-				const lazyImages = document.querySelectorAll('.lazy-image');
-				const imageObserver = new IntersectionObserver((entries, observer) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							const img = entry.target;
-							img.src = img.dataset.src;
-							img.classList.add('loaded');
-							observer.unobserve(img);
-						}
-					});
-				});
+    photoPages[page].forEach((photo, index) => {
+        const photoDiv = document.createElement("div");
+        photoDiv.className = "photo aspect-square overflow-hidden bg-white rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-2xl";
 
-				lazyImages.forEach(img => imageObserver.observe(img));
-			}
+        photoDiv.innerHTML = `
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                data-src="${photo.url}"
+                data-index="${index}"
+                alt="${photo.desc}"
+                class="lazy-image w-full h-full object-cover rounded-lg transform transition-all duration-500 hover:scale-110">
+            <div class="desc absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black to-transparent text-white text-center opacity-0 transition-opacity duration-300">${photo.desc}</div>
+        `;
 
-			function setupImageOverlay() {
-				const overlay = document.querySelector(".overlayimg");
-				const overlayImg = overlay.querySelector(".overlay-img");
-				const closeBtn = overlay.querySelector(".close-btn");
-				const prevBtn = overlay.querySelector(".prev-btn");
-				const nextBtn = overlay.querySelector(".next-btn");
-				const caption = overlay.querySelector(".caption");
+        photoGrid.appendChild(photoDiv);
+    });
 
-				function showImage(index) {
-					const currentPhotos = photoPages[currentPage];
-					currentPhotoIndex = index;
-					const photo = currentPhotos[index];
-					
-					// Update image and caption
-					overlayImg.src = photo.url;
-					
-					// Update caption with formatted content
-					const captionElement = document.querySelector('.caption');
-					const dateElement = document.querySelector('.photo-date');
-					
-					captionElement.innerHTML = `
-						<div class="mb-4">
-							<h3 class="font-bold text-lg mb-2">Photo ${index + 1}</h3>
-							<p class="text-gray-600">${photo.desc || 'No description available'}</p>
-						</div>
-					`;
-					
-					// Add date if needed
-					dateElement.textContent = `Posted on ${new Date().toLocaleDateString()}`;
-					
-					// Update navigation buttons visibility
-					prevBtn.style.visibility = index > 0 ? 'visible' : 'hidden';
-					nextBtn.style.visibility = index < currentPhotos.length - 1 ? 'visible' : 'hidden';
-				}
+    setupLazyLoading();
+    loading.classList.add("hidden");
+}
 
-				// Tambahkan event listener untuk menutup dengan escape key
-				document.addEventListener('keydown', (e) => {
-					if (e.key === 'Escape') {
-						const overlay = document.querySelector('.overlayimg');
-						if (!overlay.classList.contains('hidden')) {
-							overlay.classList.add('hidden');
-							overlay.classList.remove('flex');
-						}
-					}
-				});
-				document.addEventListener('click', (e) => {
-					if (e.target.classList.contains('lazy-image')) {
-						const index = parseInt(e.target.dataset.index);
-						currentPhotoIndex = index;
-						showImage(index);
-						overlay.classList.remove("hidden");
-						overlay.classList.add("flex");
-					}
-				});
+function setupImageOverlay() {
+    const overlay = document.querySelector(".overlayimg");
+    const overlayImg = overlay.querySelector(".overlay-img");
+    const closeBtn = overlay.querySelector(".close-btn");
+    const prevBtn = overlay.querySelector(".prev-btn");
+    const nextBtn = overlay.querySelector(".next-btn");
 
-				// Navigation handlers
-				prevBtn.addEventListener('click', () => {
-					if (currentPhotoIndex > 0) {
-						showImage(currentPhotoIndex - 1);
-					}
-				});
+    function showImage(index) {
+        const currentPhotos = photoCollections[currentCollection];
+        currentPhotoIndex = index;
+        const photo = currentPhotos[index];
+        
+        overlayImg.src = photo.url;
+        
+        const captionElement = document.querySelector('.caption');
+        const dateElement = document.querySelector('.photo-date');
+        
+        captionElement.innerHTML = `
+            <div class="mb-4">
+                <h3 class="font-bold text-lg mb-2">Photo ${index + 1}</h3>
+                <p class="text-gray-600">${photo.desc || 'No description available'}</p>
+            </div>
+        `;
+        
+        dateElement.textContent = `Posted on ${new Date().toLocaleDateString()}`;
+        
+        prevBtn.style.visibility = index > 0 ? 'visible' : 'hidden';
+        nextBtn.style.visibility = index < currentPhotos.length - 1 ? 'visible' : 'hidden';
+    }
 
-				nextBtn.addEventListener('click', () => {
-					const currentPhotos = photoPages[currentPage];
-					if (currentPhotoIndex < currentPhotos.length - 1) {
-						showImage(currentPhotoIndex + 1);
-					}
-				});
+    // Event Listeners
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('lazy-image')) {
+            const index = parseInt(e.target.dataset.index);
+            showImage(index);
+            overlay.classList.remove("hidden");
+            overlay.classList.add("flex");
+        }
+    });
 
-				// Keyboard navigation
-				document.addEventListener('keydown', (e) => {
-					if (!overlay.classList.contains('hidden')) {
-						if (e.key === 'ArrowLeft') prevBtn.click();
-						if (e.key === 'ArrowRight') nextBtn.click();
-						if (e.key === 'Escape') closeBtn.click();
-					}
-				});
+    prevBtn.addEventListener('click', () => {
+        if (currentPhotoIndex > 0) {
+            showImage(currentPhotoIndex - 1);
+        }
+    });
 
-				// Close handlers
-				[closeBtn, overlay].forEach(element => {
-					element.addEventListener('click', (e) => {
-						if (e.target === element) {
-							overlay.classList.add("hidden");
-							overlay.classList.remove("flex");
-						}
-					});
-				});
-			}
+    nextBtn.addEventListener('click', () => {
+        const currentPhotos = photoCollections[currentCollection];
+        if (currentPhotoIndex < currentPhotos.length - 1) {
+            showImage(currentPhotoIndex + 1);
+        }
+    });
 
-			// Initialize
-			document.addEventListener("DOMContentLoaded", () => {
-				loadImages(1);
-				setupImageOverlay();
-			});
+    // Close handlers
+    [closeBtn, overlay].forEach(element => {
+        element.addEventListener('click', (e) => {
+            if (e.target === element) {
+                overlay.classList.add("hidden");
+                overlay.classList.remove("flex");
+            }
+        });
+    });
 
-			// Pagination handlers
-			document.querySelectorAll('.page-btn').forEach(btn => {
-				btn.addEventListener('click', () => {
-					currentPage = parseInt(btn.dataset.page);
-					loadImages(currentPage);
-				});
-			});
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!overlay.classList.contains('hidden')) {
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+            if (e.key === 'Escape') {
+                overlay.classList.add("hidden");
+                overlay.classList.remove("flex");
+            }
+        }
+    });
+}
+
+// Initialize
+document.addEventListener("DOMContentLoaded", () => {
+    showPhotoContent('JustValerie');
+    setupImageOverlay();
+});
+
+// Pagination handlers
+document.querySelectorAll('.page-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const page = parseInt(btn.dataset.page);
+        const allPhotos = photoCollections[currentCollection];
+        const photosPerPage = Math.ceil(allPhotos.length / 2);
+        const photoPages = {
+            1: allPhotos.slice(0, photosPerPage),
+            2: allPhotos.slice(photosPerPage)
+        };
+        loadImages(page, photoPages);
+    });
+});

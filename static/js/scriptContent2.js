@@ -5,56 +5,18 @@ hasPlayesAudio = false
 
 function showValentineMessage(seconds) {
     const pesan = [
-       "Hallo sayangku",
-        
-        "gimana kabarnya?? semoga dalam keadaan baik,damai dan sehat walafiat saat membuka ini yahhh...\
-        kamu pasti kaget tiba tiba ada ginian yah??\
-        jadi ini adalah website yang aku buat dari awal awal kita pacaran,\
-        aku mikirin konsep,desain dan fitur apa aja yang mau aku tambahin.\
-        maaf kalau aku harus berbohong/ngarang cerita soal ini, karena aku mau jadiin ini suprise(well sekarang enggak)",
+       "Hallo Bidadari Cantik yang lahirnya hanya untuk aku \ ", 
+        "HAPPY VALENTINE YAH!!!\ ",
+        "Tau ga, hari valentine itu dulu buat aku selalu menangis, karena hari itu nyakitin banget buat aku yang ga punya siapa siapa untuk dirayakan, merayakan dan bersuka cita selain keluarga.\ " ,
+        "Tapi setelah hadirnya kamu, dan semua yang sudah kita lalui bersama, aku merasa Valentine kali ini bener bener sesuai dengan maknanya dalam hidupku. Hari ini, akan ku deklarasikan lagi, dan akan ku kumandangkan lagi kepada setiap insan insan di atas dunia, bahwa akan selamanya dan akan selalu, dirimu adalah kesayangan dan kecintaanku.\ ",  
+        "Aku harap, senja tidak akan pernah terbenam, angin tak berhenti, dan mataku tak bisa berhenti untuk melihat.\ "  ,
+        "Tidak akan ada yang lebih menyenangkan di dunia ini, selain menyayangimu, mencintaimu, berjalan berdua bersamamu, tertawa menghabiskan waktu denganmu, mengerti dirimu, memahami apa maumu, melihatmu marah dan kesal karena kelakuanku, melihatmu tersenyum manis, dan semua hal yang kamu lakukan, gerak gerik, gestur, dan masih banyak lagi!\ "  ,
+        "akan selalu kepada dirimu, berjuta juta bintang dilangit malam, beribu ribu awan indah di siang hari, satu mentari yang berinar terang, lembah lembah yang menyejukkan, pesisir yang berlimpah, nyanyian kicauwan burung dilangit, bahkan galaxy andromeda sekalipun, kau tetaplah pemenang atas semua keindahan ini. kamu adalah bentuk dari kasih Allah yang bergitu indah, diberikan kepadaku untuk bersama. \ ",
+        "ku ingin kau jadi milikku, temani diriku yang ceroboh, ngeyelan dan keras kepala ini, karna hanya denganmu, aku dapat luluh layaknya es batu di musim panas. hanya denganmu dapat ku rasakan perasaan cinta yang berarti, dapat merasakan bersama indahnnya melewati setiap kesulitan,kesedihan,haru,senang dan bahagia dalam setiap momen yang kita hadapi dan berbagi bersama. \ ",
+        "aku tak minta banyak hal, cukup bersama aku disini, berbagi setiap momen didalam hidup, bersama mengarungi ruang ruanng hampa yang masih perlu diisi oleh cinta kita berdua. terimakasih buat hari indah ini, terimakasih buat setiap momen berharga yang kita lewati sampai valentina ini, \ ",
+        "Aku harap, kedepannya kita benar benar selalu bersama, selalu berjuang bersama, mencintai dan mengasihi sepenuh hati. Lewat Valentine ini, aku mau kamu tau kalau kasih sayangku tulus dan akan selamanya demikian.\ ",
+        "I lovee youuu like this song!!!\ "  ,
 
-        "pertama-tama mari anggungkan dulu Tuhan atas semuanya ini, atas semua yang telah terjadi;\
-        Cinta tuh kayak datang tiba tiba dalam hidupku, dan tak pernah sedikitpun terlintas di kepalaku,\
-        kalau Tuhan mempertemukan aku dengan seseorang gadis baik hati, penuh pengertian, tulus dan tentunya yang berhasil nembus hati aku.\
-        Tuhan telah menunjukan secara nyata padaku, arti sesungguhnya hati\
-        bernari-nari melihat kekasih, apalagi orangnya itu kamu. aku juga sadar kalau Tuhan menunjukan padaku kasih yang nyata melalui kamu.",
-
-        "siapa sangka, Tuhan mengirimkan seorang <a href='https://id.wikipedia.org/wiki/Afrodit'> Aphrodite(kamu bisa klik)<a> kepadaku,\
-        dan semua itu seakan masih terasa berlebihan di mataku. cantikmu itu tak wajar karena setiap harinya cantikmu akan selalu bisa buat aku terperanga dan tak dapat melepaskan pandanganku darimu;\
-        bahkan bulan saja tidak bisa buat aku terperanga meski hanya sesaat.\
-        parasmu itu spesial buat aku, exclusive hanya untuk aku, karna tanpa benda benda yang kamu lekat/pakai di wajah pun, kamu tetap bisa menandingi alam semesta ini.\
-        kamu selalu berhasil buat aku ketawa, kamu juga ngajarin aku banyak hal tentang dunia baru, ngajarin aku cara mencintai diri sendiri, dan terutama jadikan aku orang yang suka memuji Tuhan begitu melihat kamu.\
-        ",
-
-        "Mi Amor, kita telah berlayar melewati banyak hal. banyak hal di lautan lepas ini yang sudah kita lepas dan ambil. banyak hal yang kita\
-        syukuri, yang kita sesali, dan yang kita Amini. 3 bulan ini terasa begitu singkat ketika kita sudah berada di penghujung tahun, padahal\
-        3 bulan itu bukan waktu yang sebentar bagi kita berdua untuk menerima, memaafkan dan melepaskan apa yang baik dan buruk, apa yang nyaman dan tidak\
-        bagi diri kita masing masing.",
-
-        "seperti yang sayang tau, kita banyak trial dan error dalam hal komunikasi, berulang kali terjadi kesalahpahaman, tapi\
-        percayalah bahwa kita bisa mengarunginya bersama selagi kita mau mencoba. tidak peduli seberapa banyak kita gagal dalam memahami/menyelesaikan masalahnya,\
-        tapi lihat dan ingat pada seberapa banyak kita berhasil menyelesaikannya sebelumnya. \
-        tidak peduli sekeras apapun masalahnya, aku percaya kita bisa laluin ini bareng bareng sampai aku masang cincin di jari manis kamu.",
-
-        "melalui message box ini juga, aku mau tegasin lagi ke kamu, rasaku padamu tidak akan pernah berubah. selama nafasku masih berdesah, dan jantungku masih berdetak,\
-        kamu akan selalu menjadi satu satunya cinta pertama dan terakhirku yang akan hidup bersamaku sampai matahari tak lagi bersinar bagi kita berdua,\
-        sampai perahu ini lapuk dan tenggelam, dan sampai kita tak dapat melihat lagi dunia fana ini; melalui ini aku juga tegasin kalau kamu selalu cukup buat aku.\
-        kedepannya akan ada banyak hal yang akan kita lalui sayang. tentunya aku mau kita kerjasama dalam hal apapun saat menghadapinya.\
-        kedapannya juga kita akan membangun cinta yang lebih lagi, apapun kondisinya kita harus tetap lindungi bareng bareng, bahkan jika roboh, kita bangun ulang kembali sama sama.",
-
-        "sekali lagi, thanks to all you did to me. hidupku jadi penuh akan warna baru, yaitu the color of you. dan warnamu itu unik, hanya satu hingga tak ada yang dapat\
-        menggantikannya. aku kedepannya akan terus menerus memberikan yang terbaik dalam hal apapun, termasuk mencintai dan menyayangimu seperti yang Tuhan lakukan pada umat manusia.\
-        karna sesungguhnya, aku akan menjadikan Yakub sebagai teladan dalam mengejar dan mempertahankan cintanya pada Rachel selama 14 tahun.",
-
-        "<a href='https://docs.google.com/document/d/1oMF_7TqhrtLEpJriRXQktK157d1QRiBoJHDVusO_96c/edit?tab=t.0'>this is poem for you babe (click me!)<a>",
-
-        "siap siap buat something sayaangg!",
-
-        "3",
-        "2",
-        "1",
-
-        "ini adalah pesan terakhirku untuk mu, mainkan musik untukmu🎶",
 
         "klik tombol dibawah untuk membaca pesan 💕",
 
@@ -68,7 +30,7 @@ function showValentineMessage(seconds) {
 
     let messageToShow2 = pesan[currentValentineMessageIndex];
     document.getElementById("Indexcontent2").innerHTML = messageToShow2;
-	const audioPlayer = document.getElementById("audio-player");
+	const audioPlayer = document.getElementById("audio-player2");
     audioPlayer.currentTime = seconds;
     // Check if we have reached the last message
     if (currentValentineMessageIndex === pesan.length - 2) { // Second-to-last message triggers audio

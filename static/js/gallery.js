@@ -177,7 +177,17 @@
         { url: "static/image/gallary/151.png", desc: "", id: "gambar 151" },
         { url: "static/image/gallary/152.png", desc: "", id: "gambar 152" },
         { url: "static/image/gallary/153.jpg", desc: "", id: "gambar 153" },
-        { url: "static/image/gallary/160.jpg", desc: "", id: "gambar 160" }
+        { url: "static/image/gallary/160.jpg", desc: "", id: "gambar 160" },
+        { url: "static/image/gallary/161.jpg", desc: "", id: "gambar 161" },
+        { url: "static/image/gallary/162.jpg", desc: "", id: "gambar 162" },
+        { url: "static/image/gallary/163.jpg", desc: "", id: "gambar 163" },
+        { url: "static/image/gallary/164.jpg", desc: "", id: "gambar 164" },
+        { url: "static/image/gallary/165.jpg", desc: "", id: "gambar 165" },
+        { url: "static/image/gallary/166.jpg", desc: "", id: "gambar 166" },
+        { url: "static/image/gallary/167.jpg", desc: "", id: "gambar 167" },
+        { url: "static/image/gallary/168.jpg", desc: "", id: "gambar 168" },
+        { url: "static/image/gallary/169.jpg", desc: "", id: "gambar 169" },
+        
     ]
     const JustValerie = [ 
         { url: "static/image/gallary/1.jpg", desc: "", id:"gambar 1"},

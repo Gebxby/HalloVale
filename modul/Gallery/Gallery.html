@@ -150,9 +150,12 @@
 
 
     <div class="image-container">
-        <div class="pagination">
-            <button class="page-btn active" data-page="1">Page 1</button>
-            <button class="page-btn" data-page="2">Page 2</button>
+        <!-- Tambahkan ini di bagian atas container -->
+        <div class="tab-buttons flex justify-center space-x-4 mb-6">
+            <button onclick="showPhotoContent('JustValerie')" class="tab-btn active">Just Valerie</button>
+            <button onclick="showPhotoContent('dumpyPhoto')" class="tab-btn">Dumpy Photo</button>
+            <button onclick="showPhotoContent('photobooth')" class="tab-btn">Photobooth</button>
+            <button onclick="showPhotoContent('JustTwoOfUs')" class="tab-btn">Just Two of Us</button>
         </div>
 
         <div id="loading" class=" hidden"></div>
